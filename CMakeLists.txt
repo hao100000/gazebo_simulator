@@ -11,11 +11,21 @@ find_package(ament_cmake REQUIRED)
 # 追加の依存パッケージを手動で指定できます。
 # find_package(<dependency> REQUIRED)
 
+
+# Python ノードをインストール
+# ament_python_install_package(${PROJECT_NAME})
+
 install(
   PROGRAMS
-    scripts/teleop_twist_keyboard
+    scripts/teleop_twist_keyboard.py
   DESTINATION lib/${PROJECT_NAME}
 )
+
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -28,11 +38,5 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
-
-install(
-  DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}
-)
-
 
 ament_package()

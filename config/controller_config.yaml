@@ -6,36 +6,36 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    forward_velocity_controller:
+    wheel_front_left_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    wheel_front_right_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    wheel_rear_left_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    wheel_rear_right_velocity_controller:
       type: velocity_controllers/JointGroupVelocityController
 
 
 # ============================================================
-# コントローラの設定
-# joints の順番は上の motors 設定の順番と一致させてください
+# コントローラの設定 (各ホイールに対する JointGroupVelocityController を使用)
 # ============================================================
-forward_velocity_controller:
+wheel_front_left_velocity_controller:
   ros__parameters:
-    joints:
-      - wheel_left_joint
-      - wheel_right_joint
+    joints: ['wheel_front_left_joint']
 
-
-# ここを編集すると、CAN ID と joint 名の対応を変更できます。
-# - can_id: CAN メッセージの motor ID
-# - joint_name: Gazebo で動かす joint 名
-# - invert: 回転方向を反転したい場合は true
-# - control_type: 現在は velocity を使用。将来 position に拡張可能
-can_to_gazebo:
+wheel_front_right_velocity_controller:
   ros__parameters:
-    motors:
-      - can_id: 1
-        # 変更する場合はこの can_id と joint_name をセットで更新する
-        joint_name: wheel_left_joint
-        invert: false
-        control_type: velocity
+    joints: ['wheel_front_right_joint']
 
-      - can_id: 2
-        joint_name: wheel_right_joint
-        invert: false
-        control_type: velocity
+wheel_rear_left_velocity_controller:
+  ros__parameters:
+    joints: ['wheel_rear_left_joint']
+
+wheel_rear_right_velocity_controller:
+  ros__parameters:
+    joints: ['wheel_rear_right_joint']
+# CAN to Gazebo conversion settings moved to separate can_motor_map.yaml
+# See can_motor_map.yaml for CAN ID to joint name mapping

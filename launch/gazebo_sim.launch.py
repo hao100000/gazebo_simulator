@@ -9,7 +9,7 @@ import subprocess
 # ============================================================
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
-MODEL_NAME = "demorobot"  # モデル名（xacroファイルとモデルディレクトリに対応）
+MODEL_NAME = "omni4_robot"  # モデル名（xacroファイルとモデルディレクトリに対応）
 WORLD_FILE = "world.sdf"   # ワールドファイル名
 
 
@@ -134,12 +134,39 @@ def generate_launch_description():
             output="screen",
         ),
 
-        # Forward Velocity Controller
+        # Wheel velocity controllers (4-wheel omni)
         Node(
             package="controller_manager",
             executable="spawner",
             arguments=[
-                "forward_velocity_controller",
+                "wheel_front_left_velocity_controller",
+                "--controller-manager", "/controller_manager"
+            ],
+            output="screen",
+        ),
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=[
+                "wheel_front_right_velocity_controller",
+                "--controller-manager", "/controller_manager"
+            ],
+            output="screen",
+        ),
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=[
+                "wheel_rear_left_velocity_controller",
+                "--controller-manager", "/controller_manager"
+            ],
+            output="screen",
+        ),
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=[
+                "wheel_rear_right_velocity_controller",
                 "--controller-manager", "/controller_manager"
             ],
             output="screen",

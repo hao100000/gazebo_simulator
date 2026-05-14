@@ -14,31 +14,20 @@
     <inertial>
       <pose>0.1 0 0 0 0 0</pose>
       <mass value="${base_mass}"/>
-      <inertia>
-        <ixx>4.2111447e-02</ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
-        <iyy>4.2111447e-02</iyy>
-        <iyz>0</iyz>
-        <izz>7.5254874e-02</izz>
-      </inertia>
+      <inertia ixx="4.2111447e-02" ixy="0" ixz="0" iyy="4.2111447e-02" iyz="0" izz="7.5254874e-02"/>
     </inertial>
     <collision name="base_collision">
-      <pose>-0.064 0.08 0.06 0 0 -1.57</pose>
+      <pose>0 0 0 0 0 0</pose>
       <geometry>
-        <mesh>
-          <uri>model://meshes/2DRoboPrac.stl</uri>
-        </mesh>
+        <mesh filename="model://meshes/2DRoboPrac.stl"/>
       </geometry>
     </collision>
     <visual name="base_visual">
-      <pose>-0.064 0.08 0.06 0 0 -1.57</pose>
+      <pose>0 0 0 0 0 0</pose>
       <geometry>
-        <mesh>
-          <uri>model://meshes/2DRoboPrac.dae</uri>
-        </mesh>
+        <mesh filename="model://meshes/2DRoboPrac.dae"/>
       </geometry>
-      <material>
+      <material name="base_material">
         <color rgba="0.921568627 0.925490196 0.941176471 1"/>
       </material>
     </visual>
@@ -48,31 +37,18 @@
   <link name="wheel_left_link">
     <inertial>
       <mass value="${wheel_mass}"/>
-      <inertia>
-        <ixx>1.1175580e-05</ixx>
-        <ixy>-4.2369783e-11</ixy>
-        <ixz>-5.9381719e-09</ixz>
-        <iyy>1.1192413e-05</iyy>
-        <iyz>-1.4400107e-11</iyz>
-        <izz>2.0712558e-05</izz>
-      </inertia>
+      <inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09" iyy="1.1192413e-05" iyz="-1.4400107e-11" izz="2.0712558e-05"/>
     </inertial>
     <collision name="wheel_left_collision">
       <geometry>
-        <cylinder>
-          <radius>${wheel_radius}</radius>
-          <length>${wheel_length}</length>
-        </cylinder>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
     <visual name="wheel_left_visual">
       <geometry>
-        <cylinder>
-          <radius>${wheel_radius}</radius>
-          <length>${wheel_length}</length>
-        </cylinder>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
-      <material>
+      <material name="wheel_material">
         <color rgba="1.0 0.0 0.0 1"/>
       </material>
     </visual>
@@ -91,31 +67,18 @@
   <link name="wheel_right_link">
     <inertial>
       <mass value="${wheel_mass}"/>
-      <inertia>
-        <ixx>1.1175580e-05</ixx>
-        <ixy>-4.2369783e-11</ixy>
-        <ixz>-5.9381719e-09</ixz>
-        <iyy>1.1192413e-05</iyy>
-        <iyz>-1.4400107e-11</iyz>
-        <izz>2.0712558e-05</izz>
-      </inertia>
+      <inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09" iyy="1.1192413e-05" iyz="-1.4400107e-11" izz="2.0712558e-05"/>
     </inertial>
     <collision name="wheel_right_collision">
       <geometry>
-        <cylinder>
-          <radius>${wheel_radius}</radius>
-          <length>${wheel_length}</length>
-        </cylinder>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
     <visual name="wheel_right_visual">
       <geometry>
-        <cylinder>
-          <radius>${wheel_radius}</radius>
-          <length>${wheel_length}</length>
-        </cylinder>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
-      <material>
+      <material name="wheel_material">
         <color rgba="1.0 0.0 0.0 1"/>
       </material>
     </visual>
@@ -134,82 +97,64 @@
   <link name="caster_back_right_link">
     <inertial>
       <mass value="${caster_mass}"/>
-      <inertia>
-        <ixx>0.00001</ixx>
-        <ixy>0.000</ixy>
-        <ixz>0.000</ixz>
-        <iyy>0.00001</iyy>
-        <iyz>0.000</iyz>
-        <izz>0.00001</izz>
-      </inertia>
+      <inertia ixx="0.00001" ixy="0.000" ixz="0.000" iyy="0.00001" iyz="0.000" izz="0.00001"/>
     </inertial>
     <collision name="caster_back_right_collision">
       <geometry>
-        <sphere>
-          <radius>0.005</radius>
-        </sphere>
+        <sphere radius="0.005"/>
       </geometry>
     </collision>
     <visual name="caster_back_right_visual">
       <geometry>
-        <sphere>
-          <radius>0.005</radius>
-        </sphere>
+        <sphere radius="0.005"/>
       </geometry>
-      <material>
+      <material name="caster_material">
         <color rgba="0.0 1.0 0.0 1"/>
       </material>
     </visual>
   </link>
 
-  <joint name="caster_back_right_joint" type="ball">
+  <joint name="caster_back_right_joint" type="fixed">
     <parent link="base_link"/>
     <child link="caster_back_right_link"/>
     <origin xyz="0.15 -0.05 -0.004" rpy="-1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1" velocity="10" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <!-- Caster wheels (back left) -->
   <link name="caster_back_left_link">
     <inertial>
       <mass value="${caster_mass}"/>
-      <inertia>
-        <ixx>0.00001</ixx>
-        <ixy>0.000</ixy>
-        <ixz>0.000</ixz>
-        <iyy>0.00001</iyy>
-        <iyz>0.000</iyz>
-        <izz>0.00001</izz>
-      </inertia>
+      <inertia ixx="0.00001" ixy="0.000" ixz="0.000" iyy="0.00001" iyz="0.000" izz="0.00001"/>
     </inertial>
     <collision name="caster_back_left_collision">
       <geometry>
-        <sphere>
-          <radius>0.005</radius>
-        </sphere>
+        <sphere radius="0.005"/>
       </geometry>
     </collision>
     <visual name="caster_back_left_visual">
       <geometry>
-        <sphere>
-          <radius>0.005</radius>
-        </sphere>
+        <sphere radius="0.005"/>
       </geometry>
-      <material>
+      <material name="caster_material">
         <color rgba="0.0 1.0 0.0 1"/>
       </material>
     </visual>
   </link>
 
-  <joint name="caster_back_left_joint" type="ball">
+  <joint name="caster_back_left_joint" type="fixed">
     <parent link="base_link"/>
     <child link="caster_back_left_link"/>
     <origin xyz="0.15 0.05 -0.004" rpy="-1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1" velocity="10" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <!-- ros2_control plugin config -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
-      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
     </hardware>
 
     <joint name="wheel_left_joint">
@@ -232,8 +177,8 @@
   </ros2_control>
 
   <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <parameters>$(find gazebo_simulator)/config/ros2_controllers.yaml</parameters>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find gazebo_simulator)/config/controller_config.yaml</parameters>
     </plugin>
   </gazebo>
 </robot>

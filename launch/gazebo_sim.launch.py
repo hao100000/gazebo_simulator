@@ -13,6 +13,10 @@ def generate_launch_description():
         ros2_ws,
         "src/models/world.sdf"
     )
+    models_path = os.path.join(
+        ros2_ws,
+        "src/models"
+    )
     xacro_file = PathJoinSubstitution([
         pkg_share,
         'urdf',
@@ -23,12 +27,30 @@ def generate_launch_description():
         ros2_ws,
         "src/gazebo_simulator/config/controller_config.yaml"
     )
+    
+    # Set GZ_MODEL_PATH environment variable
+    gz_model_path = os.environ.get("GZ_MODEL_PATH", "")
+    if gz_model_path:
+        gz_model_path = models_path + ":" + gz_model_path
+    else:
+        gz_model_path = models_path
+    
+    # Set GZ_SIM_SYSTEM_PLUGIN_PATH for gazebo_ros2_control plugin
+    gz_plugin_path = os.environ.get("GZ_SIM_SYSTEM_PLUGIN_PATH", "")
+    if gz_plugin_path:
+        gz_plugin_path = gz_plugin_path + ":/opt/ros/jazzy/lib"
+    else:
+        gz_plugin_path = "/opt/ros/jazzy/lib"
 
     return LaunchDescription([
         # Gazebo
         ExecuteProcess(
             cmd=["gz", "sim", "-r", world_path],
-            output="screen"
+            output="screen",
+            additional_env={
+                "GZ_MODEL_PATH": gz_model_path,
+                "GZ_SIM_SYSTEM_PLUGIN_PATH": gz_plugin_path
+            }
         ),
 
         # URDF配信
@@ -40,15 +62,7 @@ def generate_launch_description():
         ),
 
 
-        # Controller Manager
-        Node(
-            package="controller_manager",
-            executable="ros2_control_node",
-            parameters=[controller_config_path],
-            output="screen",
-        ),
-
-        # Joint State Broadcaster
+        # Joint State Broadcaster (spawned within Gazebo)
         Node(
             package="controller_manager",
             executable="spawner",

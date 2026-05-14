@@ -8,21 +8,25 @@ endif()
 # Find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(trajectory_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(uec_msgs REQUIRED)
 
+# include ディレクトリ
+include_directories(include)
+
 # C++ executable: CAN to Joint Trajectory converter
-add_executable(can_to_joint_trajectory_node
-  src/can_to_joint_trajectory_node.cpp
+add_executable(can_to_gazebo
+  src/can_to_gazebo.cpp
 )
 
-ament_target_dependencies(can_to_joint_trajectory_node
+ament_target_dependencies(can_to_gazebo
   rclcpp
-  trajectory_msgs
+  std_msgs
   uec_msgs
 )
 
-install(TARGETS can_to_joint_trajectory_node
+
+install(TARGETS can_to_gazebo
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -54,6 +58,11 @@ install(
 install(
   DIRECTORY config
   DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY include
+  DESTINATION include
 )
 
 if(BUILD_TESTING)

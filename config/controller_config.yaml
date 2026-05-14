@@ -1,26 +1,16 @@
-demorobot_joint_trajectory_controller:
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    forward_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+
+forward_velocity_controller:
   ros__parameters:
     joints:
       - wheel_left_joint
       - wheel_right_joint
-    command_interfaces:
-      - velocity
-    state_interfaces:
-      - position
-      - velocity
-    state_publish_period: 0.01
-    action_monitor_period: 0.05
-    allow_partial_joints_goal: false
-    constraints:
-      stopped_velocity_tolerance: 0.01
-      goal_time: 0.0
-      wheel_left_joint:
-        trajectory: 0.1
-        goal: 0.1
-      wheel_right_joint:
-        trajectory: 0.1
-        goal: 0.1
-
-joint_state_broadcaster:
-  ros__parameters:
-    publish_period: 0.01

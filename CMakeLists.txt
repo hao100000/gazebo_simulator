@@ -5,16 +5,28 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# 依存パッケージを検索
+# Find dependencies
 find_package(ament_cmake REQUIRED)
-# 以下のセクションを有効化すると、
-# 追加の依存パッケージを手動で指定できます。
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(trajectory_msgs REQUIRED)
+find_package(uec_msgs REQUIRED)
 
+# C++ executable: CAN to Joint Trajectory converter
+add_executable(can_to_joint_trajectory_node
+  src/can_to_joint_trajectory_node.cpp
+)
 
-# Python ノードをインストール
-# ament_python_install_package(${PROJECT_NAME})
+ament_target_dependencies(can_to_joint_trajectory_node
+  rclcpp
+  trajectory_msgs
+  uec_msgs
+)
 
+install(TARGETS can_to_joint_trajectory_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# Python scripts
 install(
   PROGRAMS
     scripts/teleop_twist_keyboard.py
@@ -30,28 +42,26 @@ install(
 )
 
 install(
-  PROGRAMS
-    scripts/can_to_joint_velocity.py
-  RENAME can_to_joint_velocity
-  DESTINATION lib/${PROJECT_NAME}
-)
-
-install(
   DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
 )
 
+install(
+  DIRECTORY urdf
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
-  # 以下の行は著作権チェック用リンターをスキップします
-  # すべてのソースに著作権・ライセンス表記を追加したらコメントアウトしてください
   set(ament_cmake_copyright_FOUND TRUE)
-  # 以下の行は cpplint をスキップします（git リポジトリ内でのみ有効）
-  # このパッケージを git 管理し、かつ
-  # すべてのソースに著作権・ライセンス表記を追加したらコメントアウトしてください
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
 
 ament_package()
+

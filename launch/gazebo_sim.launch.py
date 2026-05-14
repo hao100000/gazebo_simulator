@@ -1,9 +1,43 @@
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess
+from launch.actions import ExecuteProcess, OpaqueFunction
 from launch_ros.actions import Node
 from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 import os
+import subprocess
+
+
+def regenerate_model_sdf(context, *args, **kwargs):
+    ros2_ws = os.environ.get("ROS2_WS")
+    if not ros2_ws:
+        raise RuntimeError("ROS2_WS environment variable is required")
+
+    xacro_path = os.path.join(
+        ros2_ws,
+        "src/gazebo_simulator/urdf/demorobot.urdf.xacro"
+    )
+    model_dir = os.path.join(
+        ros2_ws,
+        "src/models/demorobot"
+    )
+    urdf_path = os.path.join(model_dir, "demorobot.urdf")
+    model_sdf_path = os.path.join(model_dir, "model.sdf")
+
+    with open(urdf_path, "w", encoding="utf-8") as urdf_file:
+        subprocess.run(["xacro", xacro_path], check=True, stdout=urdf_file)
+
+    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
+        subprocess.run(["gz", "sdf", "-p", urdf_path], check=True, stdout=sdf_file)
+
+    with open(model_sdf_path, "r", encoding="utf-8") as sdf_file:
+        model_sdf = sdf_file.read()
+
+    model_sdf = model_sdf.replace("model://meshes/", "../meshes/")
+
+    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
+        sdf_file.write(model_sdf)
+
+    return []
 
 
 def generate_launch_description():
@@ -43,6 +77,8 @@ def generate_launch_description():
         gz_plugin_path = "/opt/ros/jazzy/lib"
 
     return LaunchDescription([
+        OpaqueFunction(function=regenerate_model_sdf),
+
         # Gazebo
         ExecuteProcess(
             cmd=["gz", "sim", "-r", world_path],

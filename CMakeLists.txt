@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(uec_msgs REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 # include ディレクトリ
 include_directories(include)
@@ -24,6 +25,8 @@ ament_target_dependencies(can_to_gazebo
   std_msgs
   uec_msgs
 )
+
+target_link_libraries(can_to_gazebo yaml-cpp)
 
 
 install(TARGETS can_to_gazebo

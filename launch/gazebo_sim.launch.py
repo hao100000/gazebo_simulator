@@ -6,46 +6,58 @@ from launch_ros.substitutions import FindPackageShare
 import os
 import subprocess
 
-
-def regenerate_model_sdf(context, *args, **kwargs):
-    ros2_ws = os.environ.get("ROS2_WS")
-    if not ros2_ws:
-        raise RuntimeError("ROS2_WS environment variable is required")
-
-    xacro_path = os.path.join(
-        ros2_ws,
-        "src/gazebo_simulator/urdf/demorobot.urdf.xacro"
-    )
-    model_dir = os.path.join(
-        ros2_ws,
-        "src/models/demorobot"
-    )
-    urdf_path = os.path.join(model_dir, "demorobot.urdf")
-    model_sdf_path = os.path.join(model_dir, "model.sdf")
-
-    with open(urdf_path, "w", encoding="utf-8") as urdf_file:
-        subprocess.run(["xacro", xacro_path], check=True, stdout=urdf_file)
-
-    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
-        subprocess.run(["gz", "sdf", "-p", urdf_path], check=True, stdout=sdf_file)
-
-    with open(model_sdf_path, "r", encoding="utf-8") as sdf_file:
-        model_sdf = sdf_file.read()
-
-    model_sdf = model_sdf.replace("model://meshes/", "../meshes/")
-
-    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
-        sdf_file.write(model_sdf)
-
-    return []
+# ============================================================
+# 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
+# ============================================================
+MODEL_NAME = "demorobot"  # モデル名（xacroファイルとモデルディレクトリに対応）
+WORLD_FILE = "world.sdf"   # ワールドファイル名
 
 
-def generate_launch_description():
+def create_regenerate_model_sdf(model_name):
+    """Factory function to create regenerate_model_sdf with specific model name"""
+    def regenerate_model_sdf(context, *args, **kwargs):
+        ros2_ws = os.environ.get("ROS2_WS")
+        if not ros2_ws:
+            raise RuntimeError("ROS2_WS environment variable is required")
+
+        xacro_path = os.path.join(
+            ros2_ws,
+            f"src/gazebo_simulator/urdf/{model_name}.urdf.xacro"
+        )
+        model_dir = os.path.join(
+            ros2_ws,
+            f"src/models/{model_name}"
+        )
+        urdf_path = os.path.join(model_dir, f"{model_name}.urdf")
+        model_sdf_path = os.path.join(model_dir, "model.sdf")
+
+        with open(urdf_path, "w", encoding="utf-8") as urdf_file:
+            subprocess.run(["xacro", xacro_path], check=True, stdout=urdf_file)
+
+        with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
+            subprocess.run(["gz", "sdf", "-p", urdf_path], check=True, stdout=sdf_file)
+
+        with open(model_sdf_path, "r", encoding="utf-8") as sdf_file:
+            model_sdf = sdf_file.read()
+
+        model_sdf = model_sdf.replace("model://meshes/", "../meshes/")
+
+        with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
+            sdf_file.write(model_sdf)
+
+        return []
+    
+    return regenerate_model_sdf
+
+
+def generate_launch_description():    
     pkg_share = FindPackageShare('gazebo_simulator')
     ros2_ws = os.environ.get("ROS2_WS")
+    
+    # パスを構築
     world_path = os.path.join(
         ros2_ws,
-        "src/models/world.sdf"
+        f"src/models/{WORLD_FILE}"
     )
     models_path = os.path.join(
         ros2_ws,
@@ -54,7 +66,7 @@ def generate_launch_description():
     xacro_file = PathJoinSubstitution([
         pkg_share,
         'urdf',
-        'demorobot.urdf.xacro'
+        f'{MODEL_NAME}.urdf.xacro'
     ])
     robot_description = Command(['xacro ', xacro_file])
     controller_config_path = os.path.join(
@@ -77,9 +89,11 @@ def generate_launch_description():
         gz_plugin_path = "/opt/ros/jazzy/lib"
 
     return LaunchDescription([
-        OpaqueFunction(function=regenerate_model_sdf),
+        OpaqueFunction(function=create_regenerate_model_sdf(MODEL_NAME)),
 
-        # Gazebo
+        # ============================================================
+        # 1. Gazebo Simulation & CAN to Gazebo Converter
+        # ============================================================
         ExecuteProcess(
             cmd=["gz", "sim", "-r", world_path],
             output="screen",
@@ -138,11 +152,23 @@ def generate_launch_description():
             output="screen"
         ),
 
-        # Teleop (optional)
+        # ============================================================
+        # 2. Keyboard Teleop - CAN Command (/can/tx)
+        # ============================================================
         Node(
             package="gazebo_simulator",
             executable="teleop_CANArray_keyboard",
             output="screen",
             prefix="xterm -e"
-        ),
+        ),        
+
+        # # ============================================================
+        # # 3. Keyboard Teleop - Twist Command (/cmd_vel)
+        # # ============================================================
+        # Node(
+        #     package="gazebo_simulator",
+        #     executable="teleop_twist_keyboard",
+        #     output="screen",
+        #     prefix="xterm -e"
+        # ),
     ])

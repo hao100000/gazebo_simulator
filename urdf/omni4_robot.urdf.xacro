@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="omni4_robot">
+
+  <!-- Parameters -->
+  <xacro:property name="wheel_radius" value="0.033"/>
+  <xacro:property name="wheel_width" value="0.018"/>
+  <xacro:property name="wheel_x" value="0.12"/>
+  <xacro:property name="wheel_y" value="0.095"/>
+  <xacro:property name="base_mass" value="2.0"/>
+  <xacro:property name="wheel_mass" value="0.1"/>
+
+  <!-- Base link -->
+  <link name="base_link">
+    <inertial>
+      <mass value="${base_mass}"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.3 0.2 0.06"/>
+      </geometry>
+      <material name="base_material">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.2 0.06"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Wheel link macro -->
+  <xacro:macro name="omni_wheel" params="name x y">
+    <link name="${name}_link">
+      <inertial>
+        <mass value="${wheel_mass}"/>
+        <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="wheel_material">
+          <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${name}_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${name}_link"/>
+      <origin xyz="${x} ${y} 0.02" rpy="0 0 1.5708"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10" velocity="20"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Define four omni wheels (front_left, front_right, rear_left, rear_right) -->
+  <xacro:omni_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}"/>
+  <xacro:omni_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}"/>
+  <xacro:omni_wheel name="wheel_rear_left" x="-${wheel_x}" y="${wheel_y}"/>
+  <xacro:omni_wheel name="wheel_rear_right" x="-${wheel_x}" y="-${wheel_y}"/>
+
+  <!-- ros2_control plugin config -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <joint name="wheel_front_left_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wheel_front_right_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wheel_rear_left_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wheel_rear_right_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find gazebo_simulator)/config/omni_controller_config.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>

@@ -1,9 +1,10 @@
 #include "gazebo_simulator/can_to_gazebo.hpp"
+#include <rclcpp/rclcpp.hpp>
+#include <filesystem>
 
 CanToGazeboNode::CanToGazeboNode() : rclcpp::Node("can_to_gazebo") {
-  // Setup motor to joint name mapping
-  motor_to_joint_["wheel_left_joint"] = 1;
-  motor_to_joint_["wheel_right_joint"] = 2;
+  // Load motor configuration from YAML
+  load_motor_config_from_yaml();
 
   // Create publisher for velocity commands
   gazebo_pub_ = create_publisher<std_msgs::msg::Float64MultiArray>(
@@ -15,33 +16,121 @@ CanToGazeboNode::CanToGazeboNode() : rclcpp::Node("can_to_gazebo") {
       std::bind(&CanToGazeboNode::can_callback, this,
                 std::placeholders::_1));
 
-  // Initialize velocities
-  joint_velocities_["wheel_left_joint"] = 0.0;
-  joint_velocities_["wheel_right_joint"] = 0.0;
-
+  // Log loaded motors
   RCLCPP_INFO(get_logger(),
-              "CANArray to Gazebo converter initialized. "
+              "CANArray to Gazebo converter initialized with %zu motors. "
               "Listening on /can/tx, publishing to "
-              "/forward_velocity_controller/commands");
+              "/forward_velocity_controller/commands",
+              motor_configs_.size());
+
+  for (size_t i = 0; i < motor_configs_.size(); ++i) {
+    const auto &cfg = motor_configs_[i];
+    RCLCPP_INFO(get_logger(),
+                "  Motor %d: CAN ID=%d, Joint=%s, Type=%s, Invert=%s",
+                static_cast<int>(i),
+                cfg.can_id,
+                cfg.joint_name.c_str(),
+                cfg.control_type.c_str(),
+                cfg.invert ? "true" : "false");
+  }
+}
+
+void CanToGazeboNode::load_motor_config_from_yaml() {
+  // Get ROS2_WS environment variable
+  const char *ros2_ws = std::getenv("ROS2_WS");
+  if (!ros2_ws) {
+    RCLCPP_WARN(get_logger(),
+                "ROS2_WS environment variable not set. "
+                "Attempting to load from relative path.");
+    ros2_ws = ".";
+  }
+
+  // Construct path to the shared controller_config.yaml
+  std::string config_path =
+      std::string(ros2_ws) +
+      "/src/gazebo_simulator/config/controller_config.yaml";
+
+  RCLCPP_INFO(get_logger(), "Loading motor config from: %s", config_path.c_str());
+
+  try {
+    YAML::Node config = YAML::LoadFile(config_path);
+
+    YAML::Node motors_node;
+    if (config["can_to_gazebo"] && config["can_to_gazebo"]["ros__parameters"] &&
+        config["can_to_gazebo"]["ros__parameters"]["motors"]) {
+      motors_node = config["can_to_gazebo"]["ros__parameters"]["motors"];
+    } else if (config["motors"]) {
+      motors_node = config["motors"];
+    }
+
+    if (!motors_node) {
+      RCLCPP_WARN(get_logger(),
+                  "No motor configuration found in controller_config.yaml. "
+                  "Using empty motor list.");
+      return;
+    }
+
+    // Initialize velocity vector
+    joint_velocities_.clear();
+    motor_configs_.clear();
+    can_id_to_joint_.clear();
+    can_id_to_motor_idx_.clear();
+
+    if (!motors_node.IsSequence()) {
+      RCLCPP_ERROR(get_logger(),
+                   "motors configuration is not a list in YAML");
+      return;
+    }
+
+    for (size_t i = 0; i < motors_node.size(); ++i) {
+      const YAML::Node &motor = motors_node[i];
+
+      MotorConfig cfg;
+      cfg.can_id = motor["can_id"].as<uint8_t>();
+      cfg.joint_name = motor["joint_name"].as<std::string>();
+      cfg.invert = motor["invert"].as<bool>(false);
+      cfg.control_type = motor["control_type"].as<std::string>("velocity");
+
+      motor_configs_.push_back(cfg);
+      can_id_to_joint_[cfg.can_id] = cfg.joint_name;
+      can_id_to_motor_idx_[cfg.can_id] = i;
+      joint_velocities_.push_back(0.0);
+    }
+
+    RCLCPP_INFO(get_logger(), "Successfully loaded %zu motor configs from YAML",
+                motor_configs_.size());
+  } catch (const YAML::Exception &e) {
+    RCLCPP_ERROR(get_logger(), "Failed to parse YAML: %s", e.what());
+    RCLCPP_ERROR(
+        get_logger(),
+        "Make sure controller_config.yaml has a can_to_gazebo.ros__parameters.motors section");
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(get_logger(), "Error loading motor config: %s", e.what());
+  }
 }
 
 void CanToGazeboNode::can_callback(
     const uec_msgs::msg::CANArray::SharedPtr msg) {
+  if (motor_configs_.empty()) {
+    RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 5000,
+                         "No motor configs loaded. Ignoring CAN message.");
+    return;
+  }
+
   bool updated = false;
 
   for (const auto &can_msg : msg->array) {
     uint8_t motor_id = can_msg.bulk_id;
-    std::string joint_name;
 
-    // Map motor ID to joint name
-    if (motor_id == 1) {
-      joint_name = "wheel_left_joint";
-    } else if (motor_id == 2) {
-      joint_name = "wheel_right_joint";
-    } else {
-      // Ignore unknown motor IDs
+    // Find motor config for this CAN ID
+    auto it = can_id_to_motor_idx_.find(motor_id);
+    if (it == can_id_to_motor_idx_.end()) {
+      // Unknown motor ID, skip
       continue;
     }
+
+    size_t motor_idx = it->second;
+    const auto &cfg = motor_configs_[motor_idx];
 
     // Extract velocity from CAN data
     double velocity = 0.0;
@@ -49,11 +138,16 @@ void CanToGazeboNode::can_callback(
       velocity = static_cast<double>(can_msg.data[0]);
     }
 
-    joint_velocities_[joint_name] = velocity;
+    // Apply invert flag
+    if (cfg.invert) {
+      velocity = -velocity;
+    }
+
+    joint_velocities_[motor_idx] = velocity;
     updated = true;
 
     RCLCPP_DEBUG(get_logger(), "Motor %d (%s) -> velocity: %.2f", motor_id,
-                 joint_name.c_str(), velocity);
+                 cfg.joint_name.c_str(), velocity);
   }
 
   if (updated) {
@@ -64,15 +158,15 @@ void CanToGazeboNode::can_callback(
 void CanToGazeboNode::publish_velocity_command() {
   auto msg = std::make_unique<std_msgs::msg::Float64MultiArray>();
 
-  msg->data.push_back(joint_velocities_["wheel_left_joint"]);
-  msg->data.push_back(joint_velocities_["wheel_right_joint"]);
+  // Publish velocities in order of motor config
+  for (double velocity : joint_velocities_) {
+    msg->data.push_back(velocity);
+  }
 
   gazebo_pub_->publish(std::move(msg));
 
-  RCLCPP_DEBUG(get_logger(),
-               "Published velocities: left=%.2f, right=%.2f",
-               joint_velocities_["wheel_left_joint"],
-               joint_velocities_["wheel_right_joint"]);
+  RCLCPP_DEBUG(get_logger(), "Published %zu joint velocities",
+               joint_velocities_.size());
 }
 
 int main(int argc, char *argv[]) {

@@ -17,13 +17,13 @@
       <inertia ixx="4.2111447e-02" ixy="0" ixz="0" iyy="4.2111447e-02" iyz="0" izz="7.5254874e-02"/>
     </inertial>
     <collision name="base_collision">
-      <pose>0 0 0 0 0 0</pose>
+      <origin xyz="-0.064 0.08 0.06" rpy="0 0 -1.57"/>
       <geometry>
         <mesh filename="model://meshes/2DRoboPrac.stl"/>
       </geometry>
     </collision>
     <visual name="base_visual">
-      <pose>0 0 0 0 0 0</pose>
+      <origin xyz="-0.064 0.08 0.06" rpy="0 0 -1.57"/>
       <geometry>
         <mesh filename="model://meshes/2DRoboPrac.dae"/>
       </geometry>
@@ -54,12 +54,12 @@
     </visual>
   </link>
 
-  <joint name="wheel_left_joint" type="revolute">
+  <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_left_link"/>
     <origin xyz="0.0 0.095 0.023" rpy="-1.57 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.14159" upper="3.14159"/>
+    <limit effort="10" velocity="10"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
 
@@ -84,12 +84,12 @@
     </visual>
   </link>
 
-  <joint name="wheel_right_joint" type="revolute">
+  <joint name="wheel_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_right_link"/>
     <origin xyz="0.0 -0.095 0.023" rpy="-1.57 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.14159" upper="3.14159"/>
+    <limit effort="10" velocity="10"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
 
@@ -119,7 +119,7 @@
     <child link="caster_back_right_link"/>
     <origin xyz="0.15 -0.05 -0.004" rpy="-1.57 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="1" velocity="10" lower="-3.14159" upper="3.14159"/>
+    <limit effort="10" velocity="100" lower="-30.14159" upper="30.14159"/>
   </joint>
 
   <!-- Caster wheels (back left) -->
@@ -148,7 +148,7 @@
     <child link="caster_back_left_link"/>
     <origin xyz="0.15 0.05 -0.004" rpy="-1.57 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="1" velocity="10" lower="-3.14159" upper="3.14159"/>
+    <limit effort="10" velocity="100" lower="-30.14159" upper="30.14159"/>
   </joint>
 
   <!-- ros2_control plugin config -->
@@ -159,8 +159,9 @@
 
     <joint name="wheel_left_joint">
       <command_interface name="velocity">
-        <param name="min">-10</param>
-        <param name="max">10</param>
+      <!-- これ↓いみない制限やわ -->
+        <!-- <param name="min">-10</param>
+        <param name="max">10</param> -->
       </command_interface>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
@@ -168,8 +169,9 @@
 
     <joint name="wheel_right_joint">
       <command_interface name="velocity">
-        <param name="min">-10</param>
-        <param name="max">10</param>
+        <!-- これ↓いみない制限やわ -->
+        <!-- <param name="min">-10</param>
+        <param name="max">10</param> -->
       </command_interface>
       <state_interface name="position"/>
       <state_interface name="velocity"/>

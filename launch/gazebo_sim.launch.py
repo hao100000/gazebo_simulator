@@ -57,10 +57,21 @@ def generate_launch_description():
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
-            parameters=[{'robot_description': robot_description}],
+            parameters=[{
+                'robot_description': robot_description,
+                'use_sim_time': True
+            }],
             output='screen'
         ),
-
+                
+        Node(
+            package='ros_gz_bridge',
+            executable='parameter_bridge',
+            arguments=[
+                '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'
+            ],
+            output='screen'
+        ),
 
         # Joint State Broadcaster (spawned within Gazebo)
         Node(

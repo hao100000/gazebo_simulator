@@ -18,6 +18,21 @@ find_package(ament_cmake REQUIRED)
 install(
   PROGRAMS
     scripts/teleop_twist_keyboard.py
+  RENAME teleop_twist_keyboard
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+  PROGRAMS
+    scripts/teleop_CANArray_keyboard.py
+  RENAME teleop_CANArray_keyboard
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+  PROGRAMS
+    scripts/can_to_joint_velocity.py
+  RENAME can_to_joint_velocity
   DESTINATION lib/${PROJECT_NAME}
 )
 

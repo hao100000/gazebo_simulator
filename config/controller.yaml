@@ -3,9 +3,11 @@ controller_manager:
     update_rate: 100
     use_sim_time: true
 
+    # センサーの値を/joint_statesに返すコントローラー
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
+    # 指示値をモーター(joint)に送るコントローラー
     forward_velocity_controller:
       type: velocity_controllers/JointGroupVelocityController
 
@@ -17,5 +19,7 @@ controller_manager:
 forward_velocity_controller:
   ros__parameters:
     joints:
-      - wheel_left_joint
-      - wheel_right_joint
+      - wheel_front_left_joint
+      - wheel_front_right_joint
+      - wheel_rear_left_joint
+      - wheel_rear_right_joint

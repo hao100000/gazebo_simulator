@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="omni4_robot">
 
-  <!-- Parameters -->
+  <!-- Use visual meshes from sim2_lecture's omni wheel set while keeping simple controllable joints -->
   <xacro:property name="wheel_radius" value="0.033"/>
   <xacro:property name="wheel_width" value="0.018"/>
   <xacro:property name="wheel_x" value="0.12"/>
@@ -30,8 +30,9 @@
     </collision>
   </link>
 
-  <!-- Wheel link macro -->
-  <xacro:macro name="omni_wheel" params="name x y">
+  <!-- Per-wheel: a simple controllable revolute joint + visual from odm meshes -->
+  <xacro:macro name="odm_visual_wheel" params="name x y mesh_housing mesh_barrel">
+    <!-- controlled rotor link -->
     <link name="${name}_link">
       <inertial>
         <mass value="${wheel_mass}"/>
@@ -40,13 +41,12 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+          <!-- main housing mesh (optional) -->
+          <mesh filename="${mesh_housing}"/>
         </geometry>
-        <material name="wheel_material">
-          <color rgba="0.1 0.1 0.1 1"/>
-        </material>
       </visual>
       <collision>
+        <!-- keep simple cylinder collision for performance -->
         <geometry>
           <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
         </geometry>
@@ -63,22 +63,20 @@
     </joint>
   </xacro:macro>
 
-  <!-- Define four omni wheels (front_left, front_right, rear_left, rear_right) -->
-  <xacro:omni_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}"/>
-  <xacro:omni_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}"/>
-  <xacro:omni_wheel name="wheel_rear_left" x="-${wheel_x}" y="${wheel_y}"/>
-  <xacro:omni_wheel name="wheel_rear_right" x="-${wheel_x}" y="-${wheel_y}"/>
+  <!-- Create four wheels using meshes from sim2_lecture if available -->
+  <xacro:odm_visual_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_rear_left" x="-${wheel_x}" y="${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_rear_right" x="-${wheel_x}" y="-${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
 
-  <!-- ros2_control plugin config -->
+  <!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
     </hardware>
 
     <joint name="wheel_front_left_joint">
-    <!-- ここ↓をpositionにすると位置制御 -->
       <command_interface name="velocity"/>
-    <!-- ここ↓は返す値の種類 -->
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>

@@ -19,13 +19,13 @@
     <collision name="base_collision">
       <origin xyz="-0.064 0.08 0.06" rpy="0 0 -1.57"/>
       <geometry>
-        <mesh filename="model://meshes/2DRoboPrac.stl"/>
+        <mesh filename="model://demorobot/meshes/2DRoboPrac.stl"/>
       </geometry>
     </collision>
     <visual name="base_visual">
       <origin xyz="-0.064 0.08 0.06" rpy="0 0 -1.57"/>
       <geometry>
-        <mesh filename="model://meshes/2DRoboPrac.dae"/>
+        <mesh filename="model://demorobot/meshes/2DRoboPrac.dae"/>
       </geometry>
       <material name="base_material">
         <color rgba="0.921568627 0.925490196 0.941176471 1"/>

@@ -64,10 +64,10 @@
   </xacro:macro>
 
   <!-- Create four wheels using meshes from sim2_lecture if available -->
-  <xacro:odm_visual_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
-  <xacro:odm_visual_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
-  <xacro:odm_visual_wheel name="wheel_rear_left" x="-${wheel_x}" y="${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
-  <xacro:odm_visual_wheel name="wheel_rear_right" x="-${wheel_x}" y="-${wheel_y}" mesh_housing="package://sim2_lecture/stl/omni_housing.stl" mesh_barrel="package://sim2_lecture/stl/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_rear_left" x="-${wheel_x}" y="${wheel_y}" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_rear_right" x="-${wheel_x}" y="-${wheel_y}" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
 
   <!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
   <ros2_control name="GazeboSystem" type="system">
@@ -102,7 +102,7 @@
 
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>$(find gazebo_simulator)/config/controller.yaml</parameters>
+      <parameters>$(find gazebo_simulator)/config/controller_omni4.yaml</parameters>
     </plugin>
   </gazebo>
 

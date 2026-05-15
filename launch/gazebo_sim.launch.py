@@ -9,7 +9,7 @@ import subprocess
 # ============================================================
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
-MODEL_NAME = "demorobot"  # モデル名（xacroファイルとモデルディレクトリに対応）
+MODEL_NAME = "omni4"  # モデル名（xacroファイルとモデルディレクトリに対応）
 WORLD_FILE = "world.sdf"   # ワールドファイル名
 
 
@@ -72,7 +72,7 @@ def generate_launch_description():
     robot_description = Command(['xacro ', xacro_file])
     controller_config_path = os.path.join(
         ros2_ws,
-        "src/gazebo_simulator/config/controller_demorobot.yaml"
+        "src/gazebo_simulator/config/controller_omni4.yaml"
     )
     
     # Set GZ_MODEL_PATH environment variable
@@ -123,7 +123,7 @@ def generate_launch_description():
             ],
             output='screen'
         ),
-        
+
         Node(
             package="controller_manager",
             executable="spawner",

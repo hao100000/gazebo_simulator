@@ -82,7 +82,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+            <uri>model://omni4/meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -135,7 +135,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+            <uri>model://omni4/meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -188,7 +188,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+            <uri>model://omni4/meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -241,13 +241,13 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+            <uri>model://omni4/meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
-      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller.yaml</parameters>
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni4.yaml</parameters>
     </plugin>
   </model>
 </sdf>

@@ -45,30 +45,43 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
     ros2_ws = ".";
   }
 
-  // Construct path to the shared controller.yaml
-  std::string config_path =
-      std::string(ros2_ws) +
-      "/src/gazebo_simulator/config/controller.yaml";
+  // Prefer dedicated motors.yaml to avoid breaking processes given controller_config
+  std::string motors_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/motors.yaml";
+  std::string controller_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/controller_config.yaml";
 
-  RCLCPP_INFO(get_logger(), "Loading motor config from: %s", config_path.c_str());
+  YAML::Node config;
+  YAML::Node motors_node;
 
+  // Try motors.yaml first
   try {
-    YAML::Node config = YAML::LoadFile(config_path);
-
-    YAML::Node motors_node;
-    if (config["can_to_gazebo"] && config["can_to_gazebo"]["ros__parameters"] &&
-        config["can_to_gazebo"]["ros__parameters"]["motors"]) {
-      motors_node = config["can_to_gazebo"]["ros__parameters"]["motors"];
-    } else if (config["motors"]) {
-      motors_node = config["motors"];
+    if (std::filesystem::exists(motors_path)) {
+      RCLCPP_INFO(get_logger(), "Loading motor config from: %s", motors_path.c_str());
+      config = YAML::LoadFile(motors_path);
+      if (config["motors"]) motors_node = config["motors"];
     }
+  } catch (const YAML::Exception &e) {
+    RCLCPP_WARN(get_logger(), "Failed to load %s: %s", motors_path.c_str(), e.what());
+  }
 
-    if (!motors_node) {
-      RCLCPP_WARN(get_logger(),
-                  "No motor configuration found in controller.yaml. "
-                  "Using empty motor list.");
-      return;
+  // Fallback to controller_config.yaml (backwards compatibility)
+  if (!motors_node) {
+    try {
+      RCLCPP_INFO(get_logger(), "Loading motor config from: %s", controller_path.c_str());
+      config = YAML::LoadFile(controller_path);
+      if (config["can_to_gazebo"] && config["can_to_gazebo"]["ros__parameters"] && config["can_to_gazebo"]["ros__parameters"]["motors"]) {
+        motors_node = config["can_to_gazebo"]["ros__parameters"]["motors"];
+      } else if (config["motors"]) {
+        motors_node = config["motors"];
+      }
+    } catch (const YAML::Exception &e) {
+      RCLCPP_WARN(get_logger(), "Failed to load %s: %s", controller_path.c_str(), e.what());
     }
+  }
+
+  if (!motors_node) {
+    RCLCPP_WARN(get_logger(), "No motor configuration found. Using empty motor list.");
+    return;
+  }
 
     // Initialize velocity vector
     joint_velocities_.clear();
@@ -99,14 +112,6 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
 
     RCLCPP_INFO(get_logger(), "Successfully loaded %zu motor configs from YAML",
                 motor_configs_.size());
-  } catch (const YAML::Exception &e) {
-    RCLCPP_ERROR(get_logger(), "Failed to parse YAML: %s", e.what());
-    RCLCPP_ERROR(
-        get_logger(),
-        "Make sure controller_config.yaml has a can_to_gazebo.ros__parameters.motors section");
-  } catch (const std::exception &e) {
-    RCLCPP_ERROR(get_logger(), "Error loading motor config: %s", e.what());
-  }
 }
 
 void CanToGazeboNode::can_callback(

@@ -45,10 +45,10 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
     ros2_ws = ".";
   }
 
-  // Construct path to the shared controller_config.yaml
+  // Construct path to the shared controller.yaml
   std::string config_path =
       std::string(ros2_ws) +
-      "/src/gazebo_simulator/config/controller_config.yaml";
+      "/src/gazebo_simulator/config/controller.yaml";
 
   RCLCPP_INFO(get_logger(), "Loading motor config from: %s", config_path.c_str());
 
@@ -65,7 +65,7 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
 
     if (!motors_node) {
       RCLCPP_WARN(get_logger(),
-                  "No motor configuration found in controller_config.yaml. "
+                  "No motor configuration found in controller.yaml. "
                   "Using empty motor list.");
       return;
     }

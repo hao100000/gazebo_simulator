@@ -149,7 +149,9 @@ def generate_launch_description():
         Node(
             package="gazebo_simulator",
             executable="can_to_gazebo",
-            output="screen"
+            output="screen",
+            emulate_tty=True,   # ← [INFO]の前に名乗らないでね
+            # prefix=""           # ← [INFO]の前に名乗らないでね2
         ),
 
         # ============================================================

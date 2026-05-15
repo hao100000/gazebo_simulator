@@ -123,8 +123,7 @@ def generate_launch_description():
             ],
             output='screen'
         ),
-
-        # Joint State Broadcaster (spawned within Gazebo)
+        
         Node(
             package="controller_manager",
             executable="spawner",
@@ -132,54 +131,22 @@ def generate_launch_description():
                 "joint_state_broadcaster",
                 "--controller-manager", "/controller_manager"
             ],
-            output="screen",
         ),
 
-        # Wheel velocity controllers (4-wheel omni)
         Node(
             package="controller_manager",
             executable="spawner",
             arguments=[
-                "wheel_front_left_velocity_controller",
+                "forward_velocity_controller",
                 "--controller-manager", "/controller_manager"
             ],
-            output="screen",
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "wheel_front_right_velocity_controller",
-                "--controller-manager", "/controller_manager"
-            ],
-            output="screen",
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "wheel_rear_left_velocity_controller",
-                "--controller-manager", "/controller_manager"
-            ],
-            output="screen",
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "wheel_rear_right_velocity_controller",
-                "--controller-manager", "/controller_manager"
-            ],
-            output="screen",
         ),
 
         # CAN to Gazebo Converter (C++)
         Node(
             package="gazebo_simulator",
             executable="can_to_gazebo",
-            output="screen",
-            emulate_tty=True,   # ← [INFO]の前に名乗らないでね
-            # prefix=""           # ← [INFO]の前に名乗らないでね2
+            output="screen"
         ),
 
         # ============================================================

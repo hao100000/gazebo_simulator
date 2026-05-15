@@ -9,7 +9,7 @@ import subprocess
 # ============================================================
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
-MODEL_NAME = "omni4"  # モデル名（xacroファイルとモデルディレクトリに対応）
+MODEL_NAME = "demorobot"  # モデル名（xacroファイルとモデルディレクトリに対応）
 WORLD_FILE = "world.sdf"   # ワールドファイル名
 
 
@@ -26,7 +26,7 @@ def create_regenerate_model_sdf(model_name):
         )
         model_dir = os.path.join(
             ros2_ws,
-            f"src/models/{model_name}"
+            f"src/gazebo_simulator/models/{model_name}"
         )
         os.makedirs(model_dir, exist_ok=True)
         urdf_path = os.path.join(model_dir, f"{model_name}.urdf")
@@ -58,11 +58,11 @@ def generate_launch_description():
     # パスを構築
     world_path = os.path.join(
         ros2_ws,
-        f"src/models/{WORLD_FILE}"
+        f"src/gazebo_simulator/models/{WORLD_FILE}"
     )
     models_path = os.path.join(
         ros2_ws,
-        "src/models"
+        "src/gazebo_simulator/models"
     )
     xacro_file = PathJoinSubstitution([
         pkg_share,
@@ -70,10 +70,6 @@ def generate_launch_description():
         f'{MODEL_NAME}.urdf.xacro'
     ])
     robot_description = Command(['xacro ', xacro_file])
-    controller_config_path = os.path.join(
-        ros2_ws,
-        "src/gazebo_simulator/config/controller.yaml"
-    )
     
     # Set GZ_MODEL_PATH environment variable
     gz_model_path = os.environ.get("GZ_MODEL_PATH", "")

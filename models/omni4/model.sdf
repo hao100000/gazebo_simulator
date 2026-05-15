@@ -80,15 +80,11 @@
       <visual name='wheel_front_left_link_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.017999999999999999</length>
-            <radius>0.033000000000000002</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <diffuse>0.125 0.125 0.125 1</diffuse>
-          <ambient>0.125 0.125 0.125 1</ambient>
-        </material>
       </visual>
     </link>
     <joint name='wheel_front_right_joint' type='revolute'>
@@ -137,15 +133,11 @@
       <visual name='wheel_front_right_link_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.017999999999999999</length>
-            <radius>0.033000000000000002</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <diffuse>0.125 0.125 0.125 1</diffuse>
-          <ambient>0.125 0.125 0.125 1</ambient>
-        </material>
       </visual>
     </link>
     <joint name='wheel_rear_left_joint' type='revolute'>
@@ -194,15 +186,11 @@
       <visual name='wheel_rear_left_link_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.017999999999999999</length>
-            <radius>0.033000000000000002</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <diffuse>0.125 0.125 0.125 1</diffuse>
-          <ambient>0.125 0.125 0.125 1</ambient>
-        </material>
       </visual>
     </link>
     <joint name='wheel_rear_right_joint' type='revolute'>
@@ -251,15 +239,11 @@
       <visual name='wheel_rear_right_link_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.017999999999999999</length>
-            <radius>0.033000000000000002</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://sim2_lecture/stl/omni_housing.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <diffuse>0.125 0.125 0.125 1</diffuse>
-          <ambient>0.125 0.125 0.125 1</ambient>
-        </material>
       </visual>
     </link>
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>

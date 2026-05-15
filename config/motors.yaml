@@ -1,0 +1,17 @@
+# CAN Motor Mapping and Control Configuration
+# Motors mapping used by can_to_gazebo node. Kept separate to avoid
+# passing complex structures to processes that expect ROS params file format.
+motors:
+  - can_id: 1
+    joint_name: wheel_left_joint
+    invert: false
+    control_type: velocity
+
+  - can_id: 2
+    joint_name: wheel_right_joint
+    invert: false
+    control_type: velocity
+
+# Optional settings
+settings:
+  rpm_to_rad_s: 0.10471975511965977

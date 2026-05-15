@@ -26,16 +26,5 @@ forward_velocity_controller:
 # - joint_name: Gazebo で動かす joint 名
 # - invert: 回転方向を反転したい場合は true
 # - control_type: 現在は velocity を使用。将来 position に拡張可能
-can_to_gazebo:
-  ros__parameters:
-    motors:
-      - can_id: 1
-        # 変更する場合はこの can_id と joint_name をセットで更新する
-        joint_name: wheel_left_joint
-        invert: false
-        control_type: velocity
-
-      - can_id: 2
-        joint_name: wheel_right_joint
-        invert: false
-        control_type: velocity
+# モーターのマッピングは `config/motors.yaml` に移しました。
+# 必要に応じて `motors.yaml` を編集してください。

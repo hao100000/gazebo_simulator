@@ -47,7 +47,7 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
 
   // Prefer dedicated motors.yaml to avoid breaking processes given controller_config
   std::string motors_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/motors.yaml";
-  std::string controller_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/controller_config.yaml";
+  std::string controller_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/controller.yaml";
 
   YAML::Node config;
   YAML::Node motors_node;

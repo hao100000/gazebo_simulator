@@ -19,12 +19,3 @@ forward_velocity_controller:
     joints:
       - wheel_left_joint
       - wheel_right_joint
-
-
-# ここを編集すると、CAN ID と joint 名の対応を変更できます。
-# - can_id: CAN メッセージの motor ID
-# - joint_name: Gazebo で動かす joint 名
-# - invert: 回転方向を反転したい場合は true
-# - control_type: 現在は velocity を使用。将来 position に拡張可能
-# モーターのマッピングは `config/motors.yaml` に移しました。
-# 必要に応じて `motors.yaml` を編集してください。

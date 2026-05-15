@@ -9,7 +9,7 @@ import subprocess
 # ============================================================
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
-MODEL_NAME = "omni4_robot"  # モデル名（xacroファイルとモデルディレクトリに対応）
+MODEL_NAME = "omni4"  # モデル名（xacroファイルとモデルディレクトリに対応）
 WORLD_FILE = "world.sdf"   # ワールドファイル名
 
 
@@ -28,6 +28,7 @@ def create_regenerate_model_sdf(model_name):
             ros2_ws,
             f"src/models/{model_name}"
         )
+        os.makedirs(model_dir, exist_ok=True)
         urdf_path = os.path.join(model_dir, f"{model_name}.urdf")
         model_sdf_path = os.path.join(model_dir, "model.sdf")
 
@@ -71,7 +72,7 @@ def generate_launch_description():
     robot_description = Command(['xacro ', xacro_file])
     controller_config_path = os.path.join(
         ros2_ws,
-        "src/gazebo_simulator/config/controller_config.yaml"
+        "src/gazebo_simulator/config/controller.yaml"
     )
     
     # Set GZ_MODEL_PATH environment variable
@@ -176,7 +177,9 @@ def generate_launch_description():
         Node(
             package="gazebo_simulator",
             executable="can_to_gazebo",
-            output="screen"
+            output="screen",
+            emulate_tty=True,   # ← [INFO]の前に名乗らないでね
+            # prefix=""           # ← [INFO]の前に名乗らないでね2
         ),
 
         # ============================================================

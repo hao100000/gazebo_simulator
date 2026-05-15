@@ -76,7 +76,9 @@
     </hardware>
 
     <joint name="wheel_front_left_joint">
+    <!-- ここ↓をpositionにすると位置制御 -->
       <command_interface name="velocity"/>
+    <!-- ここ↓は返す値の種類 -->
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
@@ -102,7 +104,7 @@
 
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>$(find gazebo_simulator)/config/controller_config.yaml</parameters>
+      <parameters>$(find gazebo_simulator)/config/controller.yaml</parameters>
     </plugin>
   </gazebo>
 

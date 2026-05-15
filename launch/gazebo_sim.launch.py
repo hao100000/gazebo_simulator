@@ -71,7 +71,7 @@ def generate_launch_description():
     robot_description = Command(['xacro ', xacro_file])
     controller_config_path = os.path.join(
         ros2_ws,
-        "src/gazebo_simulator/config/controller_config.yaml"
+        "src/gazebo_simulator/config/controller.yaml"
     )
     
     # Set GZ_MODEL_PATH environment variable

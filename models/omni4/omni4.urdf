@@ -33,7 +33,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="1.570796 0 0.7854" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 -2.35619" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -41,7 +41,7 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
-      <origin rpy="1.570796 0 0.7854" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 -2.35619" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
@@ -54,7 +54,7 @@
   <joint name="wheel_front_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_front_left_link"/>
-    <origin rpy="1.570796 0 0.7854" xyz="0.12 0.095 0.02"/>
+    <origin rpy="1.5708 0 -2.35619" xyz="0.12 0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -66,7 +66,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="1.570796 0 -0.7854" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -74,7 +74,7 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
-      <origin rpy="1.570796 0 -0.7854" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
@@ -87,7 +87,7 @@
   <joint name="wheel_front_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_front_right_link"/>
-    <origin rpy="1.570796 0 -0.7854" xyz="0.12 -0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="0.12 -0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -99,7 +99,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="-1.570796 0 2.3562" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -107,7 +107,7 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
-      <origin rpy="-1.570796 0 2.3562" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
@@ -120,7 +120,7 @@
   <joint name="wheel_rear_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_rear_left_link"/>
-    <origin rpy="-1.570796 0 2.3562" xyz="-0.12 0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="-0.12 0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -132,7 +132,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="-1.570796 0 -2.3562" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -140,7 +140,7 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
-      <origin rpy="-1.570796 0 -2.3562" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
@@ -153,11 +153,23 @@
   <joint name="wheel_rear_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_rear_right_link"/>
-    <origin rpy="-1.570796 0 -2.3562" xyz="-0.12 -0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="-0.12 -0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
+  <!-- まずはwheel_front_leftについてのみ考える -->
+  <!-- 目標：車輪とモーターの接続部分が最初(-1,-1,0)方向(ベクトル)を向いて、(-1,-1,0)軸回転。 -->
+  <!-- (r, p, yaw, axis_x, axis_y, axis_z) = (0, 0, 0, 0, 0, 1)のとき、接続部分が最初(0, 0, -1)方向を向いて、(0, 0, 1)軸回転 -->
+  <!-- (r, p, yaw, axis_x, axis_y, axis_z) = (1.570796, 0, 0, 0, 0, 1)のとき、接続部分が最初(0, 0, 1)方向を向いて、(0, -1, 0)軸回転 -->
+  <!-- (r, p, yaw, axis_x, axis_y, axis_z) = (0.785398, 0, 0, 0, 0, 1)のとき、接続部分が最初(0, 1, 0)方向を向いて、(0, -1, 1)軸回転 -->
+  <!-- (r, p, yaw, axis_x, axis_y, axis_z) = (-0.785398, 0, -0.5, 0, 0, 1)のとき、接続部分が最初(-1, -1, 0)方向を向いて、(1, 1, 1)軸回転 -->
+  <!-- (r, p, yaw, axis_x, axis_y, axis_z) = (1.5708, 0, -2.35619, 0, 0, 1)のとき、接続部分が最初(-1, -1, 0)方向を向いて、(1, 1, 1)軸回転 -->
+  <!-- Create four wheels using meshes from sim2_lecture if available
+  <xacro:odm_visual_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}" r="1.570796" p="0" yaw="0.7854" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}" r="1.570796" p="0" yaw="-0.7854" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_rear_left" x="-${wheel_x}" y="${wheel_y}" r="-1.570796" p="0" yaw="2.3562" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
+  <xacro:odm_visual_wheel name="wheel_rear_right" x="-${wheel_x}" y="-${wheel_y}" r="-1.570796" p="0" yaw="-2.3562" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/> -->
   <!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>

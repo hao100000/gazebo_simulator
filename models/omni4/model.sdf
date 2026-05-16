@@ -35,7 +35,7 @@
       </visual>
     </link>
     <joint name='wheel_front_left_joint' type='revolute'>
-      <pose relative_to='base_link'>0.12 0.095000000000000001 0.02 1.5707960000000001 0 0.78540000000000021</pose>
+      <pose relative_to='base_link'>0.12 0.095000000000000001 0.02 1.5708 0 -2.3561899999999998</pose>
       <parent>base_link</parent>
       <child>wheel_front_left_link</child>
       <axis>
@@ -69,7 +69,7 @@
         </inertia>
       </inertial>
       <collision name='wheel_front_left_link_collision'>
-        <pose>0 0 0 1.5707960000000001 0 0.78540000000000021</pose>
+        <pose>0 0 0 1.5708 0 -2.3561899999999998</pose>
         <geometry>
           <cylinder>
             <length>0.017999999999999999</length>
@@ -86,7 +86,7 @@
         </surface>
       </collision>
       <visual name='wheel_front_left_link_visual'>
-        <pose>0 0 0 1.5707960000000001 0 0.78540000000000021</pose>
+        <pose>0 0 0 1.5708 0 -2.3561899999999998</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -102,7 +102,7 @@
       </visual>
     </link>
     <joint name='wheel_front_right_joint' type='revolute'>
-      <pose relative_to='base_link'>0.12 -0.095000000000000001 0.02 1.5707960000000001 0 -0.78540000000000021</pose>
+      <pose relative_to='base_link'>0.12 -0.095000000000000001 0.02 0 0 0</pose>
       <parent>base_link</parent>
       <child>wheel_front_right_link</child>
       <axis>
@@ -136,7 +136,7 @@
         </inertia>
       </inertial>
       <collision name='wheel_front_right_link_collision'>
-        <pose>0 0 0 1.5707960000000001 0 -0.78540000000000021</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.017999999999999999</length>
@@ -153,7 +153,7 @@
         </surface>
       </collision>
       <visual name='wheel_front_right_link_visual'>
-        <pose>0 0 0 1.5707960000000001 0 -0.78540000000000021</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -169,7 +169,7 @@
       </visual>
     </link>
     <joint name='wheel_rear_left_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.12 0.095000000000000001 0.02 -1.5707960000000001 2.2204460492503131e-16 2.3561999999999999</pose>
+      <pose relative_to='base_link'>-0.12 0.095000000000000001 0.02 0 0 0</pose>
       <parent>base_link</parent>
       <child>wheel_rear_left_link</child>
       <axis>
@@ -203,7 +203,7 @@
         </inertia>
       </inertial>
       <collision name='wheel_rear_left_link_collision'>
-        <pose>0 0 0 -1.5707960000000001 2.2204460492503131e-16 2.3561999999999999</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.017999999999999999</length>
@@ -220,7 +220,7 @@
         </surface>
       </collision>
       <visual name='wheel_rear_left_link_visual'>
-        <pose>0 0 0 -1.5707960000000001 2.2204460492503131e-16 2.3561999999999999</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -236,7 +236,7 @@
       </visual>
     </link>
     <joint name='wheel_rear_right_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.12 -0.095000000000000001 0.02 -1.5707960000000001 -2.2204460492503131e-16 -2.3561999999999999</pose>
+      <pose relative_to='base_link'>-0.12 -0.095000000000000001 0.02 0 0 0</pose>
       <parent>base_link</parent>
       <child>wheel_rear_right_link</child>
       <axis>
@@ -270,7 +270,7 @@
         </inertia>
       </inertial>
       <collision name='wheel_rear_right_link_collision'>
-        <pose>0 0 0 -1.5707960000000001 -2.2204460492503131e-16 -2.3561999999999999</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.017999999999999999</length>
@@ -287,7 +287,7 @@
         </surface>
       </collision>
       <visual name='wheel_rear_right_link_visual'>
-        <pose>0 0 0 -1.5707960000000001 -2.2204460492503131e-16 -2.3561999999999999</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>

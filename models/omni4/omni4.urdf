@@ -168,7 +168,7 @@
   <!-- r="0" p="1.5708" yaw="-2.35619" axis_x="-0.7071" axis_y="-0.7071" axis_z="0"のとき、接続部分が最初(1, -1, -1)方向を向いて、(-1, 1, 1)を軸に回転 -->
   <!-- r="0" p="1.5708" yaw="-2.3561" axis_x="0" axis_y="0" axis_z="1"のとき、接続部分が最初(1, -1, -1)方向を向いて、(-1, -1, 0)を軸に回転 -->
   <!-- r="0" p="0" yaw="-2.3561" axis_x="0" axis_y="0" axis_z="1"のとき、接続部分が最初(0, 0, -1)方向を向いて、(0, 0, 1)を軸に回転 -->
-  <!-- r="0" p="-1.5708" yaw="-2.3561" axis_x="0" axis_y="0" axis_z="1"のとき、接続部分が最初(0, 0, -1)方向を向いて、(0, 0, 1)を軸に回転 -->
+  <!-- r="0" p="-1.5708" yaw="-2.3561" axis_x="0" axis_y="0" axis_z="1"のとき、接続部分が最初(-1, 1, -1)方向を向いて、(-1, -1, 0)を軸に回転 -->
   <!-- Create four wheels using meshes from sim2_lecture if available
   <xacro:odm_visual_wheel name="wheel_front_left" x="${wheel_x}" y="${wheel_y}" r="1.570796" p="0" yaw="0.7854" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>
   <xacro:odm_visual_wheel name="wheel_front_right" x="${wheel_x}" y="-${wheel_y}" r="1.570796" p="0" yaw="-0.7854" mesh_housing="model://omni4/meshes/omni_housing.stl" mesh_barrel="model://omni4/meshes/omni_barrel.stl"/>

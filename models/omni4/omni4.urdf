@@ -15,7 +15,9 @@
         <box size="0.3 0.2 0.06"/>
       </geometry>
       <material name="base_material">
-        <color rgba="0.8 0.8 0.8 1"/>
+        <!-- <color rgba="0.8 0.8 0.8 1"/> -->
+        <!-- ↓透明化↑普通 -->
+        <color rgba="1 1 1 0"/>
       </material>
     </visual>
     <collision>
@@ -31,7 +33,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -39,15 +41,20 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
     </collision>
   </link>
+  <!-- 色 -->
+  <gazebo reference="wheel_front_left_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint name="wheel_front_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_front_left_link"/>
-    <origin rpy="0 0 1.5708" xyz="0.12 0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="0.12 0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -59,7 +66,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -67,15 +74,20 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
     </collision>
   </link>
+  <!-- 色 -->
+  <gazebo reference="wheel_front_right_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint name="wheel_front_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_front_right_link"/>
-    <origin rpy="0 0 1.5708" xyz="0.12 -0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="0.12 -0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -87,7 +99,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -95,15 +107,20 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
     </collision>
   </link>
+  <!-- 色 -->
+  <gazebo reference="wheel_rear_left_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint name="wheel_rear_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_rear_left_link"/>
-    <origin rpy="0 0 1.5708" xyz="-0.12 0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="-0.12 0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -115,7 +132,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -123,15 +140,20 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
     </collision>
   </link>
+  <!-- 色 -->
+  <gazebo reference="wheel_rear_right_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint name="wheel_rear_right_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_rear_right_link"/>
-    <origin rpy="0 0 1.5708" xyz="-0.12 -0.095 0.02"/>
+    <origin rpy="0 0 0" xyz="-0.12 -0.095 0.02"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>

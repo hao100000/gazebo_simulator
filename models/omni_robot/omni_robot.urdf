@@ -48,7 +48,7 @@
   <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel0_attach_link"/>
-    <origin rpy="0 0 1.5707963267948966" xyz="4.286263797015737e-18 0.07 0.019"/>
+    <origin rpy="0 0 0.7853981633974483" xyz="0.04949747468305833 0.049497474683058325 0.019"/>
   </joint>
   <link name="wheel0_attach_link"/>
   <joint name="wheel0_base_joint" type="fixed">
@@ -614,7 +614,7 @@
   <joint name="wheel1_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel1_attach_link"/>
-    <origin rpy="0 0 3.141592653589793" xyz="-0.07 8.572527594031473e-18 0.019"/>
+    <origin rpy="0 0 2.356194490192345" xyz="-0.049497474683058325 0.04949747468305833 0.019"/>
   </joint>
   <link name="wheel1_attach_link"/>
   <joint name="wheel1_base_joint" type="fixed">
@@ -1180,7 +1180,7 @@
   <joint name="wheel2_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel2_attach_link"/>
-    <origin rpy="0 0 4.71238898038469" xyz="-1.285879139104721e-17 -0.07 0.019"/>
+    <origin rpy="0 0 3.9269908169872414" xyz="-0.049497474683058346 -0.049497474683058325 0.019"/>
   </joint>
   <link name="wheel2_attach_link"/>
   <joint name="wheel2_base_joint" type="fixed">
@@ -1746,7 +1746,7 @@
   <joint name="wheel3_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel3_attach_link"/>
-    <origin rpy="0 0 6.283185307179586" xyz="0.07 -1.7145055188062947e-17 0.019"/>
+    <origin rpy="0 0 5.497787143782138" xyz="0.04949747468305832 -0.049497474683058346 0.019"/>
   </joint>
   <link name="wheel3_attach_link"/>
   <joint name="wheel3_base_joint" type="fixed">
@@ -2338,6 +2338,14 @@
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgz-sim-pose-publisher-system.so" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>false</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
     </plugin>
   </gazebo>
 </robot>

@@ -2,14 +2,14 @@
   <model name='omni_robot'>
     <link name='base_link'>
       <inertial>
-        <pose>-1.334402673828313e-18 -3.2193646239716731e-19 0.042846153846153867 0 0 0</pose>
+        <pose>-1.6680033422853921e-18 -6.6720133691415671e-19 0.042846153846153867 0 0 0</pose>
         <mass>2.6000000000000001</mass>
         <inertia>
           <ixx>0.012313538461538461</ixx>
-          <ixy>9.2439614914906097e-20</ixy>
-          <ixz>-1.7575751217661179e-19</ixz>
+          <ixy>-5.4210108624275222e-20</ixy>
+          <ixz>-1.045004093941799e-19</ixz>
           <iyy>0.012313538461538461</iyy>
-          <iyz>-6.8315477561477884e-20</iyz>
+          <iyz>-2.011612030796186e-20</iyz>
           <izz>0.013339999999999999</izz>
         </inertia>
       </inertial>
@@ -22,7 +22,7 @@
         </geometry>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel0_motor_body_link_collision_1'>
-        <pose>8.1681684506212256e-19 0.045000000000000012 0.019 -1.5707963267948957 1.5707963267948966 0</pose>
+        <pose>0.031819805153394637 0.031819805153394637 0.019 -0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -39,7 +39,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_2'>
-        <pose>-0.045000000000000012 5.5109105961630903e-18 0.019 -3.1415926535897931 1.5707963267948966 0</pose>
+        <pose>-0.031819805153394637 0.031819805153394637 0.019 -2.3561944901923448 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -56,7 +56,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_3'>
-        <pose>-9.3893444390935953e-18 -0.045000000000000012 0.019 1.5707963267948968 1.5707963267948966 0</pose>
+        <pose>-0.031819805153394658 -0.031819805153394637 0.019 2.3561944901923457 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -73,7 +73,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_4'>
-        <pose>0.045000000000000012 -1.1021821192326181e-17 0.019 2.4492935982947059e-16 1.5707963267948966 0</pose>
+        <pose>0.031819805153394637 -0.031819805153394651 0.019 0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -102,7 +102,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel0_motor_body_link_visual_1'>
-        <pose>4.2862637970157367e-18 0.070000000000000007 0.019 0 0 1.5707963267948959</pose>
+        <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -119,7 +119,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_2'>
-        <pose>-0.070000000000000007 8.5725275940314735e-18 0.019 0 0 3.1415926535897931</pose>
+        <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -136,7 +136,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_3'>
-        <pose>-1.2858791391047209e-17 -0.070000000000000007 0.019 0 0 -1.570796326794897</pose>
+        <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -153,7 +153,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_4'>
-        <pose>0.070000000000000007 -1.714505518806295e-17 0.019 0 0 -2.4492935982947059e-16</pose>
+        <pose>0.049497474683058318 -0.049497474683058353 0.019 0 0 -0.7853981633974485</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -171,7 +171,7 @@
       </visual>
     </link>
     <joint name='wheel0_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>6.0209872729925438e-18 0.082000000000000003 0.019 0 0 1.5707963267948959</pose>
+      <pose relative_to='base_link'>0.0579827560572969 0.0579827560572969 0.019 0 0 0.78539816339744839</pose>
       <parent>base_link</parent>
       <child>wheel0_motor_shaft_link</child>
       <axis>
@@ -952,7 +952,7 @@
       </visual>
     </link>
     <joint name='wheel1_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.082000000000000003 1.00421037530083e-17 0.019 0 0 3.1415926535897931</pose>
+      <pose relative_to='base_link'>-0.0579827560572969 0.0579827560572969 0.019 0 0 2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel1_motor_shaft_link</child>
       <axis>
@@ -1733,7 +1733,7 @@
       </visual>
     </link>
     <joint name='wheel2_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-1.4593514867024021e-17 -0.082000000000000003 0.019 0 0 -1.570796326794897</pose>
+      <pose relative_to='base_link'>-0.057982756057296907 -0.057982756057296893 0.019 0 0 -2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel2_motor_shaft_link</child>
       <axis>
@@ -2514,7 +2514,7 @@
       </visual>
     </link>
     <joint name='wheel3_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.082000000000000003 -2.0084207506016591e-17 0.019 0 0 -2.4492935982947059e-16</pose>
+      <pose relative_to='base_link'>0.057982756057296893 -0.057982756057296921 0.019 0 0 -0.7853981633974485</pose>
       <parent>base_link</parent>
       <child>wheel3_motor_shaft_link</child>
       <axis>
@@ -3297,6 +3297,12 @@
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
       <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
     </plugin>
+    <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
+      <publish_link_pose>false</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
+    </plugin>
     <frame name='body_joint' attached_to='base_link'>
       <pose>0 0 0.050000000000000003 0 0 0</pose>
     </frame>
@@ -3376,7 +3382,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel0_attach_joint' attached_to='base_link'>
-      <pose>4.2862637970157367e-18 0.070000000000000007 0.019 0 0 1.5707963267948959</pose>
+      <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
     </frame>
     <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3454,7 +3460,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel1_attach_joint' attached_to='base_link'>
-      <pose>-0.070000000000000007 8.5725275940314735e-18 0.019 0 0 3.1415926535897931</pose>
+      <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
     </frame>
     <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3532,7 +3538,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel2_attach_joint' attached_to='base_link'>
-      <pose>-1.2858791391047209e-17 -0.070000000000000007 0.019 0 0 -1.570796326794897</pose>
+      <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
     </frame>
     <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3610,7 +3616,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel3_attach_joint' attached_to='base_link'>
-      <pose>0.070000000000000007 -1.714505518806295e-17 0.019 0 0 -2.4492935982947059e-16</pose>
+      <pose>0.049497474683058318 -0.049497474683058353 0.019 0 0 -0.7853981633974485</pose>
     </frame>
     <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'>
       <pose>0 0 0 0 0 0</pose>

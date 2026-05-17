@@ -33,7 +33,7 @@
       <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00002"/>
     </inertial>
     <visual>
-      <origin rpy="0 -1.5708 -2.3561" xyz="0 0 0"/>
+      <origin rpy="-0.7071 0 -0.5" xyz="0 0 0"/>
       <geometry>
         <!-- main housing mesh (optional) -->
         <mesh filename="model://omni4/meshes/omni_housing.stl"/>
@@ -41,7 +41,7 @@
     </visual>
     <collision>
       <!-- keep simple cylinder collision for performance -->
-      <origin rpy="0 -1.5708 -2.3561" xyz="0 0 0"/>
+      <origin rpy="-0.7071 0 -0.5" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.018" radius="0.033"/>
       </geometry>
@@ -54,8 +54,8 @@
   <joint name="wheel_front_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_front_left_link"/>
-    <origin rpy="0 -1.5708 -2.3561" xyz="0.12 0.095 0.02"/>
-    <axis xyz="0 0 1"/>
+    <origin rpy="-0.7071 0 -0.5" xyz="0.12 0.095 0.02"/>
+    <axis xyz="0.7071 0.7071 1"/>
     <limit effort="10" velocity="20"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>

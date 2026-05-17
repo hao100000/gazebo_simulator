@@ -45,7 +45,7 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-  <joint name="wheel_front_left_joint" type="fixed">
+  <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel0_attach_link"/>
     <origin rpy="0 0 1.5707963267948966" xyz="4.286263797015737e-18 0.07 0.019"/>
@@ -611,7 +611,7 @@
   <gazebo reference="wheel0_barrel_8_mark_link">
     <material>Gazebo/White</material>
   </gazebo>
-  <joint name="wheel_front_right_joint" type="fixed">
+  <joint name="wheel1_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel1_attach_link"/>
     <origin rpy="0 0 3.141592653589793" xyz="-0.07 8.572527594031473e-18 0.019"/>
@@ -1177,7 +1177,7 @@
   <gazebo reference="wheel1_barrel_8_mark_link">
     <material>Gazebo/White</material>
   </gazebo>
-  <joint name="wheel_rear_left_joint" type="fixed">
+  <joint name="wheel2_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel2_attach_link"/>
     <origin rpy="0 0 4.71238898038469" xyz="-1.285879139104721e-17 -0.07 0.019"/>
@@ -1743,7 +1743,7 @@
   <gazebo reference="wheel2_barrel_8_mark_link">
     <material>Gazebo/White</material>
   </gazebo>
-  <joint name="wheel_rear_right_joint" type="fixed">
+  <joint name="wheel3_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel3_attach_link"/>
     <origin rpy="0 0 6.283185307179586" xyz="0.07 -1.7145055188062947e-17 0.019"/>
@@ -2314,22 +2314,22 @@
     <hardware>
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
     </hardware>
-    <joint name="wheel_front_left_joint">
+    <joint name="wheel0_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="wheel_front_right_joint">
+    <joint name="wheel1_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="wheel_rear_left_joint">
+    <joint name="wheel2_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="wheel_rear_right_joint">
+    <joint name="wheel3_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
@@ -2337,7 +2337,7 @@
   </ros2_control>
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni4.yaml</parameters>
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
     </plugin>
   </gazebo>
 </robot>

@@ -6,22 +6,22 @@
 
 motors:
   - can_id: 1
-    joint_name: wheel0_shaft_joint
+    joint_name: wheel0_motor_shaft_joint
     invert: false
     control_type: velocity
 
   - can_id: 2
-    joint_name: wheel1_shaft_joint
+    joint_name: wheel1_motor_shaft_joint
     invert: false
     control_type: velocity
 
   - can_id: 3
-    joint_name: wheel2_shaft_joint
+    joint_name: wheel2_motor_shaft_joint
     invert: false
     control_type: velocity
 
   - can_id: 4
-    joint_name: wheel3_shaft_joint
+    joint_name: wheel3_motor_shaft_joint
     invert: false
     control_type: velocity
 

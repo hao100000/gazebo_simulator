@@ -19,7 +19,7 @@ controller_manager:
 forward_velocity_controller:
   ros__parameters:
     joints:
-      - wheel0_shaft_joint
-      - wheel1_shaft_joint
-      - wheel2_shaft_joint
-      - wheel3_shaft_joint
+      - wheel0_motor_shaft_joint
+      - wheel1_motor_shaft_joint
+      - wheel2_motor_shaft_joint
+      - wheel3_motor_shaft_joint

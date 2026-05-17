@@ -3295,7 +3295,7 @@
       </visual>
     </link>
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
-      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni4.yaml</parameters>
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
     </plugin>
     <frame name='body_joint' attached_to='base_link'>
       <pose>0 0 0.050000000000000003 0 0 0</pose>
@@ -3375,10 +3375,10 @@
     <frame name='wheel0_base_link' attached_to='wheel0_base_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
-    <frame name='wheel_front_left_joint' attached_to='base_link'>
+    <frame name='wheel0_attach_joint' attached_to='base_link'>
       <pose>4.2862637970157367e-18 0.070000000000000007 0.019 0 0 1.5707963267948959</pose>
     </frame>
-    <frame name='wheel0_attach_link' attached_to='wheel_front_left_joint'>
+    <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel1_motor_joint' attached_to='wheel1_base_link'>
@@ -3453,10 +3453,10 @@
     <frame name='wheel1_base_link' attached_to='wheel1_base_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
-    <frame name='wheel_front_right_joint' attached_to='base_link'>
+    <frame name='wheel1_attach_joint' attached_to='base_link'>
       <pose>-0.070000000000000007 8.5725275940314735e-18 0.019 0 0 3.1415926535897931</pose>
     </frame>
-    <frame name='wheel1_attach_link' attached_to='wheel_front_right_joint'>
+    <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel2_motor_joint' attached_to='wheel2_base_link'>
@@ -3531,10 +3531,10 @@
     <frame name='wheel2_base_link' attached_to='wheel2_base_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
-    <frame name='wheel_rear_left_joint' attached_to='base_link'>
+    <frame name='wheel2_attach_joint' attached_to='base_link'>
       <pose>-1.2858791391047209e-17 -0.070000000000000007 0.019 0 0 -1.570796326794897</pose>
     </frame>
-    <frame name='wheel2_attach_link' attached_to='wheel_rear_left_joint'>
+    <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel3_motor_joint' attached_to='wheel3_base_link'>
@@ -3609,10 +3609,10 @@
     <frame name='wheel3_base_link' attached_to='wheel3_base_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
-    <frame name='wheel_rear_right_joint' attached_to='base_link'>
+    <frame name='wheel3_attach_joint' attached_to='base_link'>
       <pose>0.070000000000000007 -1.714505518806295e-17 0.019 0 0 -2.4492935982947059e-16</pose>
     </frame>
-    <frame name='wheel3_attach_link' attached_to='wheel_rear_right_joint'>
+    <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
   </model>

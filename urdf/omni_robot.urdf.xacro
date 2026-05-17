@@ -28,7 +28,7 @@
     </inertial>  
   </link>
 
-  <joint name="wheel_front_left_joint" type="fixed">
+  <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel0_attach_link"/>
     <origin xyz="${0.07*cos(radians(90))} ${0.07*sin(radians(90))} 0.019" rpy="0 0 ${radians(90)}"/>
@@ -36,7 +36,7 @@
   <link name="wheel0_attach_link" />
   <xacro:omni_wheel_set prefix="wheel0" parent="wheel0_attach_link" />
 
-  <joint name="wheel_front_right_joint" type="fixed">
+  <joint name="wheel1_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel1_attach_link"/>
     <origin xyz="${0.07*cos(radians(180))} ${0.07*sin(radians(180))} 0.019" rpy="0 0 ${radians(180)}"/>
@@ -44,7 +44,7 @@
   <link name="wheel1_attach_link" />
   <xacro:omni_wheel_set prefix="wheel1" parent="wheel1_attach_link" />
 
-  <joint name="wheel_rear_left_joint" type="fixed">
+  <joint name="wheel2_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel2_attach_link"/>
     <origin xyz="${0.07*cos(radians(270))} ${0.07*sin(radians(270))} 0.019" rpy="0 0 ${radians(270)}"/>
@@ -52,7 +52,7 @@
   <link name="wheel2_attach_link" />
   <xacro:omni_wheel_set prefix="wheel2" parent="wheel2_attach_link" />
 
-  <joint name="wheel_rear_right_joint" type="fixed">
+  <joint name="wheel3_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel3_attach_link"/>
     <origin xyz="${0.07*cos(radians(360))} ${0.07*sin(radians(360))} 0.019" rpy="0 0 ${radians(360)}"/>
@@ -67,25 +67,25 @@
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
     </hardware>
 
-    <joint name="wheel_front_left_joint">
+    <joint name="wheel0_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
-    <joint name="wheel_front_right_joint">
+    <joint name="wheel1_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
-    <joint name="wheel_rear_left_joint">
+    <joint name="wheel2_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
-    <joint name="wheel_rear_right_joint">
+    <joint name="wheel3_motor_shaft_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
@@ -94,7 +94,7 @@
 
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>$(find gazebo_simulator)/config/controller_omni4.yaml</parameters>
+      <parameters>$(find gazebo_simulator)/config/controller_omni_robot.yaml</parameters>
     </plugin>
   </gazebo>
 

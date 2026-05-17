@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="omni_robot">
+  <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_common.xacro"/>
+  <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_wheel.xacro"/>
+
+  <link name="base_link"/>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <box size="0.14 0.08 0.02" />
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.14 0.08 0.02" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="2.0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>  
+  </link>
+
+  <joint name="wheel_front_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="wheel0_attach_link"/>
+    <origin xyz="${0.07*cos(radians(90))} ${0.07*sin(radians(90))} 0.019" rpy="0 0 ${radians(90)}"/>
+  </joint>
+  <link name="wheel0_attach_link" />
+  <xacro:omni_wheel_set prefix="wheel0" parent="wheel0_attach_link" />
+
+  <joint name="wheel_front_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="wheel1_attach_link"/>
+    <origin xyz="${0.07*cos(radians(180))} ${0.07*sin(radians(180))} 0.019" rpy="0 0 ${radians(180)}"/>
+  </joint>
+  <link name="wheel1_attach_link" />
+  <xacro:omni_wheel_set prefix="wheel1" parent="wheel1_attach_link" />
+
+  <joint name="wheel_rear_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="wheel2_attach_link"/>
+    <origin xyz="${0.07*cos(radians(270))} ${0.07*sin(radians(270))} 0.019" rpy="0 0 ${radians(270)}"/>
+  </joint>
+  <link name="wheel2_attach_link" />
+  <xacro:omni_wheel_set prefix="wheel2" parent="wheel2_attach_link" />
+
+  <joint name="wheel_rear_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="wheel3_attach_link"/>
+    <origin xyz="${0.07*cos(radians(360))} ${0.07*sin(radians(360))} 0.019" rpy="0 0 ${radians(360)}"/>
+  </joint>
+  <link name="wheel3_attach_link" />
+  <xacro:omni_wheel_set prefix="wheel3" parent="wheel3_attach_link" />
+
+
+  <!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <joint name="wheel_front_left_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wheel_front_right_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wheel_rear_left_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wheel_rear_right_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find gazebo_simulator)/config/controller_omni4.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>

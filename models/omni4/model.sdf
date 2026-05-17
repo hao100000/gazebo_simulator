@@ -35,11 +35,11 @@
       </visual>
     </link>
     <joint name='wheel_front_left_joint' type='revolute'>
-      <pose relative_to='base_link'>0.12 0.095000000000000001 0.02 -0.70710000000000017 0 -0.50000000000000011</pose>
+      <pose relative_to='base_link'>0.12 0.095000000000000001 0.02 0.78529999999999978 0 0</pose>
       <parent>base_link</parent>
       <child>wheel_front_left_link</child>
       <axis>
-        <xyz>0.70709999999999995 0.70709999999999995 1</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
           <velocity>20</velocity>
@@ -69,7 +69,7 @@
         </inertia>
       </inertial>
       <collision name='wheel_front_left_link_collision'>
-        <pose>0 0 0 -0.70710000000000017 0 -0.50000000000000011</pose>
+        <pose>0 0 0 0.78529999999999978 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.017999999999999999</length>
@@ -86,7 +86,7 @@
         </surface>
       </collision>
       <visual name='wheel_front_left_link_visual'>
-        <pose>0 0 0 -0.70710000000000017 0 -0.50000000000000011</pose>
+        <pose>0 0 0 0.78529999999999978 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>

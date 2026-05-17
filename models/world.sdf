@@ -59,10 +59,10 @@
           </link>
       </model>
 
-        <model name="demorobot">
+        <model name="omni_robot">
             <pose>0 0 0.1 0 0 0</pose>
             <include>
-                <uri>model://demorobot</uri>
+                <uri>model://omni_robot</uri>
             </include>
         </model>
     </world>

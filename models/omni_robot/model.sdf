@@ -1,0 +1,3619 @@
+<sdf version='1.11'>
+  <model name='omni_robot'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-1.334402673828313e-18 -3.2193646239716731e-19 0.042846153846153867 0 0 0</pose>
+        <mass>2.6000000000000001</mass>
+        <inertia>
+          <ixx>0.012313538461538461</ixx>
+          <ixy>9.2439614914906097e-20</ixy>
+          <ixz>-1.7575751217661179e-19</ixz>
+          <iyy>0.012313538461538461</iyy>
+          <iyz>-6.8315477561477884e-20</iyz>
+          <izz>0.013339999999999999</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__body_link_collision'>
+        <pose>0 0 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14000000000000001 0.080000000000000002 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__wheel0_motor_body_link_collision_1'>
+        <pose>8.1681684506212256e-19 0.045000000000000012 0.019 -1.5707963267948957 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.050000000000000003</length>
+            <radius>0.012</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_2'>
+        <pose>-0.045000000000000012 5.5109105961630903e-18 0.019 -3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.050000000000000003</length>
+            <radius>0.012</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_3'>
+        <pose>-9.3893444390935953e-18 -0.045000000000000012 0.019 1.5707963267948968 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.050000000000000003</length>
+            <radius>0.012</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_4'>
+        <pose>0.045000000000000012 -1.1021821192326181e-17 0.019 2.4492935982947059e-16 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.050000000000000003</length>
+            <radius>0.012</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__body_link_visual'>
+        <pose>0 0 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14000000000000001 0.080000000000000002 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__wheel0_motor_body_link_visual_1'>
+        <pose>4.2862637970157367e-18 0.070000000000000007 0.019 0 0 1.5707963267948959</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_2'>
+        <pose>-0.070000000000000007 8.5725275940314735e-18 0.019 0 0 3.1415926535897931</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_3'>
+        <pose>-1.2858791391047209e-17 -0.070000000000000007 0.019 0 0 -1.570796326794897</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_4'>
+        <pose>0.070000000000000007 -1.714505518806295e-17 0.019 0 0 -2.4492935982947059e-16</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_motor_shaft_joint' type='revolute'>
+      <pose relative_to='base_link'>6.0209872729925438e-18 0.082000000000000003 0.019 0 0 1.5707963267948959</pose>
+      <parent>base_link</parent>
+      <child>wheel0_motor_shaft_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>3</effort>
+          <velocity>40</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_motor_shaft_link'>
+      <pose relative_to='wheel0_motor_shaft_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01 0 0 0 0 0</pose>
+        <mass>0.059999999999999998</mass>
+        <inertia>
+          <ixx>0.00020049999999999999</ixx>
+          <ixy>-4.1492647505093111e-37</ixy>
+          <ixz>1.504632769052528e-36</ixz>
+          <iyy>0.00020220000000000001</iyy>
+          <iyz>6.7762635780344027e-21</iyz>
+          <izz>0.00020220000000000001</izz>
+        </inertia>
+      </inertial>
+      <visual name='wheel0_motor_shaft_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_motor_shaft_link_fixed_joint_lump__wheel0_housing_link_visual_1'>
+        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_1_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_1_link'>
+      <pose relative_to='wheel0_barrel_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_1_link_fixed_joint_lump__wheel0_barrel_1_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_2_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_2_link'>
+      <pose relative_to='wheel0_barrel_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_2_link_fixed_joint_lump__wheel0_barrel_2_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_3_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_3_link'>
+      <pose relative_to='wheel0_barrel_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_3_link_fixed_joint_lump__wheel0_barrel_3_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_4_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_4_link'>
+      <pose relative_to='wheel0_barrel_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_4_link_fixed_joint_lump__wheel0_barrel_4_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_5_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_5_link'>
+      <pose relative_to='wheel0_barrel_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_5_link_fixed_joint_lump__wheel0_barrel_5_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_6_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_6_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_6_link'>
+      <pose relative_to='wheel0_barrel_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_6_link_fixed_joint_lump__wheel0_barrel_6_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_7_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_7_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_7_link'>
+      <pose relative_to='wheel0_barrel_7_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_7_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_7_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_7_link_fixed_joint_lump__wheel0_barrel_7_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel0_barrel_8_joint' type='revolute'>
+      <pose relative_to='wheel0_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <parent>wheel0_motor_shaft_link</parent>
+      <child>wheel0_barrel_8_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel0_barrel_8_link'>
+      <pose relative_to='wheel0_barrel_8_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel0_barrel_8_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel0_barrel_8_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel0_barrel_8_link_fixed_joint_lump__wheel0_barrel_8_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_motor_shaft_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.082000000000000003 1.00421037530083e-17 0.019 0 0 3.1415926535897931</pose>
+      <parent>base_link</parent>
+      <child>wheel1_motor_shaft_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>3</effort>
+          <velocity>40</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_motor_shaft_link'>
+      <pose relative_to='wheel1_motor_shaft_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01 0 0 0 0 0</pose>
+        <mass>0.059999999999999998</mass>
+        <inertia>
+          <ixx>0.00020049999999999999</ixx>
+          <ixy>-4.1492647505093111e-37</ixy>
+          <ixz>1.504632769052528e-36</ixz>
+          <iyy>0.00020220000000000001</iyy>
+          <iyz>6.7762635780344027e-21</iyz>
+          <izz>0.00020220000000000001</izz>
+        </inertia>
+      </inertial>
+      <visual name='wheel1_motor_shaft_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_motor_shaft_link_fixed_joint_lump__wheel1_housing_link_visual_1'>
+        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_1_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_1_link'>
+      <pose relative_to='wheel1_barrel_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_1_link_fixed_joint_lump__wheel1_barrel_1_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_2_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_2_link'>
+      <pose relative_to='wheel1_barrel_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_2_link_fixed_joint_lump__wheel1_barrel_2_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_3_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_3_link'>
+      <pose relative_to='wheel1_barrel_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_3_link_fixed_joint_lump__wheel1_barrel_3_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_4_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_4_link'>
+      <pose relative_to='wheel1_barrel_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_4_link_fixed_joint_lump__wheel1_barrel_4_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_5_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_5_link'>
+      <pose relative_to='wheel1_barrel_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_5_link_fixed_joint_lump__wheel1_barrel_5_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_6_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_6_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_6_link'>
+      <pose relative_to='wheel1_barrel_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_6_link_fixed_joint_lump__wheel1_barrel_6_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_7_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_7_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_7_link'>
+      <pose relative_to='wheel1_barrel_7_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_7_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_7_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_7_link_fixed_joint_lump__wheel1_barrel_7_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel1_barrel_8_joint' type='revolute'>
+      <pose relative_to='wheel1_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <parent>wheel1_motor_shaft_link</parent>
+      <child>wheel1_barrel_8_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel1_barrel_8_link'>
+      <pose relative_to='wheel1_barrel_8_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel1_barrel_8_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel1_barrel_8_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel1_barrel_8_link_fixed_joint_lump__wheel1_barrel_8_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_motor_shaft_joint' type='revolute'>
+      <pose relative_to='base_link'>-1.4593514867024021e-17 -0.082000000000000003 0.019 0 0 -1.570796326794897</pose>
+      <parent>base_link</parent>
+      <child>wheel2_motor_shaft_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>3</effort>
+          <velocity>40</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_motor_shaft_link'>
+      <pose relative_to='wheel2_motor_shaft_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01 0 0 0 0 0</pose>
+        <mass>0.059999999999999998</mass>
+        <inertia>
+          <ixx>0.00020049999999999999</ixx>
+          <ixy>-4.1492647505093111e-37</ixy>
+          <ixz>1.504632769052528e-36</ixz>
+          <iyy>0.00020220000000000001</iyy>
+          <iyz>6.7762635780344027e-21</iyz>
+          <izz>0.00020220000000000001</izz>
+        </inertia>
+      </inertial>
+      <visual name='wheel2_motor_shaft_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_motor_shaft_link_fixed_joint_lump__wheel2_housing_link_visual_1'>
+        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_1_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_1_link'>
+      <pose relative_to='wheel2_barrel_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_1_link_fixed_joint_lump__wheel2_barrel_1_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_2_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_2_link'>
+      <pose relative_to='wheel2_barrel_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_2_link_fixed_joint_lump__wheel2_barrel_2_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_3_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_3_link'>
+      <pose relative_to='wheel2_barrel_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_3_link_fixed_joint_lump__wheel2_barrel_3_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_4_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_4_link'>
+      <pose relative_to='wheel2_barrel_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_4_link_fixed_joint_lump__wheel2_barrel_4_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_5_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_5_link'>
+      <pose relative_to='wheel2_barrel_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_5_link_fixed_joint_lump__wheel2_barrel_5_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_6_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_6_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_6_link'>
+      <pose relative_to='wheel2_barrel_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_6_link_fixed_joint_lump__wheel2_barrel_6_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_7_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_7_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_7_link'>
+      <pose relative_to='wheel2_barrel_7_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_7_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_7_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_7_link_fixed_joint_lump__wheel2_barrel_7_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel2_barrel_8_joint' type='revolute'>
+      <pose relative_to='wheel2_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <parent>wheel2_motor_shaft_link</parent>
+      <child>wheel2_barrel_8_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel2_barrel_8_link'>
+      <pose relative_to='wheel2_barrel_8_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel2_barrel_8_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel2_barrel_8_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel2_barrel_8_link_fixed_joint_lump__wheel2_barrel_8_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_motor_shaft_joint' type='revolute'>
+      <pose relative_to='base_link'>0.082000000000000003 -2.0084207506016591e-17 0.019 0 0 -2.4492935982947059e-16</pose>
+      <parent>base_link</parent>
+      <child>wheel3_motor_shaft_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>3</effort>
+          <velocity>40</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_motor_shaft_link'>
+      <pose relative_to='wheel3_motor_shaft_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01 0 0 0 0 0</pose>
+        <mass>0.059999999999999998</mass>
+        <inertia>
+          <ixx>0.00020049999999999999</ixx>
+          <ixy>-4.1492647505093111e-37</ixy>
+          <ixz>1.504632769052528e-36</ixz>
+          <iyy>0.00020220000000000001</iyy>
+          <iyz>6.7762635780344027e-21</iyz>
+          <izz>0.00020220000000000001</izz>
+        </inertia>
+      </inertial>
+      <visual name='wheel3_motor_shaft_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_motor_shaft_link_fixed_joint_lump__wheel3_housing_link_visual_1'>
+        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_1_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_1_link'>
+      <pose relative_to='wheel3_barrel_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_1_link_fixed_joint_lump__wheel3_barrel_1_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_2_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_2_link'>
+      <pose relative_to='wheel3_barrel_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_2_link_fixed_joint_lump__wheel3_barrel_2_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_3_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_3_link'>
+      <pose relative_to='wheel3_barrel_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_3_link_fixed_joint_lump__wheel3_barrel_3_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_4_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_4_link'>
+      <pose relative_to='wheel3_barrel_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_4_link_fixed_joint_lump__wheel3_barrel_4_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_5_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_5_link'>
+      <pose relative_to='wheel3_barrel_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_5_link_fixed_joint_lump__wheel3_barrel_5_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_6_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_6_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_6_link'>
+      <pose relative_to='wheel3_barrel_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_6_link_fixed_joint_lump__wheel3_barrel_6_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_7_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_7_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_7_link'>
+      <pose relative_to='wheel3_barrel_7_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_7_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_7_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_7_link_fixed_joint_lump__wheel3_barrel_7_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel3_barrel_8_joint' type='revolute'>
+      <pose relative_to='wheel3_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <parent>wheel3_motor_shaft_link</parent>
+      <child>wheel3_barrel_8_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel3_barrel_8_link'>
+      <pose relative_to='wheel3_barrel_8_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>9.9999999999999995e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999999999995e-07</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999999999995e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel3_barrel_8_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>5000</kp>
+              <kd>10</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2.5</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel3_barrel_8_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='wheel3_barrel_8_link_fixed_joint_lump__wheel3_barrel_8_mark_link_visual_1'>
+        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni4.yaml</parameters>
+    </plugin>
+    <frame name='body_joint' attached_to='base_link'>
+      <pose>0 0 0.050000000000000003 0 0 0</pose>
+    </frame>
+    <frame name='body_link' attached_to='body_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_motor_joint' attached_to='wheel0_base_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_motor_body_link' attached_to='wheel0_motor_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_housing_s_joint' attached_to='wheel0_housing_link'>
+      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+    </frame>
+    <frame name='wheel0_housing_s_link' attached_to='wheel0_housing_s_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_5_mark_joint' attached_to='wheel0_barrel_5_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_5_mark_link' attached_to='wheel0_barrel_5_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_6_mark_joint' attached_to='wheel0_barrel_6_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_6_mark_link' attached_to='wheel0_barrel_6_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_7_mark_joint' attached_to='wheel0_barrel_7_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_7_mark_link' attached_to='wheel0_barrel_7_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_8_mark_joint' attached_to='wheel0_barrel_8_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_8_mark_link' attached_to='wheel0_barrel_8_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_housind_joint' attached_to='wheel0_motor_shaft_link'>
+      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+    </frame>
+    <frame name='wheel0_housing_link' attached_to='wheel0_housind_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_1_mark_joint' attached_to='wheel0_barrel_1_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_1_mark_link' attached_to='wheel0_barrel_1_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_2_mark_joint' attached_to='wheel0_barrel_2_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_2_mark_link' attached_to='wheel0_barrel_2_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_3_mark_joint' attached_to='wheel0_barrel_3_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_3_mark_link' attached_to='wheel0_barrel_3_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_4_mark_joint' attached_to='wheel0_barrel_4_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_barrel_4_mark_link' attached_to='wheel0_barrel_4_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_base_joint' attached_to='wheel0_attach_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel0_base_link' attached_to='wheel0_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel_front_left_joint' attached_to='base_link'>
+      <pose>4.2862637970157367e-18 0.070000000000000007 0.019 0 0 1.5707963267948959</pose>
+    </frame>
+    <frame name='wheel0_attach_link' attached_to='wheel_front_left_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_motor_joint' attached_to='wheel1_base_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_motor_body_link' attached_to='wheel1_motor_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_housing_s_joint' attached_to='wheel1_housing_link'>
+      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+    </frame>
+    <frame name='wheel1_housing_s_link' attached_to='wheel1_housing_s_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_5_mark_joint' attached_to='wheel1_barrel_5_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_5_mark_link' attached_to='wheel1_barrel_5_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_6_mark_joint' attached_to='wheel1_barrel_6_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_6_mark_link' attached_to='wheel1_barrel_6_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_7_mark_joint' attached_to='wheel1_barrel_7_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_7_mark_link' attached_to='wheel1_barrel_7_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_8_mark_joint' attached_to='wheel1_barrel_8_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_8_mark_link' attached_to='wheel1_barrel_8_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_housind_joint' attached_to='wheel1_motor_shaft_link'>
+      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+    </frame>
+    <frame name='wheel1_housing_link' attached_to='wheel1_housind_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_1_mark_joint' attached_to='wheel1_barrel_1_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_1_mark_link' attached_to='wheel1_barrel_1_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_2_mark_joint' attached_to='wheel1_barrel_2_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_2_mark_link' attached_to='wheel1_barrel_2_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_3_mark_joint' attached_to='wheel1_barrel_3_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_3_mark_link' attached_to='wheel1_barrel_3_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_4_mark_joint' attached_to='wheel1_barrel_4_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_barrel_4_mark_link' attached_to='wheel1_barrel_4_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_base_joint' attached_to='wheel1_attach_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel1_base_link' attached_to='wheel1_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel_front_right_joint' attached_to='base_link'>
+      <pose>-0.070000000000000007 8.5725275940314735e-18 0.019 0 0 3.1415926535897931</pose>
+    </frame>
+    <frame name='wheel1_attach_link' attached_to='wheel_front_right_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_motor_joint' attached_to='wheel2_base_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_motor_body_link' attached_to='wheel2_motor_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_housing_s_joint' attached_to='wheel2_housing_link'>
+      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+    </frame>
+    <frame name='wheel2_housing_s_link' attached_to='wheel2_housing_s_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_5_mark_joint' attached_to='wheel2_barrel_5_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_5_mark_link' attached_to='wheel2_barrel_5_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_6_mark_joint' attached_to='wheel2_barrel_6_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_6_mark_link' attached_to='wheel2_barrel_6_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_7_mark_joint' attached_to='wheel2_barrel_7_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_7_mark_link' attached_to='wheel2_barrel_7_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_8_mark_joint' attached_to='wheel2_barrel_8_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_8_mark_link' attached_to='wheel2_barrel_8_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_housind_joint' attached_to='wheel2_motor_shaft_link'>
+      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+    </frame>
+    <frame name='wheel2_housing_link' attached_to='wheel2_housind_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_1_mark_joint' attached_to='wheel2_barrel_1_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_1_mark_link' attached_to='wheel2_barrel_1_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_2_mark_joint' attached_to='wheel2_barrel_2_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_2_mark_link' attached_to='wheel2_barrel_2_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_3_mark_joint' attached_to='wheel2_barrel_3_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_3_mark_link' attached_to='wheel2_barrel_3_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_4_mark_joint' attached_to='wheel2_barrel_4_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_barrel_4_mark_link' attached_to='wheel2_barrel_4_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_base_joint' attached_to='wheel2_attach_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel2_base_link' attached_to='wheel2_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel_rear_left_joint' attached_to='base_link'>
+      <pose>-1.2858791391047209e-17 -0.070000000000000007 0.019 0 0 -1.570796326794897</pose>
+    </frame>
+    <frame name='wheel2_attach_link' attached_to='wheel_rear_left_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_motor_joint' attached_to='wheel3_base_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_motor_body_link' attached_to='wheel3_motor_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_housing_s_joint' attached_to='wheel3_housing_link'>
+      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+    </frame>
+    <frame name='wheel3_housing_s_link' attached_to='wheel3_housing_s_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_5_mark_joint' attached_to='wheel3_barrel_5_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_5_mark_link' attached_to='wheel3_barrel_5_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_6_mark_joint' attached_to='wheel3_barrel_6_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_6_mark_link' attached_to='wheel3_barrel_6_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_7_mark_joint' attached_to='wheel3_barrel_7_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_7_mark_link' attached_to='wheel3_barrel_7_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_8_mark_joint' attached_to='wheel3_barrel_8_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_8_mark_link' attached_to='wheel3_barrel_8_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_housind_joint' attached_to='wheel3_motor_shaft_link'>
+      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+    </frame>
+    <frame name='wheel3_housing_link' attached_to='wheel3_housind_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_1_mark_joint' attached_to='wheel3_barrel_1_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_1_mark_link' attached_to='wheel3_barrel_1_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_2_mark_joint' attached_to='wheel3_barrel_2_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_2_mark_link' attached_to='wheel3_barrel_2_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_3_mark_joint' attached_to='wheel3_barrel_3_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_3_mark_link' attached_to='wheel3_barrel_3_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_4_mark_joint' attached_to='wheel3_barrel_4_link'>
+      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_barrel_4_mark_link' attached_to='wheel3_barrel_4_mark_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_base_joint' attached_to='wheel3_attach_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel3_base_link' attached_to='wheel3_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='wheel_rear_right_joint' attached_to='base_link'>
+      <pose>0.070000000000000007 -1.714505518806295e-17 0.019 0 0 -2.4492935982947059e-16</pose>
+    </frame>
+    <frame name='wheel3_attach_link' attached_to='wheel_rear_right_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

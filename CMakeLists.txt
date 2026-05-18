@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(tf2_msgs REQUIRED)
 find_package(uec_msgs REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
@@ -28,8 +29,20 @@ ament_target_dependencies(can_to_gazebo
 
 target_link_libraries(can_to_gazebo yaml-cpp)
 
+# C++ executable: extract robot body pose from TF stream
+add_executable(gazebo_to_uodom
+  src/gazebo_to_uodom.cpp
+)
+
+ament_target_dependencies(gazebo_to_uodom
+  rclcpp
+  tf2_msgs
+  uec_msgs
+)
+
 
 install(TARGETS can_to_gazebo
+  gazebo_to_uodom
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -81,4 +94,3 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
-

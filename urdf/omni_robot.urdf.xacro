@@ -3,6 +3,12 @@
   <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_common.xacro"/>
   <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_wheel.xacro"/>
 
+  <!-- per-wheel mounting angles (degrees) - change these to reposition wheels easily -->
+  <xacro:property name="wheel0_angle_deg" value="-45"/>
+  <xacro:property name="wheel1_angle_deg" value="45"/>
+  <xacro:property name="wheel2_angle_deg" value="135"/>
+  <xacro:property name="wheel3_angle_deg" value="225"/>
+
   <link name="base_link"/>
 
   <joint name="body_joint" type="fixed">
@@ -31,7 +37,7 @@
   <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel0_attach_link"/>
-    <origin xyz="${0.07*cos(radians(45))} ${0.07*sin(radians(45))} 0.019" rpy="0 0 ${radians(45)}"/>
+    <origin xyz="${0.07*cos(radians(wheel0_angle_deg))} ${0.07*sin(radians(wheel0_angle_deg))} 0.019" rpy="0 0 ${radians(wheel0_angle_deg)}"/>
   </joint>
   <link name="wheel0_attach_link" />
   <xacro:omni_wheel_set prefix="wheel0" parent="wheel0_attach_link" />
@@ -39,7 +45,7 @@
   <joint name="wheel1_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel1_attach_link"/>
-    <origin xyz="${0.07*cos(radians(135))} ${0.07*sin(radians(135))} 0.019" rpy="0 0 ${radians(135)}"/>
+    <origin xyz="${0.07*cos(radians(wheel1_angle_deg))} ${0.07*sin(radians(wheel1_angle_deg))} 0.019" rpy="0 0 ${radians(wheel1_angle_deg)}"/>
   </joint>
   <link name="wheel1_attach_link" />
   <xacro:omni_wheel_set prefix="wheel1" parent="wheel1_attach_link" />
@@ -47,7 +53,7 @@
   <joint name="wheel2_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel2_attach_link"/>
-    <origin xyz="${0.07*cos(radians(225))} ${0.07*sin(radians(225))} 0.019" rpy="0 0 ${radians(225)}"/>
+    <origin xyz="${0.07*cos(radians(wheel2_angle_deg))} ${0.07*sin(radians(wheel2_angle_deg))} 0.019" rpy="0 0 ${radians(wheel2_angle_deg)}"/>
   </joint>
   <link name="wheel2_attach_link" />
   <xacro:omni_wheel_set prefix="wheel2" parent="wheel2_attach_link" />
@@ -55,7 +61,7 @@
   <joint name="wheel3_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="wheel3_attach_link"/>
-    <origin xyz="${0.07*cos(radians(315))} ${0.07*sin(radians(315))} 0.019" rpy="0 0 ${radians(315)}"/>
+    <origin xyz="${0.07*cos(radians(wheel3_angle_deg))} ${0.07*sin(radians(wheel3_angle_deg))} 0.019" rpy="0 0 ${radians(wheel3_angle_deg)}"/>
   </joint>
   <link name="wheel3_attach_link" />
   <xacro:omni_wheel_set prefix="wheel3" parent="wheel3_attach_link" />

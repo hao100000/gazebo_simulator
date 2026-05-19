@@ -156,23 +156,37 @@ def generate_launch_description():
             output="screen"
         ),
 
-        # ============================================================
-        # 2. Keyboard Teleop - CAN Command (/can/tx)
-        # ============================================================
+        # Omni node: translates /cmd_vel -> CAN messages
         Node(
-            package="gazebo_simulator",
-            executable="teleop_CANArray_keyboard",
-            output="screen",
-            prefix="xterm -e"
-        ),        
-
+        package='uec_core',
+        executable='omni',
+        parameters=[{'update_freq': 0.05},
+                    {'wheel_radius' : 0.05},
+                    {'wheel_base' : 0.23},
+                    {'min_v': 0.05},
+                    {'max_v': 1.0},
+                    {'max_a': 1.0},
+                    {'bulk_id':[1, 2, 3, 4]}],
+        output='screen'
+        ),
         # # ============================================================
-        # # 3. Keyboard Teleop - Twist Command (/cmd_vel)
+        # # 2. Keyboard Teleop - CAN Command (/can/tx)
         # # ============================================================
         # Node(
         #     package="gazebo_simulator",
-        #     executable="teleop_twist_keyboard",
+        #     executable="teleop_CANArray_keyboard",
         #     output="screen",
         #     prefix="xterm -e"
-        # ),
+        # ),        
+
+        # ============================================================
+        # 3. Keyboard Teleop - Twist Command (/cmd_vel)
+        # ============================================================
+
+        Node(
+            package="gazebo_simulator",
+            executable="teleop_twist_keyboard",
+            output="screen",
+            prefix="xterm -e"
+        ),
     ])

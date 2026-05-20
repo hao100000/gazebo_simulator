@@ -4,17 +4,17 @@
   <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_wheel.xacro"/>
 
   <!-- per-wheel mounting angles (degrees) - change these to reposition wheels easily -->
-  <xacro:property name="wheel0_angle_deg" value="-45"/>
-  <xacro:property name="wheel1_angle_deg" value="45"/>
-  <xacro:property name="wheel2_angle_deg" value="135"/>
-  <xacro:property name="wheel3_angle_deg" value="225"/>
+  <xacro:property name="wheel0_angle_deg" value="45"/>
+  <xacro:property name="wheel1_angle_deg" value="135"/>
+  <xacro:property name="wheel2_angle_deg" value="225"/>
+  <xacro:property name="wheel3_angle_deg" value="315"/>
 
   <link name="base_link"/>
 
   <joint name="body_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="body_link"/>
-    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    <origin xyz="0 0 0.05" rpy="0 0 ${radians(90)}"/>
   </joint>
   <link name="body_link">
     <visual>

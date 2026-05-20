@@ -2,19 +2,19 @@
   <model name='omni_robot'>
     <link name='base_link'>
       <inertial>
-        <pose>-6.6720133691415671e-19 1.000802005371235e-18 0.042846153846153867 0 0 0</pose>
+        <pose>-1.6680033422853921e-18 -6.6720133691415671e-19 0.042846153846153867 0 0 0</pose>
         <mass>2.6000000000000001</mass>
         <inertia>
           <ixx>0.012313538461538461</ixx>
           <ixy>-5.4210108624275222e-20</ixy>
-          <ixz>-2.011612030796186e-20</ixz>
+          <ixz>-1.045004093941799e-19</ixz>
           <iyy>0.012313538461538461</iyy>
-          <iyz>1.1148934339835559e-19</iyz>
+          <iyz>-2.011612030796186e-20</iyz>
           <izz>0.013339999999999999</izz>
         </inertia>
       </inertial>
       <collision name='base_link_fixed_joint_lump__body_link_collision'>
-        <pose>0 0 0.050000000000000003 0 0 0</pose>
+        <pose>0 0 0.050000000000000003 0 0 1.5707963267948959</pose>
         <geometry>
           <box>
             <size>0.14000000000000001 0.080000000000000002 0.02</size>
@@ -22,23 +22,6 @@
         </geometry>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel0_motor_body_link_collision_1'>
-        <pose>0.031819805153394637 -0.031819805153394637 0.019 0.7853981633974485 1.5707963267948966 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.050000000000000003</length>
-            <radius>0.012</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_2'>
         <pose>0.031819805153394637 0.031819805153394637 0.019 -0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
@@ -55,7 +38,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_3'>
+      <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_2'>
         <pose>-0.031819805153394637 0.031819805153394637 0.019 -2.3561944901923448 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
@@ -72,7 +55,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_4'>
+      <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_3'>
         <pose>-0.031819805153394658 -0.031819805153394637 0.019 2.3561944901923457 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
@@ -89,8 +72,25 @@
           </friction>
         </surface>
       </collision>
+      <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_4'>
+        <pose>0.031819805153394637 -0.031819805153394651 0.019 0.7853981633974485 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.050000000000000003</length>
+            <radius>0.012</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
       <visual name='base_link_fixed_joint_lump__body_link_visual'>
-        <pose>0 0 0.050000000000000003 0 0 0</pose>
+        <pose>0 0 0.050000000000000003 0 0 1.5707963267948959</pose>
         <geometry>
           <box>
             <size>0.14000000000000001 0.080000000000000002 0.02</size>
@@ -102,23 +102,6 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel0_motor_body_link_visual_1'>
-        <pose>0.049497474683058332 -0.049497474683058318 0.019 0 0 -0.78539816339744839</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Gray</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
-        </material>
-      </visual>
-      <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_2'>
         <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
         <geometry>
           <mesh>
@@ -135,7 +118,7 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_3'>
+      <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_2'>
         <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
         <geometry>
           <mesh>
@@ -152,8 +135,25 @@
           <ambient>1 1 1 1</ambient>
         </material>
       </visual>
-      <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_4'>
+      <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_3'>
         <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_4'>
+        <pose>0.049497474683058318 -0.049497474683058353 0.019 0 0 -0.7853981633974485</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -171,7 +171,7 @@
       </visual>
     </link>
     <joint name='wheel0_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.0579827560572969 -0.0579827560572969 0.019 0 0 -0.78539816339744839</pose>
+      <pose relative_to='base_link'>0.0579827560572969 0.0579827560572969 0.019 0 0 0.78539816339744839</pose>
       <parent>base_link</parent>
       <child>wheel0_motor_shaft_link</child>
       <axis>
@@ -952,7 +952,7 @@
       </visual>
     </link>
     <joint name='wheel1_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.0579827560572969 0.0579827560572969 0.019 0 0 0.78539816339744839</pose>
+      <pose relative_to='base_link'>-0.0579827560572969 0.0579827560572969 0.019 0 0 2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel1_motor_shaft_link</child>
       <axis>
@@ -1733,7 +1733,7 @@
       </visual>
     </link>
     <joint name='wheel2_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.0579827560572969 0.0579827560572969 0.019 0 0 2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.057982756057296907 -0.057982756057296893 0.019 0 0 -2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel2_motor_shaft_link</child>
       <axis>
@@ -2514,7 +2514,7 @@
       </visual>
     </link>
     <joint name='wheel3_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.057982756057296907 -0.057982756057296893 0.019 0 0 -2.3561944901923448</pose>
+      <pose relative_to='base_link'>0.057982756057296893 -0.057982756057296921 0.019 0 0 -0.7853981633974485</pose>
       <parent>base_link</parent>
       <child>wheel3_motor_shaft_link</child>
       <axis>
@@ -3304,7 +3304,7 @@
       <update_frequency>50</update_frequency>
     </plugin>
     <frame name='body_joint' attached_to='base_link'>
-      <pose>0 0 0.050000000000000003 0 0 0</pose>
+      <pose>0 0 0.050000000000000003 0 0 1.5707963267948959</pose>
     </frame>
     <frame name='body_link' attached_to='body_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3382,7 +3382,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel0_attach_joint' attached_to='base_link'>
-      <pose>0.049497474683058332 -0.049497474683058318 0.019 0 0 -0.78539816339744839</pose>
+      <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
     </frame>
     <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3460,7 +3460,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel1_attach_joint' attached_to='base_link'>
-      <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
+      <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
     </frame>
     <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3538,7 +3538,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel2_attach_joint' attached_to='base_link'>
-      <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
+      <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
     </frame>
     <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3616,7 +3616,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel3_attach_joint' attached_to='base_link'>
-      <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
+      <pose>0.049497474683058318 -0.049497474683058353 0.019 0 0 -0.7853981633974485</pose>
     </frame>
     <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'>
       <pose>0 0 0 0 0 0</pose>

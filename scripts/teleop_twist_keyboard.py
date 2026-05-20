@@ -40,6 +40,7 @@ if sys.platform == 'win32':
 else:
     import termios
     import tty
+    import select
 
 
 msg = """
@@ -51,7 +52,7 @@ US 配列のキーボードでの使用が最適です。
     j    k    l
     m    ,    .
 
-ホロノミックモード（横移動）では、Shift キーを押しながら使います:
+回転は、Shift キーを押しながら使います:
 ---------------------------
     U    I    O
     J    K    L
@@ -100,14 +101,23 @@ speedBindings = {
 }
 
 
-def getKey(settings):
+def getKey(settings, timeout=0.1):
+    """
+    ノンブロッキングで1文字読み取る。タイムアウト内に入力がなければ空文字を返す。
+    """
     if sys.platform == 'win32':
-        key = msvcrt.getwch()
+        if msvcrt.kbhit():
+            return msvcrt.getwch()
+        return ''
     else:
         tty.setraw(sys.stdin.fileno())
-        key = sys.stdin.read(1)
+        rlist, _, _ = select.select([sys.stdin], [], [], timeout)
+        if rlist:
+            key = sys.stdin.read(1)
+        else:
+            key = ''
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
-    return key
+        return key
 
 
 def saveTerminalSettings():
@@ -185,7 +195,11 @@ def main():
                 if status == 14:
                     print(msg)
                 status = (status + 1) % 15
+            elif key == '':
+                # 入力なし: 直前の指示値を維持してそのまま publish する
+                pass
             else:
+                # 未定義のキー: 停止コマンド
                 x = 0.0
                 y = 0.0
                 z = 0.0

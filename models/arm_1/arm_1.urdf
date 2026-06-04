@@ -4,6 +4,24 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="arm_1">
+  <material name="gray">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="1.0 0 0 1.0"/>
+  </material>
+  <material name="light_red">
+    <color rgba="1.0 0.5 0.5 1.0"/>
+  </material>
+  <material name="yellow">
+    <color rgba="0 1.0 1.0 1.0"/>
+  </material>
   <link name="base_link"/>
   <joint name="body_joint" type="fixed">
     <parent link="base_link"/>
@@ -13,13 +31,13 @@
   <link name="body_link">
     <visual>
       <geometry>
-        <mesh filename="meshes/entyu.stl" scale="1 1 1"/>
+        <mesh filename="meshes/entyu.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/entyu.stl" scale="1 1 1"/>
+        <mesh filename="meshes/entyu.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>

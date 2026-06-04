@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot name="arm_1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+
+<xacro:include filename="$(find gazebo_simulator)/models/arm_1_description/urdf/materials.xacro" />
+<xacro:include filename="$(find gazebo_simulator)/models/arm_1_description/urdf/arm_1.trans" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.023998948872794978 -0.007387863182670346 0.06661108569012464" rpy="0 0 0"/>
+    <mass value="3.021034035508284"/>
+    <inertia ixx="0.003443" iyy="0.003443" izz="0.00185" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_1_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_1_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_1_v2_2">
+  <inertial>
+    <origin xyz="-0.06943606034614613 0.028348442295090398 0.05000008569012458" rpy="0 0 0"/>
+    <mass value="9.248063374004953"/>
+    <inertia ixx="0.013212" iyy="0.021469" izz="0.02312" ixy="0.004045" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.023999 0.007388 -0.116611" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_1_description/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.023999 0.007388 -0.116611" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_1_description/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="motor_1" type="continuous">
+  <origin xyz="-0.023999 -0.007388 0.116611" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arm_link_1_v2_2"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+</robot>

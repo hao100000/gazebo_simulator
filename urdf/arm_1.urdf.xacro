@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm_1">
+  <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_common.xacro"/>
+  <xacro:property name="model_scale" value="0.001"/>
 
   <link name="base_link"/>
 
@@ -11,13 +13,13 @@
   <link name="body_link">
     <visual>
       <geometry>
-        <mesh filename="meshes/entyu.stl" scale="1 1 1"/>
+        <mesh filename="meshes/entyu.stl" scale="${model_scale} ${model_scale} ${model_scale}"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/entyu.stl" scale="1 1 1"/>
+        <mesh filename="meshes/entyu.stl" scale="${model_scale} ${model_scale} ${model_scale}"/>
       </geometry>
     </collision>
     <inertial>

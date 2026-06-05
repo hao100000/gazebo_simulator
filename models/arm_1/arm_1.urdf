@@ -66,4 +66,28 @@
     <child link="arm_link_1_v2_2"/>
     <axis xyz="-0.0 0.0 -1.0"/>
   </joint>
+  <!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="motor_1">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgz-sim-pose-publisher-system.so" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
+    </plugin>
+  </gazebo>
 </robot>

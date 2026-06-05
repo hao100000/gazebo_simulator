@@ -35,7 +35,13 @@
     </inertial>
     <collision name="wheel_left_collision">
       <geometry>
-        <cylinder length="0.018" radius="0.033"/>
+        <cylinder length="0.018" radius="0.03  <joint name="wheel3_attach_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="wheel3_attach_link"/>
+    <origin xyz="${0.07*cos(radians(wheel3_angle_deg))} ${0.07*sin(radians(wheel3_angle_deg))} 0.019" rpy="0 0 ${radians(wheel3_angle_deg)}"/>
+  </joint>
+  <link name="wheel3_attach_link" />
+  <xacro:omni_wheel_set prefix="wheel3" parent="wheel3_attach_link" />3"/>
       </geometry>
     </collision>
     <visual name="wheel_left_visual">

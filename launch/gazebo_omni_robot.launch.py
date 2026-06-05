@@ -69,6 +69,11 @@ def generate_launch_description():
         'urdf',
         f'{MODEL_NAME}.urdf.xacro'
     ])
+    config_file = PathJoinSubstitution([
+        pkg_share,
+        'config',
+        f'controller_{MODEL_NAME}.yaml'
+    ])
     robot_description = Command(['xacro ', xacro_file])
     
     # Set GZ_MODEL_PATH environment variable
@@ -149,6 +154,7 @@ def generate_launch_description():
         Node(
             package="gazebo_simulator",
             executable="can_to_gazebo",
+            parameters=[{'config_file': config_file}],
             output="screen"
         ),
 

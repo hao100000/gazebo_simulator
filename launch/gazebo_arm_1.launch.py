@@ -22,7 +22,7 @@ def create_regenerate_model_sdf(model_name):
 
         xacro_path = os.path.join(
             ros2_ws,
-            f"src/gazebo_simulator/urdf/{model_name}.urdf.xacro"
+            f"src/gazebo_simulator/models/{model_name}/urdf/{model_name}.xacro"
         )
         model_dir = os.path.join(
             ros2_ws,
@@ -43,13 +43,31 @@ def create_regenerate_model_sdf(model_name):
 
         # Replace mesh URIs with relative paths
         import re
-        model_sdf = re.sub(r'model://.*?/meshes/', '../meshes/', model_sdf)
-        model_sdf = model_sdf.replace("model://meshes/", "../meshes/")
+        model_sdf = re.sub(r'model://.*?/meshes/', 'meshes/', model_sdf)
+        model_sdf = model_sdf.replace("model://meshes/", "meshes/")
         # Remove <parameters> tags that cause RCL parsing errors
         model_sdf = re.sub(r'<parameters>.*?</parameters>', '', model_sdf, flags=re.DOTALL)
 
         with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
             sdf_file.write(model_sdf)
+
+
+        config_path = os.path.join(model_dir, "model.config")
+        model_config = f"""<?xml version="1.0"?>
+        <model>
+        <name>{model_name}</name>
+        <version>1.0</version>
+        <sdf version="1.8">model.sdf</sdf>
+        <author>
+            <name>Hao</name>
+        </author>
+        <description>
+            Auto-generated model configuration
+        </description>
+        </model>
+        """
+        with open(config_path, "w", encoding="utf-8") as config_file:
+            config_file.write(model_config)
 
         return []
     
@@ -130,11 +148,11 @@ def generate_launch_description():
             output='screen'
         ),
 
-        Node(
-            package='gazebo_simulator',
-            executable='gazebo_to_uodom',
-            output='screen'
-        ),
+        # Node(
+        #     package='gazebo_simulator',
+        #     executable='gazebo_to_uodom',
+        #     output='screen'
+        # ),
 
         Node(
             package="controller_manager",

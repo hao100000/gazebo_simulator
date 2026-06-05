@@ -6,7 +6,7 @@
 
 motors:
   - can_id: 1
-    joint_name: moter1
+    joint_name: motor_1
     invert: false
     control_type: velocity
 

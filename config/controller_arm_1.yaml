@@ -19,4 +19,4 @@ controller_manager:
 forward_velocity_controller:
   ros__parameters:
     joints:
-      - moter1
+      - motor_1

@@ -3,8 +3,8 @@
 
 
 
-<xacro:include filename="$(find gazebo_simulator)/models/arm_1_description/urdf/materials.xacro" />
-<xacro:include filename="$(find gazebo_simulator)/models/arm_1_description/urdf/arm_1.trans" />
+<xacro:include filename="$(find gazebo_simulator)/models/arm_1/urdf/materials.xacro" />
+<xacro:include filename="$(find gazebo_simulator)/models/arm_1/urdf/arm_1.trans" />
 
 <link name="base_link">
   <inertial>
@@ -15,14 +15,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_1_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_1/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_1_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_1/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -36,14 +36,14 @@
   <visual>
     <origin xyz="0.023999 0.007388 -0.116611" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_1_description/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_1/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.023999 0.007388 -0.116611" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_1_description/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_1/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>

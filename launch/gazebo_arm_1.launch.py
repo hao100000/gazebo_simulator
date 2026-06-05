@@ -95,7 +95,7 @@ def generate_launch_description():
     config_file = PathJoinSubstitution([
         pkg_share,
         'config',
-        f'can_to_gazebo_{MODEL_NAME}.yaml'
+        f'controller_{MODEL_NAME}.yaml'
     ])
     robot_description = Command(['xacro ', xacro_file])
     

@@ -2,7 +2,8 @@
 <robot name="arm_2" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 
-<xacro:property name="robot_name" value="arm_2"/>
+
+<xacro:property name="robot_name" value="$(arg robot_name)"/>
 
 <xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/materials.xacro" />
 <xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/${robot_name}.trans" />

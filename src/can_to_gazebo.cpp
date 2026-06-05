@@ -2,13 +2,11 @@
 #include <rclcpp/rclcpp.hpp>
 #include <filesystem>
 
-namespace {
-constexpr const char* ROBOT_NAME = "arm_2";
-}
-
 CanToGazeboNode::CanToGazeboNode() : rclcpp::Node("can_to_gazebo") {
+  const std::string robot_name = declare_parameter<std::string>("robot_name", "arm_2");
+
   // Load motor configuration from YAML
-  load_motor_config_from_yaml();
+  load_motor_config_from_yaml(robot_name);
 
   // Create publisher for velocity commands
   gazebo_pub_ = create_publisher<std_msgs::msg::Float64MultiArray>(
@@ -39,7 +37,7 @@ CanToGazeboNode::CanToGazeboNode() : rclcpp::Node("can_to_gazebo") {
   }
 }
 
-void CanToGazeboNode::load_motor_config_from_yaml() {
+void CanToGazeboNode::load_motor_config_from_yaml(const std::string &robot_name) {
   // Get ROS2_WS environment variable
   const char *ros2_ws = std::getenv("ROS2_WS");
   if (!ros2_ws) {
@@ -53,13 +51,13 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
   std::string motors_path =
       std::string(ros2_ws) +
       "/src/gazebo_simulator/config/motors_" +
-      std::string(ROBOT_NAME) +
+      robot_name +
       ".yaml";
 
   std::string controller_path =
       std::string(ros2_ws) +
       "/src/gazebo_simulator/config/controller_" +
-      std::string(ROBOT_NAME) +
+      robot_name +
       ".yaml";
 
   YAML::Node config;

@@ -3,8 +3,10 @@
 
 
 
-<xacro:include filename="$(find gazebo_simulator)/models/arm_1/urdf/materials.xacro" />
-<xacro:include filename="$(find gazebo_simulator)/models/arm_1/urdf/arm_1.trans" />
+<xacro:property name="robot_name" value="$(arg robot_name)"/>
+
+<xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/materials.xacro" />
+<xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/${robot_name}.trans" />
 
 <link name="base_link">
   <inertial>

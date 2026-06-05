@@ -45,8 +45,6 @@ def create_regenerate_model_sdf(model_name):
         import re
         model_sdf = re.sub(r'model://.*?/meshes/', 'meshes/', model_sdf)
         model_sdf = model_sdf.replace("model://meshes/", "meshes/")
-        # Remove <parameters> tags that cause RCL parsing errors
-        model_sdf = re.sub(r'<parameters>.*?</parameters>', '', model_sdf, flags=re.DOTALL)
 
         with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
             sdf_file.write(model_sdf)

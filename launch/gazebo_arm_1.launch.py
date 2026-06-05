@@ -89,8 +89,10 @@ def generate_launch_description():
     )
     xacro_file = PathJoinSubstitution([
         pkg_share,
+        'models',
+        MODEL_NAME,
         'urdf',
-        f'{MODEL_NAME}.urdf.xacro'
+        f'{MODEL_NAME}.xacro'
     ])
     robot_description = Command(['xacro ', xacro_file])
     

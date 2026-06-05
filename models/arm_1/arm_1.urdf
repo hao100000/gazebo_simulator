@@ -79,7 +79,7 @@
   </ros2_control>
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_arm_1.yaml</parameters>
     </plugin>
   </gazebo>
   <gazebo>

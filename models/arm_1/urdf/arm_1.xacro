@@ -71,7 +71,7 @@
 
 <gazebo>
   <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-    <parameters>$(find gazebo_simulator)/config/controller_omni_robot.yaml</parameters>
+    <parameters>$(find gazebo_simulator)/config/controller_arm_1.yaml</parameters>
   </plugin>
 </gazebo>
 

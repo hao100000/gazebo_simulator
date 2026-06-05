@@ -1,16 +1,3 @@
-can_to_gazebo:
-  ros__parameters:
-    motors:
-      - can_id: 1
-        joint_name: wheel_left_joint
-        invert: false
-        control_type: velocity
-
-      - can_id: 2
-        joint_name: wheel_right_joint
-        invert: false
-        control_type: velocity
-
 controller_manager:
   ros__parameters:
     update_rate: 100
@@ -25,6 +12,10 @@ controller_manager:
       type: velocity_controllers/JointGroupVelocityController
 
 
+# ============================================================
+# コントローラの設定
+# joints の順番は motors 設定の順番と一致させてください
+# ============================================================
 forward_velocity_controller:
   ros__parameters:
     joints:

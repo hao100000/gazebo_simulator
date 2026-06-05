@@ -22,7 +22,7 @@ public:
   CanToGazeboNode();
 
 private:
-  void load_motor_config_from_yaml(const std::string &config_file);
+  void load_motor_config_from_yaml();
   void can_callback(const uec_msgs::msg::CANArray::SharedPtr msg);
   void publish_velocity_command();
 

@@ -2,6 +2,10 @@
 #include <rclcpp/rclcpp.hpp>
 #include <filesystem>
 
+namespace {
+constexpr const char* ROBOT_NAME = "arm_2";
+}
+
 CanToGazeboNode::CanToGazeboNode() : rclcpp::Node("can_to_gazebo") {
   // Load motor configuration from YAML
   load_motor_config_from_yaml();
@@ -46,8 +50,17 @@ void CanToGazeboNode::load_motor_config_from_yaml() {
   }
 
   // Prefer dedicated motors.yaml to avoid breaking processes given controller_config
-  std::string motors_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/motors_arm_1.yaml";
-  std::string controller_path = std::string(ros2_ws) + "/src/gazebo_simulator/config/controller_arm_1.yaml";
+  std::string motors_path =
+      std::string(ros2_ws) +
+      "/src/gazebo_simulator/config/motors_" +
+      std::string(ROBOT_NAME) +
+      ".yaml";
+
+  std::string controller_path =
+      std::string(ros2_ws) +
+      "/src/gazebo_simulator/config/controller_" +
+      std::string(ROBOT_NAME) +
+      ".yaml";
 
   YAML::Node config;
   YAML::Node motors_node;

@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<robot name="arm_2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+<xacro:property name="robot_name" value="arm_2"/>
+
+<xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/materials.xacro" />
+<xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/${robot_name}.trans" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.05000000000000001" rpy="0 0 0"/>
+    <mass value="3.021034035508284"/>
+    <inertia ixx="0.003443" iyy="0.003443" izz="0.00185" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_2_v2_1">
+  <inertial>
+    <origin xyz="-0.14482351306658287 -0.04637911064210727 -1.1527285645462904e-07" rpy="0 0 0"/>
+    <mass value="4.624031687002477"/>
+    <inertia ixx="0.002152" iyy="0.034696" izz="0.035403" ixy="-0.004848" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.088643 -0.088133 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2/meshes/arm_link_2_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.088643 -0.088133 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2/meshes/arm_link_2_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_1_v2_2">
+  <inertial>
+    <origin xyz="-0.07421534285577663 -0.010820484499296758 0.05000000000000002" rpy="0 0 0"/>
+    <mass value="9.248063374004953"/>
+    <inertia ixx="0.011801" iyy="0.02288" izz="0.02312" ixy="-0.00165" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.0 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.0 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="motor_2" type="continuous">
+  <origin xyz="-0.088643 0.088133 0.05" rpy="0 0 0"/>
+  <parent link="arm_link_1_v2_2"/>
+  <child link="arm_link_2_v2_1"/>
+  <axis xyz="-0.144273 0.989538 0.0"/>
+</joint>
+
+<joint name="motor_1" type="continuous">
+  <origin xyz="0.0 0.0 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arm_link_1_v2_2"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+  </hardware>
+
+  <joint name="motor_1">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="motor_2">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>  
+
+</ros2_control>
+
+<gazebo>
+  <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+    <parameters>$(find gazebo_simulator)/config/controller_${robot_name}.yaml</parameters>
+  </plugin>
+</gazebo>
+
+<gazebo>
+  <plugin
+    filename="libgz-sim-pose-publisher-system.so"
+    name="gz::sim::systems::PosePublisher">
+    <publish_link_pose>true</publish_link_pose>
+    <publish_model_pose>true</publish_model_pose>
+    <use_pose_vector_msg>true</use_pose_vector_msg>
+    <update_frequency>50</update_frequency>
+  </plugin>
+</gazebo>
+
+</robot>

@@ -1,0 +1,155 @@
+<sdf version='1.11'>
+  <model name='arm_2'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0 0.05000000000000001 0 0 0</pose>
+        <mass>3.0210340355082841</mass>
+        <inertia>
+          <ixx>0.0034429999999999999</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0034429999999999999</iyy>
+          <iyz>0</iyz>
+          <izz>0.0018500000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='motor_1' type='revolute'>
+      <pose relative_to='base_link'>0 0 0.10000000000000001 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>arm_link_1_v2_2</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='arm_link_1_v2_2'>
+      <pose relative_to='motor_1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.074215342855776634 -0.01082048449929676 0.050000000000000017 0 0 0</pose>
+        <mass>9.2480633740049534</mass>
+        <inertia>
+          <ixx>0.011801000000000001</ixx>
+          <ixy>-0.00165</ixy>
+          <ixz>0</ixz>
+          <iyy>0.022880000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.023120000000000002</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_link_1_v2_2_collision'>
+        <pose>0 0 -0.10000000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/arm_link_1_v2_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='arm_link_1_v2_2_visual'>
+        <pose>0 0 -0.10000000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/arm_link_1_v2_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='motor_2' type='revolute'>
+      <pose relative_to='arm_link_1_v2_2'>-0.088643 0.088133000000000003 0.050000000000000003 0 0 0</pose>
+      <parent>arm_link_1_v2_2</parent>
+      <child>arm_link_2_v2_1</child>
+      <axis>
+        <xyz>-0.14427300000000001 0.98953800000000003 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='arm_link_2_v2_1'>
+      <pose relative_to='motor_2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.14482351306658289 -0.046379110642107271 -1.15272856454629e-07 0 0 0</pose>
+        <mass>4.6240316870024767</mass>
+        <inertia>
+          <ixx>0.0021519999999999998</ixx>
+          <ixy>-0.0048479999999999999</ixy>
+          <ixz>0</ixz>
+          <iyy>0.034695999999999998</iyy>
+          <iyz>0</iyz>
+          <izz>0.035402999999999997</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_link_2_v2_1_collision'>
+        <pose>0.088643 -0.088133000000000003 -0.14999999999999999 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/arm_link_2_v2_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='arm_link_2_v2_1_visual'>
+        <pose>0.088643 -0.088133000000000003 -0.14999999999999999 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/arm_link_2_v2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
+      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_arm_2.yaml</parameters>
+    </plugin>
+    <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
+      <publish_link_pose>true</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
+    </plugin>
+  </model>
+</sdf>

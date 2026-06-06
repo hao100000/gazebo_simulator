@@ -60,7 +60,7 @@
       </model>
 
         <include>
-            <uri>model://arm_2</uri>
+            <uri>model://__MODEL_NAME__</uri>
             <pose>0 0 0.1 0 0 0</pose>
         </include>
 

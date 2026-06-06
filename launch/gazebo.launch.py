@@ -69,7 +69,7 @@ def launch_setup(context, *args, **kwargs):
     with open(world_template_path, "r", encoding="utf-8") as template_file:
         world_sdf = template_file.read()
 
-    world_sdf = re.sub(r"model://[^<\s]+", f"model://{model_name}", world_sdf, count=1)
+    world_sdf = world_sdf.replace("__MODEL_NAME__", model_name)
     world_file_handle = tempfile.NamedTemporaryFile(
         mode="w",
         encoding="utf-8",

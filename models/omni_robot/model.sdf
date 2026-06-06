@@ -106,7 +106,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+            <uri>meshes/ga25_body.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -123,7 +123,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+            <uri>meshes/ga25_body.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -140,7 +140,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+            <uri>meshes/ga25_body.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -157,7 +157,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_body.stl</uri>
+            <uri>meshes/ga25_body.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -209,7 +209,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+            <uri>meshes/ga25_shaft.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -226,7 +226,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -276,7 +276,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -299,7 +299,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -365,7 +365,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -388,7 +388,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -454,7 +454,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -477,7 +477,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -543,7 +543,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -566,7 +566,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -632,7 +632,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -655,7 +655,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -721,7 +721,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -744,7 +744,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -810,7 +810,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -833,7 +833,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -899,7 +899,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -922,7 +922,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -990,7 +990,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+            <uri>meshes/ga25_shaft.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1007,7 +1007,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1057,7 +1057,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1080,7 +1080,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1146,7 +1146,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1169,7 +1169,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1235,7 +1235,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1258,7 +1258,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1324,7 +1324,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1347,7 +1347,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1413,7 +1413,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1436,7 +1436,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1502,7 +1502,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1525,7 +1525,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1591,7 +1591,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1614,7 +1614,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1680,7 +1680,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1703,7 +1703,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1771,7 +1771,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+            <uri>meshes/ga25_shaft.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1788,7 +1788,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1838,7 +1838,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1861,7 +1861,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1927,7 +1927,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1950,7 +1950,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2016,7 +2016,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2039,7 +2039,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2105,7 +2105,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2128,7 +2128,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2194,7 +2194,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2217,7 +2217,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2283,7 +2283,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2306,7 +2306,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2372,7 +2372,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2395,7 +2395,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2461,7 +2461,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2484,7 +2484,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2552,7 +2552,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/ga25_shaft.stl</uri>
+            <uri>meshes/ga25_shaft.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2569,7 +2569,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2619,7 +2619,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2642,7 +2642,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2708,7 +2708,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2731,7 +2731,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2797,7 +2797,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2820,7 +2820,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2886,7 +2886,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2909,7 +2909,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2975,7 +2975,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2998,7 +2998,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3064,7 +3064,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3087,7 +3087,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3153,7 +3153,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3176,7 +3176,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3242,7 +3242,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3265,7 +3265,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_robot/meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel.stl</uri>
           </mesh>
         </geometry>
         <material>

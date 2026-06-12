@@ -2,15 +2,15 @@
   <model name='arm_2'>
     <link name='base_link'>
       <inertial>
-        <pose>0 0 0.05000000000000001 0 0 0</pose>
-        <mass>3.0210340355082841</mass>
+        <pose>0 0 0.0025000000000000001 0 0 0</pose>
+        <mass>9.8125</mass>
         <inertia>
-          <ixx>0.0034429999999999999</ixx>
+          <ixx>0.20444799999999999</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0034429999999999999</iyy>
+          <iyy>0.20444799999999999</iyy>
           <iyz>0</iyz>
-          <izz>0.0018500000000000001</izz>
+          <izz>0.408854</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -37,9 +37,9 @@
       </visual>
     </link>
     <joint name='motor_1' type='revolute'>
-      <pose relative_to='base_link'>0 0 0.10000000000000001 0 0 0</pose>
+      <pose relative_to='base_link'>0 0 0.0050000000000000001 0 0 0</pose>
       <parent>base_link</parent>
-      <child>arm_link_1_v2_2</child>
+      <child>arm_link_1_v2_1</child>
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
@@ -52,35 +52,35 @@
         </dynamics>
       </axis>
     </joint>
-    <link name='arm_link_1_v2_2'>
+    <link name='arm_link_1_v2_1'>
       <pose relative_to='motor_1'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>-0.074215342855776634 -0.01082048449929676 0.050000000000000017 0 0 0</pose>
-        <mass>9.2480633740049534</mass>
+        <pose>-4.9649364142500372e-18 -3.7238716991499846e-18 0.014999999999999999 0 0 0</pose>
+        <mass>0.9063102106524854</mass>
         <inertia>
-          <ixx>0.011801000000000001</ixx>
-          <ixy>-0.00165</ixy>
+          <ixx>0.00034600000000000001</ixx>
+          <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.022880000000000001</iyy>
+          <iyy>0.00034600000000000001</iyy>
           <iyz>0</iyz>
-          <izz>0.023120000000000002</izz>
+          <izz>0.00055500000000000005</izz>
         </inertia>
       </inertial>
-      <collision name='arm_link_1_v2_2_collision'>
-        <pose>0 0 -0.10000000000000001 0 0 0</pose>
+      <collision name='arm_link_1_v2_1_collision'>
+        <pose>0 0 -0.0050000000000000001 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>meshes/arm_link_1_v2_2.stl</uri>
+            <uri>meshes/arm_link_1_v2_1.stl</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name='arm_link_1_v2_2_visual'>
-        <pose>0 0 -0.10000000000000001 0 0 0</pose>
+      <visual name='arm_link_1_v2_1_visual'>
+        <pose>0 0 -0.0050000000000000001 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>meshes/arm_link_1_v2_2.stl</uri>
+            <uri>meshes/arm_link_1_v2_1.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -90,11 +90,11 @@
       </visual>
     </link>
     <joint name='motor_2' type='revolute'>
-      <pose relative_to='arm_link_1_v2_2'>-0.088643 0.088133000000000003 0.050000000000000003 0 0 0</pose>
-      <parent>arm_link_1_v2_2</parent>
-      <child>arm_link_2_v2_1</child>
+      <pose relative_to='arm_link_1_v2_1'>0.034147999999999998 -0.0076759999999999997 0.029999999999999999 0 0 0</pose>
+      <parent>arm_link_1_v2_1</parent>
+      <child>arm_link_2_v5_1</child>
       <axis>
-        <xyz>-0.14427300000000001 0.98953800000000003 0</xyz>
+        <xyz>0.97565599999999997 -0.219308 0</xyz>
         <limit>
           <lower>-inf</lower>
           <upper>inf</upper>
@@ -105,35 +105,88 @@
         </dynamics>
       </axis>
     </joint>
-    <link name='arm_link_2_v2_1'>
+    <link name='arm_link_2_v5_1'>
       <pose relative_to='motor_2'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>-0.14482351306658289 -0.046379110642107271 -1.15272856454629e-07 0 0 0</pose>
-        <mass>4.6240316870024767</mass>
+        <pose>-0.024950311282444231 -0.042601419945584619 0.058417322481180839 0 0 0</pose>
+        <mass>0.83232570366044578</mass>
         <inertia>
-          <ixx>0.0021519999999999998</ixx>
-          <ixy>-0.0048479999999999999</ixy>
-          <ixz>0</ixz>
-          <iyy>0.034695999999999998</iyy>
-          <iyz>0</iyz>
-          <izz>0.035402999999999997</izz>
+          <ixx>0.0015790000000000001</ixx>
+          <ixy>-0.000127</ixy>
+          <ixz>0.00016200000000000001</ixz>
+          <iyy>0.001041</iyy>
+          <iyz>0.00072099999999999996</iyz>
+          <izz>0.00068900000000000005</izz>
         </inertia>
       </inertial>
-      <collision name='arm_link_2_v2_1_collision'>
-        <pose>0.088643 -0.088133000000000003 -0.14999999999999999 0 0 0</pose>
+      <collision name='arm_link_2_v5_1_collision'>
+        <pose>-0.034147999999999998 0.0076759999999999997 -0.035000000000000003 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>meshes/arm_link_2_v2_1.stl</uri>
+            <uri>meshes/arm_link_2_v5_1.stl</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name='arm_link_2_v2_1_visual'>
-        <pose>0.088643 -0.088133000000000003 -0.14999999999999999 0 0 0</pose>
+      <visual name='arm_link_2_v5_1_visual'>
+        <pose>-0.034147999999999998 0.0076759999999999997 -0.035000000000000003 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>meshes/arm_link_2_v2_1.stl</uri>
+            <uri>meshes/arm_link_2_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='motor_3' type='revolute'>
+      <pose relative_to='arm_link_2_v5_1'>-0.049901000000000001 -0.085203000000000001 0.11683499999999999 0 0 0</pose>
+      <parent>arm_link_2_v5_1</parent>
+      <child>arm_link_3_v3_1</child>
+      <axis>
+        <xyz>-0.97565599999999997 0.219308 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='arm_link_3_v3_1'>
+      <pose relative_to='motor_3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.001265435483363929 -0.062769369818885548 -0.043685765516444923 0 0 0</pose>
+        <mass>0.83232570366044578</mass>
+        <inertia>
+          <ixx>0.0015590000000000001</ixx>
+          <ixy>-0.000214</ixy>
+          <ixz>-0.00015699999999999999</ixz>
+          <iyy>0.00065499999999999998</iyy>
+          <iyz>-0.00069899999999999997</iyz>
+          <izz>0.0010939999999999999</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_link_3_v3_1_collision'>
+        <pose>0.015753 0.092879000000000003 -0.151835 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/arm_link_3_v3_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='arm_link_3_v3_1_visual'>
+        <pose>0.015753 0.092879000000000003 -0.151835 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/arm_link_3_v3_1.stl</uri>
           </mesh>
         </geometry>
         <material>

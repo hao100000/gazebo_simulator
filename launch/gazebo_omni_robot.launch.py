@@ -22,7 +22,7 @@ def create_regenerate_model_sdf(model_name):
 
         xacro_path = os.path.join(
             ros2_ws,
-            f"src/gazebo_simulator/urdf/{model_name}.urdf.xacro"
+            f"src/gazebo_simulator/models/{model_name}/urdf/{model_name}.xacro"
         )
         model_dir = os.path.join(
             ros2_ws,

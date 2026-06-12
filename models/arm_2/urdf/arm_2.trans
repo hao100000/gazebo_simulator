@@ -1,6 +1,17 @@
 <?xml version="1.0" ?>
 <robot name="arm_2" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+<transmission name="motor_1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_1_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
 <transmission name="motor_2_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="motor_2">
@@ -12,12 +23,12 @@
   </actuator>
 </transmission>
 
-<transmission name="motor_1_tran">
+<transmission name="motor_3_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="motor_1">
+  <joint name="motor_3">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="motor_1_actr">
+  <actuator name="motor_3_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>

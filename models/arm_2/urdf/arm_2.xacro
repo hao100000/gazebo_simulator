@@ -1,89 +1,117 @@
 <?xml version="1.0" ?>
 <robot name="arm_2" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
-
 <xacro:property name="robot_name" value="$(arg robot_name)"/>
 
 <xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/materials.xacro" />
+
 <xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/${robot_name}.trans" />
 
 <link name="base_link">
   <inertial>
-    <origin xyz="0.0 0.0 0.05000000000000001" rpy="0 0 0"/>
-    <mass value="3.021034035508284"/>
-    <inertia ixx="0.003443" iyy="0.003443" izz="0.00185" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    <origin xyz="0.0 0.0 0.0025" rpy="0 0 0"/>
+    <mass value="9.8125"/>
+    <inertia ixx="0.204448" iyy="0.204448" izz="0.408854" ixy="0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_2_v10/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_2_v10/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="arm_link_2_v2_1">
+<link name="arm_link_1_v2_1">
   <inertial>
-    <origin xyz="-0.14482351306658287 -0.04637911064210727 -1.1527285645462904e-07" rpy="0 0 0"/>
-    <mass value="4.624031687002477"/>
-    <inertia ixx="0.002152" iyy="0.034696" izz="0.035403" ixy="-0.004848" iyz="-0.0" ixz="-0.0"/>
+    <origin xyz="-4.964936414250037e-18 -3.7238716991499854e-18 0.014999999999999996" rpy="0 0 0"/>
+    <mass value="0.9063102106524854"/>
+    <inertia ixx="0.000346" iyy="0.000346" izz="0.000555" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.088643 -0.088133 -0.15" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.0 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_2/meshes/arm_link_2_v2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_2_v10/meshes/arm_link_1_v2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
-    <origin xyz="0.088643 -0.088133 -0.15" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.0 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_2/meshes/arm_link_2_v2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_2_v10/meshes/arm_link_1_v2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="arm_link_1_v2_2">
+<link name="arm_link_2_v5_1">
   <inertial>
-    <origin xyz="-0.07421534285577663 -0.010820484499296758 0.05000000000000002" rpy="0 0 0"/>
-    <mass value="9.248063374004953"/>
-    <inertia ixx="0.011801" iyy="0.02288" izz="0.02312" ixy="-0.00165" iyz="0.0" ixz="0.0"/>
+    <origin xyz="-0.024950311282444234 -0.04260141994558462 0.05841732248118084" rpy="0 0 0"/>
+    <mass value="0.8323257036604458"/>
+    <inertia ixx="0.001579" iyy="0.001041" izz="0.000689" ixy="-0.000127" iyz="0.000721" ixz="0.000162"/>
   </inertial>
   <visual>
-    <origin xyz="-0.0 0.0 -0.1" rpy="0 0 0"/>
+    <origin xyz="-0.034148 0.007676 -0.035" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_2/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_2_v10/meshes/arm_link_2_v5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
-    <origin xyz="-0.0 0.0 -0.1" rpy="0 0 0"/>
+    <origin xyz="-0.034148 0.007676 -0.035" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_2/meshes/arm_link_1_v2_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_2_v10/meshes/arm_link_2_v5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<joint name="motor_2" type="continuous">
-  <origin xyz="-0.088643 0.088133 0.05" rpy="0 0 0"/>
-  <parent link="arm_link_1_v2_2"/>
-  <child link="arm_link_2_v2_1"/>
-  <axis xyz="-0.144273 0.989538 0.0"/>
-</joint>
+<link name="arm_link_3_v3_1">
+  <inertial>
+    <origin xyz="0.0012654354833639293 -0.06276936981888555 -0.043685765516444916" rpy="0 0 0"/>
+    <mass value="0.8323257036604458"/>
+    <inertia ixx="0.001559" iyy="0.000655" izz="0.001094" ixy="-0.000214" iyz="-0.000699" ixz="-0.000157"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.015753 0.092879 -0.151835" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2_v10/meshes/arm_link_3_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.015753 0.092879 -0.151835" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_2_v10/meshes/arm_link_3_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="motor_1" type="continuous">
-  <origin xyz="0.0 0.0 0.1" rpy="0 0 0"/>
+  <origin xyz="0.0 0.0 0.005" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="arm_link_1_v2_2"/>
-  <axis xyz="-0.0 -0.0 -1.0"/>
+  <child link="arm_link_1_v2_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
 </joint>
+
+<joint name="motor_2" type="continuous">
+  <origin xyz="0.034148 -0.007676 0.03" rpy="0 0 0"/>
+  <parent link="arm_link_1_v2_1"/>
+  <child link="arm_link_2_v5_1"/>
+  <axis xyz="0.975656 -0.219308 -0.0"/>
+</joint>
+
+<joint name="motor_3" type="continuous">
+  <origin xyz="-0.049901 -0.085203 0.116835" rpy="0 0 0"/>
+  <parent link="arm_link_2_v5_1"/>
+  <child link="arm_link_3_v3_1"/>
+  <axis xyz="-0.975656 0.219308 0.0"/>
+</joint>
+
 
 <!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
 <ros2_control name="GazeboSystem" type="system">
@@ -101,7 +129,14 @@
     <command_interface name="velocity"/>
     <state_interface name="position"/>
     <state_interface name="velocity"/>
-  </joint>  
+  </joint>
+
+  <joint name="motor_3">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
 
 </ros2_control>
 

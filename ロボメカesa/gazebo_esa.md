@@ -123,7 +123,11 @@ arm_link_3
 
 </details>
 
-## 3.fusion2urdfをダウンロード
+## 3.pythonをダウンロード
+
+
+
+## 4.fusion2urdfをダウンロード
 - [GitHub](https://github.com/hao100000/fusion2urdf.git)にアクセス。
 - Code>Download Zipでダウンロード(ほかのやり方でも可)
 ![12](fusion2urdf_12.png)
@@ -132,7 +136,7 @@ arm_link_3
 ![13](fusion2urdf_13.png)
 
 
-## 4.アドインをFusionのAPIにコピー
+## 5.アドインをFusionのAPIにコピー
 - 「URDF_Exporter」をコピーする。「fusion2urdf」ではないことに注意。  
 - 表示>表示>隠しファイル にチェックをつける。(こうしないと次に出てくるAppDataが表示されない)
 - PC/Windous/ユーザー/「ご自分のユーザー名」/AppData/Roaming/Autodesk/Autodesk/Fusion 360/API/Scripts/まで移動して「URDF_Expoter」を張り付ける。
@@ -151,7 +155,7 @@ arm_link_3
 </details>
 
 
-## 5.URDF形式に変換
+## 6.URDF形式に変換
 - Fusion360の「ユーティリティ>アドイン(スクリプトとアドイン)>URDF_Exporter」の隣のセルの再生ボタンみたいなボタンを押す。  
 - エクスポート先のフォルダをお好みで選択。  
 - ROS1とROS2を選ぶウィンドウ(めちゃ小さい)がでるので、いい感じにウィンドウを大きくして、ROS2を選択  
@@ -186,7 +190,7 @@ arm_link_3
 
 </details>
 
-## 6.Ubuntuを使う人に送信
+## 7.Ubuntuを使う人に送信
 - お疲れさまでした。これでWindousでやる操作は終了です。
 - 最後に、Ubuntuを使う人にこのデータを送信しましょう。
 - 送信できればなんでもいいのですが、Google Driveを使うのを推奨しときます。

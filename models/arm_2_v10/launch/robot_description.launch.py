@@ -15,9 +15,9 @@ def generate_launch_description():
             " ",
             PathJoinSubstitution(
                 [
-                    FindPackageShare("arm_2_description"),
+                    FindPackageShare("arm_2_v10_description"),
                     "urdf",
-                    "arm_2.xacro",
+                    "arm_2_v10.xacro",
                 ]
             ),
 

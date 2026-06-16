@@ -1,8 +1,8 @@
-<sdf version='1.11'>
+<sdf version='1.9'>
   <model name='omni_robot'>
     <link name='base_link'>
       <inertial>
-        <pose>-1.6680033422853921e-18 -6.6720133691415671e-19 0.042846153846153867 0 0 0</pose>
+        <pose>-1.668003342285392e-18 -6.672013369141567e-19 0.04284615384615387 0 0 0</pose>
         <mass>2.6000000000000001</mass>
         <inertia>
           <ixx>0.012313538461538461</ixx>
@@ -14,15 +14,15 @@
         </inertia>
       </inertial>
       <collision name='base_link_fixed_joint_lump__body_link_collision'>
-        <pose>0 0 0.050000000000000003 0 0 1.5707963267948959</pose>
+        <pose>0 0 0.05 0 0 1.570796326794896</pose>
         <geometry>
           <box>
-            <size>0.14000000000000001 0.080000000000000002 0.02</size>
+            <size>0.14 0.08 0.02</size>
           </box>
         </geometry>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel0_motor_body_link_collision_1'>
-        <pose>0.031819805153394637 0.031819805153394637 0.019 -0.7853981633974485 1.5707963267948966 0</pose>
+        <pose>0.03181980515339464 0.03181980515339464 0.019 0 1.570796326794897 0.7853981633974483</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -39,7 +39,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_2'>
-        <pose>-0.031819805153394637 0.031819805153394637 0.019 -2.3561944901923448 1.5707963267948966 0</pose>
+        <pose>-0.03181980515339464 0.03181980515339464 0.019 0 1.570796326794897 2.356194490192345</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -56,7 +56,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_3'>
-        <pose>-0.031819805153394658 -0.031819805153394637 0.019 2.3561944901923457 1.5707963267948966 0</pose>
+        <pose>-0.03181980515339466 -0.03181980515339464 0.019 0 1.570796326794897 3.926990816987241</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -73,7 +73,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_4'>
-        <pose>0.031819805153394637 -0.031819805153394651 0.019 0.7853981633974485 1.5707963267948966 0</pose>
+        <pose>0.03181980515339464 -0.03181980515339465 0.019 0 1.570796326794897 5.497787143782138</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -90,10 +90,10 @@
         </surface>
       </collision>
       <visual name='base_link_fixed_joint_lump__body_link_visual'>
-        <pose>0 0 0.050000000000000003 0 0 1.5707963267948959</pose>
+        <pose>0 0 0.05 0 0 1.570796326794896</pose>
         <geometry>
           <box>
-            <size>0.14000000000000001 0.080000000000000002 0.02</size>
+            <size>0.14 0.08 0.02</size>
           </box>
         </geometry>
         <material>
@@ -102,7 +102,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel0_motor_body_link_visual_1'>
-        <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
+        <pose>0.04949747468305833 0.04949747468305832 0.019 0 0 0.7853981633974484</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -119,7 +119,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_2'>
-        <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
+        <pose>-0.04949747468305832 0.04949747468305833 0.019 0 0 2.356194490192345</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -136,7 +136,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_3'>
-        <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
+        <pose>-0.04949747468305835 -0.04949747468305832 0.019 0 0 -2.356194490192345</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -153,7 +153,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_4'>
-        <pose>0.049497474683058318 -0.049497474683058353 0.019 0 0 -0.7853981633974485</pose>
+        <pose>0.04949747468305832 -0.04949747468305835 0.019 0 0 -0.7853981633974485</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -171,7 +171,7 @@
       </visual>
     </link>
     <joint name='wheel0_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.0579827560572969 0.0579827560572969 0.019 0 0 0.78539816339744839</pose>
+      <pose relative_to='base_link'>0.0579827560572969 0.0579827560572969 0.019 0 0 0.7853981633974484</pose>
       <parent>base_link</parent>
       <child>wheel0_motor_shaft_link</child>
       <axis>
@@ -179,8 +179,8 @@
         <limit>
           <effort>3</effort>
           <velocity>40</velocity>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -222,7 +222,7 @@
         </material>
       </visual>
       <visual name='wheel0_motor_shaft_link_fixed_joint_lump__wheel0_housing_link_visual_1'>
-        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <pose>0.012 0 0 0 1.570796326794897 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -240,14 +240,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.018 0 -0.014 1.570796326794896 1.570796326794897 0</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_1_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -312,10 +312,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_1_link_fixed_joint_lump__wheel0_barrel_1_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -329,14 +329,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.018 0.014 0 3.141592653589793 1.570092458683775e-16 1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_2_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -401,10 +401,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_2_link_fixed_joint_lump__wheel0_barrel_2_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -418,14 +418,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.018 1.714505518806295e-18 0.014 -1.570796326794897 -1.570796326794897 0</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_3_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -490,10 +490,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_3_link_fixed_joint_lump__wheel0_barrel_3_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -507,14 +507,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.018 -0.014 0 0 1.570092458683775e-16 -1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_4_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -579,10 +579,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_4_link_fixed_joint_lump__wheel0_barrel_4_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -596,14 +596,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.005999999999999995 -0.009899494936611665 0.009899494936611665 -3.141592653589793 -0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_5_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -668,10 +668,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_5_link_fixed_joint_lump__wheel0_barrel_5_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -685,14 +685,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.005999999999999997 0.009899494936611665 0.009899494936611665 -6.280369834735101e-16 -0.7853981633974488 1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_6_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -757,10 +757,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_6_link_fixed_joint_lump__wheel0_barrel_6_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -774,14 +774,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.006000000000000004 0.009899494936611667 -0.009899494936611665 -4.710277376051324e-16 0.7853981633974481 1.570796326794896</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_7_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -846,10 +846,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_7_link_fixed_joint_lump__wheel0_barrel_7_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -863,14 +863,14 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.006000000000000004 -0.009899494936611665 -0.009899494936611665 -3.141592653589793 0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_8_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -935,10 +935,10 @@
         </material>
       </visual>
       <visual name='wheel0_barrel_8_link_fixed_joint_lump__wheel0_barrel_8_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -952,7 +952,7 @@
       </visual>
     </link>
     <joint name='wheel1_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.0579827560572969 0.0579827560572969 0.019 0 0 2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.0579827560572969 0.0579827560572969 0.019 0 0 2.356194490192345</pose>
       <parent>base_link</parent>
       <child>wheel1_motor_shaft_link</child>
       <axis>
@@ -960,8 +960,8 @@
         <limit>
           <effort>3</effort>
           <velocity>40</velocity>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -1003,7 +1003,7 @@
         </material>
       </visual>
       <visual name='wheel1_motor_shaft_link_fixed_joint_lump__wheel1_housing_link_visual_1'>
-        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <pose>0.012 0 0 0 1.570796326794897 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -1021,14 +1021,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.018 0 -0.014 1.570796326794896 1.570796326794897 0</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_1_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1093,10 +1093,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_1_link_fixed_joint_lump__wheel1_barrel_1_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1110,14 +1110,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.018 0.014 0 3.141592653589793 1.570092458683775e-16 1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_2_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1182,10 +1182,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_2_link_fixed_joint_lump__wheel1_barrel_2_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1199,14 +1199,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.018 1.714505518806295e-18 0.014 -1.570796326794897 -1.570796326794897 0</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_3_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1271,10 +1271,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_3_link_fixed_joint_lump__wheel1_barrel_3_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1288,14 +1288,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.018 -0.014 0 0 1.570092458683775e-16 -1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_4_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1360,10 +1360,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_4_link_fixed_joint_lump__wheel1_barrel_4_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1377,14 +1377,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.005999999999999995 -0.009899494936611665 0.009899494936611665 -3.141592653589793 -0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_5_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1449,10 +1449,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_5_link_fixed_joint_lump__wheel1_barrel_5_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1466,14 +1466,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.005999999999999997 0.009899494936611665 0.009899494936611665 -6.280369834735101e-16 -0.7853981633974488 1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_6_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1538,10 +1538,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_6_link_fixed_joint_lump__wheel1_barrel_6_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1555,14 +1555,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.006000000000000004 0.009899494936611667 -0.009899494936611665 -4.710277376051324e-16 0.7853981633974481 1.570796326794896</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_7_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1627,10 +1627,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_7_link_fixed_joint_lump__wheel1_barrel_7_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1644,14 +1644,14 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.006000000000000004 -0.009899494936611665 -0.009899494936611665 -3.141592653589793 0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_8_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1716,10 +1716,10 @@
         </material>
       </visual>
       <visual name='wheel1_barrel_8_link_fixed_joint_lump__wheel1_barrel_8_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1733,7 +1733,7 @@
       </visual>
     </link>
     <joint name='wheel2_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.057982756057296907 -0.057982756057296893 0.019 0 0 -2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.05798275605729691 -0.05798275605729689 0.019 0 0 -2.356194490192345</pose>
       <parent>base_link</parent>
       <child>wheel2_motor_shaft_link</child>
       <axis>
@@ -1741,8 +1741,8 @@
         <limit>
           <effort>3</effort>
           <velocity>40</velocity>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -1784,7 +1784,7 @@
         </material>
       </visual>
       <visual name='wheel2_motor_shaft_link_fixed_joint_lump__wheel2_housing_link_visual_1'>
-        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <pose>0.012 0 0 0 1.570796326794897 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -1802,14 +1802,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.018 0 -0.014 1.570796326794896 1.570796326794897 0</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_1_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1874,10 +1874,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_1_link_fixed_joint_lump__wheel2_barrel_1_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1891,14 +1891,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.018 0.014 0 3.141592653589793 1.570092458683775e-16 1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_2_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -1963,10 +1963,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_2_link_fixed_joint_lump__wheel2_barrel_2_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -1980,14 +1980,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.018 1.714505518806295e-18 0.014 -1.570796326794897 -1.570796326794897 0</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_3_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2052,10 +2052,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_3_link_fixed_joint_lump__wheel2_barrel_3_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2069,14 +2069,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.018 -0.014 0 0 1.570092458683775e-16 -1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_4_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2141,10 +2141,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_4_link_fixed_joint_lump__wheel2_barrel_4_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2158,14 +2158,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.005999999999999995 -0.009899494936611665 0.009899494936611665 -3.141592653589793 -0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_5_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2230,10 +2230,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_5_link_fixed_joint_lump__wheel2_barrel_5_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2247,14 +2247,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.005999999999999997 0.009899494936611665 0.009899494936611665 -6.280369834735101e-16 -0.7853981633974488 1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_6_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2319,10 +2319,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_6_link_fixed_joint_lump__wheel2_barrel_6_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2336,14 +2336,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.006000000000000004 0.009899494936611667 -0.009899494936611665 -4.710277376051324e-16 0.7853981633974481 1.570796326794896</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_7_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2408,10 +2408,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_7_link_fixed_joint_lump__wheel2_barrel_7_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2425,14 +2425,14 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.006000000000000004 -0.009899494936611665 -0.009899494936611665 -3.141592653589793 0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_8_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2497,10 +2497,10 @@
         </material>
       </visual>
       <visual name='wheel2_barrel_8_link_fixed_joint_lump__wheel2_barrel_8_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2514,7 +2514,7 @@
       </visual>
     </link>
     <joint name='wheel3_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.057982756057296893 -0.057982756057296921 0.019 0 0 -0.7853981633974485</pose>
+      <pose relative_to='base_link'>0.05798275605729689 -0.05798275605729692 0.019 0 0 -0.7853981633974485</pose>
       <parent>base_link</parent>
       <child>wheel3_motor_shaft_link</child>
       <axis>
@@ -2522,8 +2522,8 @@
         <limit>
           <effort>3</effort>
           <velocity>40</velocity>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -2565,7 +2565,7 @@
         </material>
       </visual>
       <visual name='wheel3_motor_shaft_link_fixed_joint_lump__wheel3_housing_link_visual_1'>
-        <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+        <pose>0.012 0 0 0 1.570796326794897 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -2583,14 +2583,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.018 0 -0.014 1.570796326794896 1.570796326794897 0</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_1_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2655,10 +2655,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_1_link_fixed_joint_lump__wheel3_barrel_1_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2672,14 +2672,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.018 0.014 0 3.141592653589793 1.570092458683775e-16 1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_2_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2744,10 +2744,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_2_link_fixed_joint_lump__wheel3_barrel_2_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2761,14 +2761,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.018 1.714505518806295e-18 0.014 -1.570796326794897 -1.570796326794897 0</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_3_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2833,10 +2833,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_3_link_fixed_joint_lump__wheel3_barrel_3_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2850,14 +2850,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.018 -0.014 0 0 1.570092458683775e-16 -1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_4_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -2922,10 +2922,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_4_link_fixed_joint_lump__wheel3_barrel_4_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -2939,14 +2939,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.005999999999999995 -0.009899494936611665 0.009899494936611665 -3.141592653589793 -0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_5_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -3011,10 +3011,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_5_link_fixed_joint_lump__wheel3_barrel_5_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -3028,14 +3028,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.005999999999999997 0.009899494936611665 0.009899494936611665 -6.280369834735101e-16 -0.7853981633974488 1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_6_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -3100,10 +3100,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_6_link_fixed_joint_lump__wheel3_barrel_6_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -3117,14 +3117,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.006000000000000004 0.009899494936611667 -0.009899494936611665 -4.710277376051324e-16 0.7853981633974481 1.570796326794896</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_7_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -3189,10 +3189,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_7_link_fixed_joint_lump__wheel3_barrel_7_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -3206,14 +3206,14 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.006000000000000004 -0.009899494936611665 -0.009899494936611665 -3.141592653589793 0.7853981633974485 -1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_8_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -3278,10 +3278,10 @@
         </material>
       </visual>
       <visual name='wheel3_barrel_8_link_fixed_joint_lump__wheel3_barrel_8_mark_link_visual_1'>
-        <pose>0.0050000000000000001 0 0 0 0 0</pose>
+        <pose>0.005 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.0050000000000000001 0.0050000000000000001 0.0050000000000000001</size>
+            <size>0.005 0.005 0.005</size>
           </box>
         </geometry>
         <material>
@@ -3295,331 +3295,225 @@
       </visual>
     </link>
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
-      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
+      <parameters>/home/hao/Ubuntu_2/ROS_practice/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_omni_robot.yaml</parameters>
     </plugin>
-    <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
+    <plugin name='ignition::gazebo::systems::PosePublisher' filename='libignition-gazebo-pose-publisher-system.so'>
       <publish_link_pose>true</publish_link_pose>
       <publish_model_pose>true</publish_model_pose>
       <use_pose_vector_msg>true</use_pose_vector_msg>
       <update_frequency>50</update_frequency>
     </plugin>
     <frame name='body_joint' attached_to='base_link'>
-      <pose>0 0 0.050000000000000003 0 0 1.5707963267948959</pose>
+      <pose>0 0 0.05 0 -0 1.5708</pose>
     </frame>
-    <frame name='body_link' attached_to='body_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='body_link' attached_to='body_joint'/>
     <frame name='wheel0_motor_joint' attached_to='wheel0_base_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_motor_body_link' attached_to='wheel0_motor_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_motor_body_link' attached_to='wheel0_motor_joint'/>
     <frame name='wheel0_housing_s_joint' attached_to='wheel0_housing_link'>
-      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+      <pose>0 0 0 3.14159 0 -2.35619</pose>
     </frame>
-    <frame name='wheel0_housing_s_link' attached_to='wheel0_housing_s_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_housing_s_link' attached_to='wheel0_housing_s_joint'/>
     <frame name='wheel0_barrel_5_mark_joint' attached_to='wheel0_barrel_5_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_5_mark_link' attached_to='wheel0_barrel_5_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_5_mark_link' attached_to='wheel0_barrel_5_mark_joint'/>
     <frame name='wheel0_barrel_6_mark_joint' attached_to='wheel0_barrel_6_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_6_mark_link' attached_to='wheel0_barrel_6_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_6_mark_link' attached_to='wheel0_barrel_6_mark_joint'/>
     <frame name='wheel0_barrel_7_mark_joint' attached_to='wheel0_barrel_7_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_7_mark_link' attached_to='wheel0_barrel_7_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_7_mark_link' attached_to='wheel0_barrel_7_mark_joint'/>
     <frame name='wheel0_barrel_8_mark_joint' attached_to='wheel0_barrel_8_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_8_mark_link' attached_to='wheel0_barrel_8_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_8_mark_link' attached_to='wheel0_barrel_8_mark_joint'/>
     <frame name='wheel0_housind_joint' attached_to='wheel0_motor_shaft_link'>
-      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+      <pose>0.012 0 0 0 1.5708 0</pose>
     </frame>
-    <frame name='wheel0_housing_link' attached_to='wheel0_housind_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_housing_link' attached_to='wheel0_housind_joint'/>
     <frame name='wheel0_barrel_1_mark_joint' attached_to='wheel0_barrel_1_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_1_mark_link' attached_to='wheel0_barrel_1_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_1_mark_link' attached_to='wheel0_barrel_1_mark_joint'/>
     <frame name='wheel0_barrel_2_mark_joint' attached_to='wheel0_barrel_2_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_2_mark_link' attached_to='wheel0_barrel_2_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_2_mark_link' attached_to='wheel0_barrel_2_mark_joint'/>
     <frame name='wheel0_barrel_3_mark_joint' attached_to='wheel0_barrel_3_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_3_mark_link' attached_to='wheel0_barrel_3_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_3_mark_link' attached_to='wheel0_barrel_3_mark_joint'/>
     <frame name='wheel0_barrel_4_mark_joint' attached_to='wheel0_barrel_4_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_barrel_4_mark_link' attached_to='wheel0_barrel_4_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_barrel_4_mark_link' attached_to='wheel0_barrel_4_mark_joint'/>
     <frame name='wheel0_base_joint' attached_to='wheel0_attach_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel0_base_link' attached_to='wheel0_base_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_base_link' attached_to='wheel0_base_joint'/>
     <frame name='wheel0_attach_joint' attached_to='base_link'>
-      <pose>0.049497474683058332 0.049497474683058318 0.019 0 0 0.78539816339744839</pose>
+      <pose>0.049497 0.049497 0.019 0 -0 0.785398</pose>
     </frame>
-    <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'/>
     <frame name='wheel1_motor_joint' attached_to='wheel1_base_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_motor_body_link' attached_to='wheel1_motor_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_motor_body_link' attached_to='wheel1_motor_joint'/>
     <frame name='wheel1_housing_s_joint' attached_to='wheel1_housing_link'>
-      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+      <pose>0 0 0 3.14159 0 -2.35619</pose>
     </frame>
-    <frame name='wheel1_housing_s_link' attached_to='wheel1_housing_s_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_housing_s_link' attached_to='wheel1_housing_s_joint'/>
     <frame name='wheel1_barrel_5_mark_joint' attached_to='wheel1_barrel_5_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_5_mark_link' attached_to='wheel1_barrel_5_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_5_mark_link' attached_to='wheel1_barrel_5_mark_joint'/>
     <frame name='wheel1_barrel_6_mark_joint' attached_to='wheel1_barrel_6_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_6_mark_link' attached_to='wheel1_barrel_6_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_6_mark_link' attached_to='wheel1_barrel_6_mark_joint'/>
     <frame name='wheel1_barrel_7_mark_joint' attached_to='wheel1_barrel_7_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_7_mark_link' attached_to='wheel1_barrel_7_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_7_mark_link' attached_to='wheel1_barrel_7_mark_joint'/>
     <frame name='wheel1_barrel_8_mark_joint' attached_to='wheel1_barrel_8_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_8_mark_link' attached_to='wheel1_barrel_8_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_8_mark_link' attached_to='wheel1_barrel_8_mark_joint'/>
     <frame name='wheel1_housind_joint' attached_to='wheel1_motor_shaft_link'>
-      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+      <pose>0.012 0 0 0 1.5708 0</pose>
     </frame>
-    <frame name='wheel1_housing_link' attached_to='wheel1_housind_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_housing_link' attached_to='wheel1_housind_joint'/>
     <frame name='wheel1_barrel_1_mark_joint' attached_to='wheel1_barrel_1_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_1_mark_link' attached_to='wheel1_barrel_1_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_1_mark_link' attached_to='wheel1_barrel_1_mark_joint'/>
     <frame name='wheel1_barrel_2_mark_joint' attached_to='wheel1_barrel_2_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_2_mark_link' attached_to='wheel1_barrel_2_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_2_mark_link' attached_to='wheel1_barrel_2_mark_joint'/>
     <frame name='wheel1_barrel_3_mark_joint' attached_to='wheel1_barrel_3_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_3_mark_link' attached_to='wheel1_barrel_3_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_3_mark_link' attached_to='wheel1_barrel_3_mark_joint'/>
     <frame name='wheel1_barrel_4_mark_joint' attached_to='wheel1_barrel_4_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_barrel_4_mark_link' attached_to='wheel1_barrel_4_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_barrel_4_mark_link' attached_to='wheel1_barrel_4_mark_joint'/>
     <frame name='wheel1_base_joint' attached_to='wheel1_attach_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel1_base_link' attached_to='wheel1_base_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_base_link' attached_to='wheel1_base_joint'/>
     <frame name='wheel1_attach_joint' attached_to='base_link'>
-      <pose>-0.049497474683058318 0.049497474683058332 0.019 0 0 2.3561944901923448</pose>
+      <pose>-0.049497 0.049497 0.019 0 -0 2.35619</pose>
     </frame>
-    <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'/>
     <frame name='wheel2_motor_joint' attached_to='wheel2_base_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_motor_body_link' attached_to='wheel2_motor_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_motor_body_link' attached_to='wheel2_motor_joint'/>
     <frame name='wheel2_housing_s_joint' attached_to='wheel2_housing_link'>
-      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+      <pose>0 0 0 3.14159 0 -2.35619</pose>
     </frame>
-    <frame name='wheel2_housing_s_link' attached_to='wheel2_housing_s_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_housing_s_link' attached_to='wheel2_housing_s_joint'/>
     <frame name='wheel2_barrel_5_mark_joint' attached_to='wheel2_barrel_5_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_5_mark_link' attached_to='wheel2_barrel_5_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_5_mark_link' attached_to='wheel2_barrel_5_mark_joint'/>
     <frame name='wheel2_barrel_6_mark_joint' attached_to='wheel2_barrel_6_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_6_mark_link' attached_to='wheel2_barrel_6_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_6_mark_link' attached_to='wheel2_barrel_6_mark_joint'/>
     <frame name='wheel2_barrel_7_mark_joint' attached_to='wheel2_barrel_7_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_7_mark_link' attached_to='wheel2_barrel_7_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_7_mark_link' attached_to='wheel2_barrel_7_mark_joint'/>
     <frame name='wheel2_barrel_8_mark_joint' attached_to='wheel2_barrel_8_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_8_mark_link' attached_to='wheel2_barrel_8_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_8_mark_link' attached_to='wheel2_barrel_8_mark_joint'/>
     <frame name='wheel2_housind_joint' attached_to='wheel2_motor_shaft_link'>
-      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+      <pose>0.012 0 0 0 1.5708 0</pose>
     </frame>
-    <frame name='wheel2_housing_link' attached_to='wheel2_housind_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_housing_link' attached_to='wheel2_housind_joint'/>
     <frame name='wheel2_barrel_1_mark_joint' attached_to='wheel2_barrel_1_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_1_mark_link' attached_to='wheel2_barrel_1_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_1_mark_link' attached_to='wheel2_barrel_1_mark_joint'/>
     <frame name='wheel2_barrel_2_mark_joint' attached_to='wheel2_barrel_2_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_2_mark_link' attached_to='wheel2_barrel_2_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_2_mark_link' attached_to='wheel2_barrel_2_mark_joint'/>
     <frame name='wheel2_barrel_3_mark_joint' attached_to='wheel2_barrel_3_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_3_mark_link' attached_to='wheel2_barrel_3_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_3_mark_link' attached_to='wheel2_barrel_3_mark_joint'/>
     <frame name='wheel2_barrel_4_mark_joint' attached_to='wheel2_barrel_4_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_barrel_4_mark_link' attached_to='wheel2_barrel_4_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_barrel_4_mark_link' attached_to='wheel2_barrel_4_mark_joint'/>
     <frame name='wheel2_base_joint' attached_to='wheel2_attach_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel2_base_link' attached_to='wheel2_base_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_base_link' attached_to='wheel2_base_joint'/>
     <frame name='wheel2_attach_joint' attached_to='base_link'>
-      <pose>-0.049497474683058353 -0.049497474683058318 0.019 0 0 -2.3561944901923448</pose>
+      <pose>-0.049497 -0.049497 0.019 0 -0 -2.35619</pose>
     </frame>
-    <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'/>
     <frame name='wheel3_motor_joint' attached_to='wheel3_base_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_motor_body_link' attached_to='wheel3_motor_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_motor_body_link' attached_to='wheel3_motor_joint'/>
     <frame name='wheel3_housing_s_joint' attached_to='wheel3_housing_link'>
-      <pose>0 0 0 3.1415926535897931 1.224646799147353e-16 -2.3561944901923448</pose>
+      <pose>0 0 0 3.14159 0 -2.35619</pose>
     </frame>
-    <frame name='wheel3_housing_s_link' attached_to='wheel3_housing_s_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_housing_s_link' attached_to='wheel3_housing_s_joint'/>
     <frame name='wheel3_barrel_5_mark_joint' attached_to='wheel3_barrel_5_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_5_mark_link' attached_to='wheel3_barrel_5_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_5_mark_link' attached_to='wheel3_barrel_5_mark_joint'/>
     <frame name='wheel3_barrel_6_mark_joint' attached_to='wheel3_barrel_6_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_6_mark_link' attached_to='wheel3_barrel_6_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_6_mark_link' attached_to='wheel3_barrel_6_mark_joint'/>
     <frame name='wheel3_barrel_7_mark_joint' attached_to='wheel3_barrel_7_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_7_mark_link' attached_to='wheel3_barrel_7_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_7_mark_link' attached_to='wheel3_barrel_7_mark_joint'/>
     <frame name='wheel3_barrel_8_mark_joint' attached_to='wheel3_barrel_8_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_8_mark_link' attached_to='wheel3_barrel_8_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_8_mark_link' attached_to='wheel3_barrel_8_mark_joint'/>
     <frame name='wheel3_housind_joint' attached_to='wheel3_motor_shaft_link'>
-      <pose>0.012 0 0 0 1.5707963267948966 0</pose>
+      <pose>0.012 0 0 0 1.5708 0</pose>
     </frame>
-    <frame name='wheel3_housing_link' attached_to='wheel3_housind_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_housing_link' attached_to='wheel3_housind_joint'/>
     <frame name='wheel3_barrel_1_mark_joint' attached_to='wheel3_barrel_1_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_1_mark_link' attached_to='wheel3_barrel_1_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_1_mark_link' attached_to='wheel3_barrel_1_mark_joint'/>
     <frame name='wheel3_barrel_2_mark_joint' attached_to='wheel3_barrel_2_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_2_mark_link' attached_to='wheel3_barrel_2_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_2_mark_link' attached_to='wheel3_barrel_2_mark_joint'/>
     <frame name='wheel3_barrel_3_mark_joint' attached_to='wheel3_barrel_3_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_3_mark_link' attached_to='wheel3_barrel_3_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_3_mark_link' attached_to='wheel3_barrel_3_mark_joint'/>
     <frame name='wheel3_barrel_4_mark_joint' attached_to='wheel3_barrel_4_link'>
-      <pose>0.0050000000000000001 0 0 0 0 0</pose>
+      <pose>0.005 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_barrel_4_mark_link' attached_to='wheel3_barrel_4_mark_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_barrel_4_mark_link' attached_to='wheel3_barrel_4_mark_joint'/>
     <frame name='wheel3_base_joint' attached_to='wheel3_attach_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
     </frame>
-    <frame name='wheel3_base_link' attached_to='wheel3_base_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_base_link' attached_to='wheel3_base_joint'/>
     <frame name='wheel3_attach_joint' attached_to='base_link'>
-      <pose>0.049497474683058318 -0.049497474683058353 0.019 0 0 -0.7853981633974485</pose>
+      <pose>0.049497 -0.049497 0.019 0 -0 -0.785398</pose>
     </frame>
-    <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+    <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'/>
   </model>
 </sdf>

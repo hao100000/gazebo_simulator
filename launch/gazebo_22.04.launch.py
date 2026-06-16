@@ -12,7 +12,7 @@ import tempfile
 # ============================================================
 # Ubuntu 22.04 / ROS 2 Humble / Gazebo Sim 6 (ign gazebo)
 # ============================================================
-DEFAULT_MODEL_NAME = "arm_1"
+DEFAULT_MODEL_NAME = "arm_2_v10"
 DEFAULT_WORLD_FILE = "world.sdf"
 
 

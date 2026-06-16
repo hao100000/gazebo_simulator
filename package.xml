@@ -15,6 +15,7 @@
   <depend>uec_msgs</depend>
   <depend>trajectory_msgs</depend>
   <depend>yaml-cpp</depend>
+  <depend>xacro</depend>
 
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
@@ -24,6 +25,7 @@
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>joint_state_broadcaster</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>

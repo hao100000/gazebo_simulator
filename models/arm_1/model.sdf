@@ -1,8 +1,8 @@
-<sdf version='1.11'>
+<sdf version='1.9'>
   <model name='arm_1'>
     <link name='base_link'>
       <inertial>
-        <pose>-0.023998948872794981 -0.0073878631826703456 0.066611085690124638 0 0 0</pose>
+        <pose>-0.02399894887279498 -0.007387863182670346 0.06661108569012464 0 0 0</pose>
         <mass>3.0210340355082841</mass>
         <inertia>
           <ixx>0.0034429999999999999</ixx>
@@ -31,20 +31,20 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
-          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+          <diffuse>0.784314 0.784314 0.784314 1</diffuse>
+          <ambient>0.784314 0.784314 0.784314 1</ambient>
         </material>
       </visual>
     </link>
     <joint name='motor_1' type='revolute'>
-      <pose relative_to='base_link'>-0.023998999999999999 -0.0073879999999999996 0.11661100000000001 0 0 0</pose>
+      <pose relative_to='base_link'>-0.023999 -0.007388 0.116611 0 0 0</pose>
       <parent>base_link</parent>
       <child>arm_link_1_v2_2</child>
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -55,7 +55,7 @@
     <link name='arm_link_1_v2_2'>
       <pose relative_to='motor_1'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>-0.069436060346146133 0.028348442295090402 0.050000085690124582 0 0 0</pose>
+        <pose>-0.06943606034614613 0.0283484422950904 0.05000008569012458 0 0 0</pose>
         <mass>9.2480633740049534</mass>
         <inertia>
           <ixx>0.013212</ixx>
@@ -67,7 +67,7 @@
         </inertia>
       </inertial>
       <collision name='arm_link_1_v2_2_collision'>
-        <pose>0.023998999999999999 0.0073879999999999996 -0.11661100000000001 0 0 0</pose>
+        <pose>0.023999 0.007388 -0.116611 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -76,7 +76,7 @@
         </geometry>
       </collision>
       <visual name='arm_link_1_v2_2_visual'>
-        <pose>0.023998999999999999 0.0073879999999999996 -0.11661100000000001 0 0 0</pose>
+        <pose>0.023999 0.007388 -0.116611 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
@@ -84,15 +84,15 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
-          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+          <diffuse>0.784314 0.784314 0.784314 1</diffuse>
+          <ambient>0.784314 0.784314 0.784314 1</ambient>
         </material>
       </visual>
     </link>
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
-      <parameters>/home/hao/Ubuntu_3/Private/simulator/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_arm_1.yaml</parameters>
+      <parameters>/home/hao/Ubuntu_2/ROS_practice/ros2_ws/install/gazebo_simulator/share/gazebo_simulator/config/controller_arm_1.yaml</parameters>
     </plugin>
-    <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
+    <plugin name='ignition::gazebo::systems::PosePublisher' filename='libignition-gazebo-pose-publisher-system.so'>
       <publish_link_pose>true</publish_link_pose>
       <publish_model_pose>true</publish_model_pose>
       <use_pose_vector_msg>true</use_pose_vector_msg>

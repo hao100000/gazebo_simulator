@@ -1,0 +1,31 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: true
+
+    # センサーの値を/joint_statesに返すコントローラー
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # 指示値をジョイントに送るコントローラー
+    wheel_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    suspension_controller:
+      type: position_controllers/JointGroupPositionController
+
+wheel_controller:
+  ros__parameters:
+    joints:
+      - wheel0_joint
+      - wheel1_joint
+      - wheel2_joint
+      - wheel3_joint
+
+suspension_controller:
+  ros__parameters:
+    joints:
+      - wheel0_sus_joint
+      - wheel1_sus_joint
+      - wheel2_sus_joint
+      - wheel3_sus_joint

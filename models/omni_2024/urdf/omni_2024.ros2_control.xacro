@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="omni_2024_system">
+        <!-- Wheel and suspension commands use standard ROS 2 control interfaces. -->
+        <xacro:macro name="ros2_control_wheel" params="prefix">
+            <joint name="${prefix}_joint">
+                <command_interface name="velocity"/>
+                <state_interface name="velocity"/>
+                <state_interface name="effort"/>
+            </joint>
+        </xacro:macro>
+
+        <xacro:macro name="ros2_control_sus" params="prefix">
+            <joint name="${prefix}_joint">
+                <command_interface name="position"/>
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>
+                <state_interface name="effort"/>
+            </joint>
+        </xacro:macro>
+
+        <ros2_control name="GazeboSystem" type="system">
+            <hardware>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
+            <xacro:ros2_control_wheel prefix="wheel0" />
+            <xacro:ros2_control_wheel prefix="wheel1" />
+            <xacro:ros2_control_wheel prefix="wheel2" />
+            <xacro:ros2_control_wheel prefix="wheel3" />
+
+            <xacro:ros2_control_sus prefix="wheel0_sus" />
+            <xacro:ros2_control_sus prefix="wheel1_sus" />
+            <xacro:ros2_control_sus prefix="wheel2_sus" />
+            <xacro:ros2_control_sus prefix="wheel3_sus" />
+        </ros2_control>
+    </xacro:macro>
+</robot>

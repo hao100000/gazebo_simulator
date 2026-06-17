@@ -79,14 +79,7 @@
         <visualize>true</visualize>
         <update_rate>60</update_rate>
         <always_on>true</always_on>
-        <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
-          <ros>
-            <remapping>~/out:=imu</remapping>
-          </ros>
-          <initial_orientation_as_reference>false</initial_orientation_as_reference>
-          <output_type>sensor_msgs/Imu</output_type>
-          <frame_name>imu_link</frame_name>
-        </plugin>
+        <topic>imu</topic>
         <imu>
           <angular_velocity>
             <x>
@@ -98,68 +91,56 @@
               </noise>
             </x>
             <y>
-              <nosie type='gaussian'>
-                <mean>0.0</mean>
-                <stddev>2e-04</stddev>
-                <bias_mean>0.0000075</bias_mean>
-                <bias_stddev>0.0000008</bias_stddev>
-              </nosie>
-              <noise type='none'/>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.00020000000000000001</stddev>
+                <bias_mean>7.5000000000000002e-06</bias_mean>
+                <bias_stddev>7.9999999999999996e-07</bias_stddev>
+              </noise>
             </y>
             <z>
-              <nosie type='gaussian'>
-                <mean>0.0</mean>
-                <stddev>2e-04</stddev>
-                <bias_mean>0.0000075</bias_mean>
-                <bias_stddev>0.0000008</bias_stddev>
-              </nosie>
-              <noise type='none'/>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.00020000000000000001</stddev>
+                <bias_mean>7.5000000000000002e-06</bias_mean>
+                <bias_stddev>7.9999999999999996e-07</bias_stddev>
+              </noise>
             </z>
           </angular_velocity>
           <linear_acceleration>
             <x>
-              <nosie type='gaussian'>
-                <mean>0.0</mean>
-                <stddev>1.7e-02</stddev>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017000000000000001</stddev>
                 <bias_mean>0.001</bias_mean>
                 <bias_stddev>0.001</bias_stddev>
-              </nosie>
-              <noise type='none'/>
+              </noise>
             </x>
             <y>
-              <nosie type='gaussian'>
-                <mean>0.0</mean>
-                <stddev>1.7e-02</stddev>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017000000000000001</stddev>
                 <bias_mean>0.001</bias_mean>
                 <bias_stddev>0.001</bias_stddev>
-              </nosie>
-              <noise type='none'/>
+              </noise>
             </y>
             <z>
-              <nosie type='gaussian'>
-                <mean>0.0</mean>
-                <stddev>1.7e-02</stddev>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017000000000000001</stddev>
                 <bias_mean>0.001</bias_mean>
                 <bias_stddev>0.001</bias_stddev>
-              </nosie>
-              <noise type='none'/>
+              </noise>
             </z>
           </linear_acceleration>
         </imu>
         <pose>0 0 0 0 0 0</pose>
-        <gravity>true</gravity>
       </sensor>
       <sensor name='laser' type='ray'>
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>60</update_rate>
-        <plugin name='gazebo_lidar' filename='libgazebo_ros_ray_sensor.so'>
-          <ros>
-            <remapping>~/out:=scan</remapping>
-          </ros>
-          <output_type>sensor_msgs/LaserScan</output_type>
-          <frame_name>laser_link</frame_name>
-        </plugin>
+        <topic>scan</topic>
         <ray>
           <scan>
             <horizontal>

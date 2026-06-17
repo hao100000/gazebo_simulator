@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, TimerAction
 from launch_ros.actions import Node
 from launch.substitutions import Command, LaunchConfiguration
 import os
@@ -21,6 +21,7 @@ def launch_setup(context, *args, **kwargs):
     spawn_z = LaunchConfiguration("spawn_z").perform(context)
     spawn_yaw = LaunchConfiguration("spawn_yaw").perform(context)
     world_path = LaunchConfiguration("world_path").perform(context)
+    headless = LaunchConfiguration("headless").perform(context).lower() in ("true", "1", "yes")
 
     model_dir = os.path.join(ros2_ws, f"src/gazebo_simulator/models/{MODEL_NAME}")
     xacro_path = os.path.join(model_dir, "urdf", f"{MODEL_NAME}.xacro")
@@ -105,15 +106,22 @@ def launch_setup(context, *args, **kwargs):
     runtime_env = {
         "HOME": RUNTIME_HOME,
         "ROS_HOME": os.path.join(RUNTIME_HOME, ".ros"),
+        "ROS_LOG_DIR": os.path.join(RUNTIME_HOME, ".ros", "log"),
         "XDG_RUNTIME_DIR": os.path.join(RUNTIME_HOME, "runtime"),
-        "ROS_LOCALHOST_ONLY": "1",
+        "ROS_AUTOMATIC_DISCOVERY_RANGE": "LOCALHOST",
     }
     os.makedirs(runtime_env["ROS_HOME"], exist_ok=True)
+    os.makedirs(runtime_env["ROS_LOG_DIR"], exist_ok=True)
     os.makedirs(runtime_env["XDG_RUNTIME_DIR"], exist_ok=True)
+    os.chmod(runtime_env["XDG_RUNTIME_DIR"], 0o700)
+
+    gz_cmd = ["gz", "sim", "-r", world_file_handle.name]
+    if headless:
+        gz_cmd.insert(2, "-s")
 
     return [
         ExecuteProcess(
-            cmd=["gz", "sim", "-s", "-r", world_file_handle.name],
+            cmd=gz_cmd,
             output="screen",
             additional_env={
                 "GZ_SIM_RESOURCE_PATH": gz_resource_path,
@@ -128,8 +136,7 @@ def launch_setup(context, *args, **kwargs):
                 'robot_description': robot_description,
                 'use_sim_time': True
             }],
-            output='screen'
-            ,
+            output='screen',
             additional_env=runtime_env,
         ),
         Node(
@@ -138,37 +145,52 @@ def launch_setup(context, *args, **kwargs):
             arguments=[
                 '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
                 f'/model/{MODEL_NAME}/pose@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
+                '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU',
+                '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             ],
-            output='screen'
-            ,
+            output='screen',
             additional_env=runtime_env,
         ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "joint_state_broadcaster",
-                "--controller-manager", "/controller_manager"
+        TimerAction(
+            period=5.0,
+            actions=[
+                Node(
+                    package="controller_manager",
+                    executable="spawner",
+                    arguments=[
+                        "joint_state_broadcaster",
+                        "--controller-manager", "/controller_manager",
+                        "--controller-manager-timeout", "60",
+                        "--service-call-timeout", "60",
+                        "--switch-timeout", "60",
+                    ],
+                    additional_env=runtime_env,
+                ),
+                Node(
+                    package="controller_manager",
+                    executable="spawner",
+                    arguments=[
+                        "wheel_controller",
+                        "--controller-manager", "/controller_manager",
+                        "--controller-manager-timeout", "60",
+                        "--service-call-timeout", "60",
+                        "--switch-timeout", "60",
+                    ],
+                    additional_env=runtime_env,
+                ),
+                Node(
+                    package="controller_manager",
+                    executable="spawner",
+                    arguments=[
+                        "suspension_controller",
+                        "--controller-manager", "/controller_manager",
+                        "--controller-manager-timeout", "60",
+                        "--service-call-timeout", "60",
+                        "--switch-timeout", "60",
+                    ],
+                    additional_env=runtime_env,
+                ),
             ],
-            additional_env=runtime_env,
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "wheel_controller",
-                "--controller-manager", "/controller_manager"
-            ],
-            additional_env=runtime_env,
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "suspension_controller",
-                "--controller-manager", "/controller_manager"
-            ],
-            additional_env=runtime_env,
         ),
     ]
 
@@ -199,6 +221,11 @@ def generate_launch_description():
             "world_path",
             default_value=WORLD_FILE,
             description="World file inside gazebo_simulator/models",
+        ),
+        DeclareLaunchArgument(
+            "headless",
+            default_value="false",
+            description="Run Gazebo Sim server without GUI",
         ),
         OpaqueFunction(function=launch_setup),
     ])

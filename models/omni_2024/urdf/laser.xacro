@@ -27,13 +27,7 @@
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>60</update_rate>
-        <plugin filename="libgazebo_ros_ray_sensor.so" name="gazebo_lidar">
-          <ros>
-            <remapping>~/out:=scan</remapping>
-          </ros>
-          <output_type>sensor_msgs/LaserScan</output_type>
-          <frame_name>${prefix}_link</frame_name>
-        </plugin>
+        <topic>scan</topic>
         <ray>
           <scan>
             <horizontal>

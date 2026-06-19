@@ -136,12 +136,12 @@
         </imu>
         <pose>0 0 0 0 0 0</pose>
       </sensor>
-      <sensor name='laser' type='gpu_lidar'>
+      <sensor name='laser' type='ray'>
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>60</update_rate>
         <topic>scan</topic>
-        <lidar>
+        <ray>
           <scan>
             <horizontal>
               <samples>1440</samples>
@@ -160,7 +160,7 @@
             <mean>0</mean>
             <stddev>0.01</stddev>
           </noise>
-        </lidar>
+        </ray>
         <pose>0 -0.22 0.052400000000000002 0 0 -3.1415899999999999</pose>
       </sensor>
     </link>

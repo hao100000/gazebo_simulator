@@ -121,13 +121,13 @@
   </link>
   <gazebo reference="laser_link">
     <material>Gazebo/Red</material>
-    <sensor name="laser" type="gpu_lidar">
+    <sensor name="laser" type="ray">
       <pose>0 0 0.0474 0 0 0</pose>
       <always_on>true</always_on>
       <visualize>true</visualize>
       <update_rate>60</update_rate>
       <topic>scan</topic>
-      <lidar>
+      <ray>
         <scan>
           <horizontal>
             <samples>1440</samples>
@@ -146,7 +146,7 @@
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
-      </lidar>
+      </ray>
     </sensor>
   </gazebo>
   <joint name="wheel0_base_joint" type="fixed">

@@ -22,13 +22,13 @@
     </link>
     <gazebo reference="${prefix}_link">
       <material>Gazebo/Red</material>
-      <sensor type="gpu_lidar" name="${prefix}">
+      <sensor type="ray" name="${prefix}">
         <pose>0 0 0.0474 0 0 0</pose>
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>60</update_rate>
         <topic>scan</topic>
-        <lidar>
+        <ray>
           <scan>
             <horizontal>
               <samples>1440</samples>
@@ -47,7 +47,7 @@
             <mean>0.0</mean>
             <stddev>0.01</stddev>
           </noise>
-        </lidar>
+        </ray>
       </sensor>
     </gazebo>
   </xacro:macro>

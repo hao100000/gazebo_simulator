@@ -123,7 +123,8 @@ def launch_setup(context, *args, **kwargs):
             executable='parameter_bridge',
             arguments=[
                 '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-                f'/model/{model_name}/pose@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'
+                f'/model/{model_name}/pose@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
+                '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             ],
             output='screen'
         ),

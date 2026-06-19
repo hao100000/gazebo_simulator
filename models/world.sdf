@@ -5,19 +5,21 @@
             <max_step_size>0.001</max_step_size> <!--最大何秒ごとにシミュレートするか（小さいほど正確なシミュレーションになる）-->
             <real_time_factor>1.0</real_time_factor> <!--現実時間との比率-->
         </physics>
-        <plugin
-            filename="libignition-gazebo-physics-system.so"
-            name="ignition::gazebo::systems::Physics">
-        </plugin> <!--動力学のシミュレーションに必要-->
-        <plugin
-            filename="libignition-gazebo-user-commands-system.so"
-            name="ignition::gazebo::systems::UserCommands">
-        </plugin> <!--ユーザーコマンドを利用可能に-->
-        <plugin
-            filename="gz-sim-sensors-system"
-            name="gz::sim::systems::Sensors">
-            <render_engine>ogre2</render_engine>
-        </plugin> <!--センサー描画を有効にする-->
+        
+        <plugin filename="libgz-sim-physics-system.so"
+                name="gz::sim::systems::Physics"/>
+                <!--動力学のシミュレーションに必要-->
+
+        <plugin filename="libgz-sim-user-commands-system.so"
+                name="gz::sim::systems::UserCommands"/>
+                <!--ユーザーコマンドを利用可能に-->
+
+        <plugin filename="libgz-sim-sensors-system.so"
+                name="gz::sim::systems::Sensors">
+                <!--センサー描画を有効にする-->
+        <render_engine>ogre2</render_engine>
+        </plugin>
+
         <plugin
             filename="libignition-gazebo-scene-broadcaster-system.so"
             name="ignition::gazebo::systems::SceneBroadcaster">

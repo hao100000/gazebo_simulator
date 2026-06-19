@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="omni_robot">
   <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_common.xacro"/>
   <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/omni_wheel.xacro"/>
+  <xacro:include filename="$(find gazebo_simulator)/models/omni_robot/lidar.xacro"/>
 
   <!-- per-wheel mounting angles (degrees) - change these to reposition wheels easily -->
   <xacro:property name="wheel0_angle_deg" value="45"/>
@@ -33,6 +34,14 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>  
   </link>
+
+  <xacro:lidar_macro
+    prefix="lidar"
+    parent="base_link"
+    xyz="0 0 0.075"
+    rpy="0 0 0"
+    angle_min="${-pi}"
+    angle_max="${pi}"/>
 
   <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>

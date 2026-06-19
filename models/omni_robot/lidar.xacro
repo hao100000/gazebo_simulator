@@ -35,10 +35,11 @@
         <visualize>true</visualize>
         <update_rate>20</update_rate>
         <topic>/scan</topic>
+        <gz_frame_id>${prefix}_link</gz_frame_id>
         <ray>
           <scan>
             <horizontal>
-              <samples>720</samples>
+              <samples>120</samples>
               <resolution>1</resolution>
               <min_angle>${angle_min}</min_angle>
               <max_angle>${angle_max}</max_angle>
@@ -46,7 +47,7 @@
           </scan>
           <range>
             <min>0.08</min>
-            <max>10.0</max>
+            <max>2.0</max>
             <resolution>0.01</resolution>
           </range>
           <noise>

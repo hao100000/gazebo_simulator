@@ -77,10 +77,11 @@
       <visualize>true</visualize>
       <update_rate>20</update_rate>
       <topic>/scan</topic>
+      <gz_frame_id>lidar_link</gz_frame_id>
       <ray>
         <scan>
           <horizontal>
-            <samples>720</samples>
+            <samples>120</samples>
             <resolution>1</resolution>
             <min_angle>-3.141592653589793</min_angle>
             <max_angle>3.141592653589793</max_angle>
@@ -88,7 +89,7 @@
         </scan>
         <range>
           <min>0.08</min>
-          <max>10.0</max>
+          <max>2.0</max>
           <resolution>0.01</resolution>
         </range>
         <noise>

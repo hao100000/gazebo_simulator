@@ -151,6 +151,12 @@ def launch_setup(context, *args, **kwargs):
             output="screen"
         ),
 
+        Node(
+            package='gazebo_simulator',
+            executable='gazebo_to_uodom',
+            output='screen'
+        ),
+
         # Omni node: translates /cmd_vel -> CAN messages
         Node(
         package='uec_core',

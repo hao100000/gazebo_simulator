@@ -2,7 +2,7 @@
 <sdf version="1.8"> <!--xmlとsdfのバージョン定義-->
     <world name="WorldDemo"> <!--ワールドの内容は全てこのタグの中に-->
         <physics name="1ms" type="ignored">
-            <max_step_size>0.001</max_step_size> <!--最大何秒ごとにシミュレートするか（小さいほど正確なシミュレーションになる）-->
+            <max_step_size>0.01</max_step_size> <!--最大何秒ごとにシミュレートするか（小さいほど正確なシミュレーションになる）-->
             <real_time_factor>1.0</real_time_factor> <!--現実時間との比率-->
         </physics>
         

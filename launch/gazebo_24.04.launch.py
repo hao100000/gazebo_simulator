@@ -11,7 +11,7 @@ import tempfile
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
 DEFAULT_MODEL_NAME = "omni_robot"
-DEFAULT_WORLD_FILE = "world.sdf"
+DEFAULT_WORLD_FILE = "turtlebot3_world.world"
 
 
 def launch_setup(context, *args, **kwargs):
@@ -24,7 +24,7 @@ def launch_setup(context, *args, **kwargs):
 
     model_dir = os.path.join(ros2_ws, f"src/gazebo_simulator/models/{model_name}")
     xacro_path = os.path.join(model_dir, "urdf", f"{model_name}.xacro")
-    world_template_path = os.path.join(ros2_ws, f"src/gazebo_simulator/models/{world_file}")
+    world_template_path = os.path.join(ros2_ws, f"src/gazebo_simulator/models/world/{world_file}")
     os.makedirs(model_dir, exist_ok=True)
 
     urdf_path = os.path.join(model_dir, f"{model_name}.urdf")

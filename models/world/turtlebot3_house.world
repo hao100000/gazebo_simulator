@@ -1,6 +1,18 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
   <world name="default">
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>0.319654 -0.235002 9.29441 0 1.5138 0.009599</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
     <physics type="ode">
       <real_time_update_rate>100.0</real_time_update_rate>
       <max_step_size>0.01</max_step_size>
@@ -51,17 +63,17 @@
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
     </include>
 
-    <model name="turtlebot3_world">
+    <model name="turtlebot3_house">
       <static>1</static>
       <include>
-        <uri>model://turtlebot3_world</uri>
+        <uri>model://turtlebot3_house</uri>
       </include>
     </model>
 
     <include>
         <uri>model://__MODEL_NAME__</uri>
         <pose>2 0 0.1 0 0 0</pose>
-    </include>
+    </include>    
 
   </world>
 </sdf>

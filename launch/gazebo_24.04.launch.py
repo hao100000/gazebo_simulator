@@ -11,7 +11,7 @@ import tempfile
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
 DEFAULT_MODEL_NAME = "omni_robot"
-DEFAULT_WORLD_FILE = "turtlebot3_world.world"
+DEFAULT_WORLD_FILE = "world.sdf"
 
 
 def launch_setup(context, *args, **kwargs):
@@ -154,23 +154,23 @@ def launch_setup(context, *args, **kwargs):
         # # ============================================================
         # # 2. Keyboard Teleop - CAN Command (/can/tx)
         # # ============================================================
-        Node(
-            package="gazebo_simulator",
-            executable="teleop_CANArray_keyboard",
-            output="screen",
-            prefix="xterm -e"
-        ),        
+        # Node(
+        #     package="gazebo_simulator",
+        #     executable="teleop_CANArray_keyboard",
+        #     output="screen",
+        #     prefix="xterm -e"
+        # ),        
 
         # ============================================================
         # 3. Keyboard Teleop - Twist Command (/cmd_vel)
         # ============================================================
 
-        # Node(
-        #     package="gazebo_simulator",
-        #     executable="teleop_twist_keyboard",
-        #     output="screen",
-        #     prefix="xterm -e"
-        # ),
+        Node(
+            package="gazebo_simulator",
+            executable="teleop_twist_keyboard",
+            output="screen",
+            prefix="xterm -e"
+        ),
     ]
 
 

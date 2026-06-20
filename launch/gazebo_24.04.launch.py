@@ -150,6 +150,20 @@ def launch_setup(context, *args, **kwargs):
             parameters=[{'robot_name': model_name}],
             output="screen"
         ),
+
+        # Omni node: translates /cmd_vel -> CAN messages
+        Node(
+        package='uec_core',
+        executable='omni',
+        parameters=[{'update_freq': 0.05},
+                    {'wheel_radius' : 0.05},
+                    {'wheel_base' : 0.23},
+                    {'min_v': 0.05},
+                    {'max_v': 1.0},
+                    {'max_a': 1.0},
+                    {'bulk_id':[1, 2, 3, 4]}],
+        output='screen'
+        ),        
         
         # # ============================================================
         # # 2. Keyboard Teleop - CAN Command (/can/tx)

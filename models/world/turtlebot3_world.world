@@ -2,8 +2,8 @@
 <sdf version="1.8">
   <world name="default">
     <physics type="ode">
-      <real_time_update_rate>1000.0</real_time_update_rate>
-      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>100.0</real_time_update_rate>
+      <max_step_size>0.01</max_step_size>
       <real_time_factor>1</real_time_factor>
       <ode>
         <solver>
@@ -57,5 +57,11 @@
         <uri>model://turtlebot3_world</uri>
       </include>
     </model>
+
+    <include>
+        <uri>model://__MODEL_NAME__</uri>
+        <pose>2 0 0.1 0 0 0</pose>
+    </include>
+
   </world>
 </sdf>

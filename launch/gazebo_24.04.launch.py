@@ -6,49 +6,96 @@ import os
 import re
 import subprocess
 import tempfile
+import xml.etree.ElementTree as ET
 
-# ============================================================
-# 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
-# ============================================================
+
 DEFAULT_MODEL_NAME = "f3rc2026_map_v1"
-DEFAULT_WORLD_FILE = "turtlebot3_world.world"
+DEFAULT_WORLD_FILE = "world.sdf"
+DEFAULT_SPAWN_MODELS = "f3rc2026_map_v1:0,0,0,0,0,0;omni_robot:2,0,0.1,0,0,0"
+DEFAULT_STATIC_MODELS = "f3rc2026_map_v1"
+DEFAULT_ENABLE_CONTROL = "false"
+DEFAULT_CONTROL_MODEL = "omni_robot"
 
 
-def launch_setup(context, *args, **kwargs):
-    ros2_ws = os.environ.get("ROS2_WS")
-    if not ros2_ws:
-        raise RuntimeError("ROS2_WS environment variable is required")
+class SpawnSpec:
+    def __init__(self, model_name, instance_name, pose):
+        self.model_name = model_name
+        self.instance_name = instance_name
+        self.pose = pose
 
-    model_name = LaunchConfiguration("model_name").perform(context)
-    world_file = LaunchConfiguration("world_file").perform(context)
 
-    model_dir = os.path.join(ros2_ws, f"src/gazebo_simulator/models/{model_name}")
-    xacro_path = os.path.join(model_dir, "urdf", f"{model_name}.xacro")
-    world_template_path = os.path.join(ros2_ws, f"src/gazebo_simulator/models/world/{world_file}")
-    os.makedirs(model_dir, exist_ok=True)
+def parse_bool(value):
+    return value.lower() in ("true", "1", "yes", "on")
 
-    urdf_path = os.path.join(model_dir, f"{model_name}.urdf")
-    model_sdf_path = os.path.join(model_dir, "model.sdf")
 
-    with open(urdf_path, "w", encoding="utf-8") as urdf_file:
-        subprocess.run(
-            ["xacro", xacro_path, f"robot_name:={model_name}"],
-            check=True,
-            stdout=urdf_file,
-        )
+def parse_name_list(value):
+    return {item.strip() for item in value.split(",") if item.strip()}
 
-    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
-        subprocess.run(["gz", "sdf", "-p", urdf_path], check=True, stdout=sdf_file)
 
-    with open(model_sdf_path, "r", encoding="utf-8") as sdf_file:
-        model_sdf = sdf_file.read()
+def parse_spawn_models(value, fallback_model):
+    if not value.strip():
+        value = fallback_model
 
-    model_sdf = re.sub(r"model://.*?/meshes/", "meshes/", model_sdf)
-    model_sdf = model_sdf.replace("model://meshes/", "meshes/")
+    specs = []
+    for raw_entry in value.split(";"):
+        entry = raw_entry.strip()
+        if not entry:
+            continue
 
-    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
-        sdf_file.write(model_sdf)
+        name_part, pose_part = (entry.split(":", 1) + [""])[:2] if ":" in entry else (entry, "")
+        if "@" in name_part:
+            model_name, instance_name = name_part.split("@", 1)
+        else:
+            model_name = name_part
+            instance_name = model_name
 
+        pose_values = [part.strip() for part in pose_part.split(",") if part.strip()]
+        if pose_values:
+            if len(pose_values) != 6:
+                raise RuntimeError(
+                    f"spawn_models entry '{entry}' must use 6 pose values: x,y,z,roll,pitch,yaw"
+                )
+            pose = " ".join(pose_values)
+        else:
+            pose = "0 0 0 0 0 0"
+
+        specs.append(SpawnSpec(model_name.strip(), instance_name.strip(), pose))
+
+    if not specs:
+        raise RuntimeError("At least one model must be listed in spawn_models or model_name")
+
+    return specs
+
+
+def is_controlled(spec, control_model, enable_control):
+    return enable_control and control_model in (spec.instance_name, spec.model_name)
+
+
+def remove_matching_plugins(element, predicate):
+    for child in list(element):
+        remove_matching_plugins(child, predicate)
+        if child.tag == "plugin" and predicate(child):
+            element.remove(child)
+
+
+def strip_gz_ros2_control_plugins(sdf_text):
+    root = ET.fromstring(sdf_text)
+
+    def is_gz_ros2_control(plugin):
+        name = plugin.attrib.get("name", "")
+        filename = plugin.attrib.get("filename", "")
+        return "gz_ros2_control" in name or "gz_ros2_control" in filename
+
+    remove_matching_plugins(root, is_gz_ros2_control)
+    return ET.tostring(root, encoding="unicode")
+
+
+def normalize_mesh_uris(sdf_text):
+    sdf_text = re.sub(r"model://.*?/meshes/", "meshes/", sdf_text)
+    return sdf_text.replace("model://meshes/", "meshes/")
+
+
+def write_model_config(model_dir, model_name):
     config_path = os.path.join(model_dir, "model.config")
     model_config = f"""<?xml version="1.0"?>
 <model>
@@ -66,132 +113,243 @@ def launch_setup(context, *args, **kwargs):
     with open(config_path, "w", encoding="utf-8") as config_file:
         config_file.write(model_config)
 
+
+def regenerate_model_sdf(ros2_ws, model_name, keep_control_plugins):
+    model_dir = os.path.join(ros2_ws, f"src/gazebo_simulator/models/{model_name}")
+    xacro_path = os.path.join(model_dir, "urdf", f"{model_name}.xacro")
+    model_sdf_path = os.path.join(model_dir, "model.sdf")
+
+    if not os.path.isdir(model_dir):
+        raise RuntimeError(f"Model directory does not exist: {model_dir}")
+
+    if not os.path.isfile(xacro_path):
+        if not os.path.isfile(model_sdf_path):
+            raise RuntimeError(f"Neither xacro nor model.sdf exists for model: {model_name}")
+        return
+
+    urdf_path = os.path.join(model_dir, f"{model_name}.urdf")
+    with open(urdf_path, "w", encoding="utf-8") as urdf_file:
+        subprocess.run(
+            ["xacro", xacro_path, f"robot_name:={model_name}"],
+            check=True,
+            stdout=urdf_file,
+        )
+
+    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
+        subprocess.run(["gz", "sdf", "-p", urdf_path], check=True, stdout=sdf_file)
+
+    with open(model_sdf_path, "r", encoding="utf-8") as sdf_file:
+        model_sdf = sdf_file.read()
+
+    model_sdf = normalize_mesh_uris(model_sdf)
+    if not keep_control_plugins:
+        model_sdf = strip_gz_ros2_control_plugins(model_sdf)
+
+    with open(model_sdf_path, "w", encoding="utf-8") as sdf_file:
+        sdf_file.write(model_sdf)
+
+    write_model_config(model_dir, model_name)
+
+
+def make_include_block(spec, static_models):
+    lines = [
+        "    <include>",
+        f"      <uri>model://{spec.model_name}</uri>",
+    ]
+    if spec.instance_name != spec.model_name:
+        lines.append(f"      <name>{spec.instance_name}</name>")
+    lines.append(f"      <pose>{spec.pose}</pose>")
+    if spec.model_name in static_models or spec.instance_name in static_models:
+        lines.append("      <static>true</static>")
+    lines.append("    </include>")
+    return "\n".join(lines)
+
+
+def build_world_sdf(ros2_ws, world_file, include_blocks):
+    world_template_path = os.path.join(ros2_ws, f"src/gazebo_simulator/models/world/{world_file}")
     with open(world_template_path, "r", encoding="utf-8") as template_file:
         world_sdf = template_file.read()
 
-    world_sdf = world_sdf.replace("__MODEL_NAME__", model_name)
+    includes = "\n".join(include_blocks)
+    placeholder_include_pattern = re.compile(
+        r"\s*<include>\s*<uri>model://__MODEL_NAME__</uri>.*?</include>",
+        re.DOTALL,
+    )
+    if "__MODEL_NAME__" in world_sdf:
+        world_sdf = placeholder_include_pattern.sub("\n" + includes, world_sdf)
+        world_sdf = world_sdf.replace("__MODEL_NAME__", "")
+    elif "__MODEL_INCLUDES__" in world_sdf:
+        world_sdf = world_sdf.replace("__MODEL_INCLUDES__", includes)
+    else:
+        world_sdf = world_sdf.replace("</world>", includes + "\n  </world>")
+
     world_file_handle = tempfile.NamedTemporaryFile(
         mode="w",
         encoding="utf-8",
         delete=False,
         suffix=".sdf",
-        prefix=f"{model_name}_world_",
+        prefix="gazebo_simulator_world_",
     )
     world_file_handle.write(world_sdf)
     world_file_handle.close()
+    return world_file_handle.name
 
-    robot_description = Command([
-        "xacro ",
-        xacro_path,
-        " robot_name:=",
-        model_name,
-    ])
+
+def append_env_path(current_value, path):
+    values = [value for value in current_value.split(os.pathsep) if value]
+    if path not in values:
+        values.insert(0, path)
+    return os.pathsep.join(values)
+
+
+def launch_setup(context, *args, **kwargs):
+    ros2_ws = os.environ.get("ROS2_WS")
+    if not ros2_ws:
+        raise RuntimeError("ROS2_WS environment variable is required")
+
+    model_name = LaunchConfiguration("model_name").perform(context)
+    world_file = LaunchConfiguration("world_file").perform(context)
+    spawn_models = LaunchConfiguration("spawn_models").perform(context)
+    static_models = parse_name_list(LaunchConfiguration("static_models").perform(context))
+    enable_control = parse_bool(LaunchConfiguration("enable_control").perform(context))
+    control_model = LaunchConfiguration("control_model").perform(context)
+
+    specs = parse_spawn_models(spawn_models, model_name)
+    model_names = sorted({spec.model_name for spec in specs})
+
+    for name in model_names:
+        keep_control_plugins = any(
+            is_controlled(spec, control_model, enable_control)
+            for spec in specs
+            if spec.model_name == name
+        )
+        regenerate_model_sdf(ros2_ws, name, keep_control_plugins)
+
+    world_path = build_world_sdf(
+        ros2_ws,
+        world_file,
+        [make_include_block(spec, static_models) for spec in specs],
+    )
 
     models_path = os.path.join(ros2_ws, "src/gazebo_simulator/models")
-    gz_model_path = os.environ.get("GZ_MODEL_PATH", "")
-    if gz_model_path:
-        gz_model_path = models_path + ":" + gz_model_path
-    else:
-        gz_model_path = models_path
+    gz_resource_path = append_env_path(os.environ.get("GZ_SIM_RESOURCE_PATH", ""), models_path)
+    gz_model_path = append_env_path(os.environ.get("GZ_MODEL_PATH", ""), models_path)
+    gz_plugin_path = append_env_path(os.environ.get("GZ_SIM_SYSTEM_PLUGIN_PATH", ""), "/opt/ros/jazzy/lib")
 
-    gz_plugin_path = os.environ.get("GZ_SIM_SYSTEM_PLUGIN_PATH", "")
-    if gz_plugin_path:
-        gz_plugin_path = gz_plugin_path + ":/opt/ros/jazzy/lib"
-    else:
-        gz_plugin_path = "/opt/ros/jazzy/lib"
-
-    return [
+    actions = [
         ExecuteProcess(
-            cmd=["gz", "sim", "-r", world_file_handle.name],
+            cmd=["gz", "sim", "-r", world_path],
             output="screen",
             additional_env={
+                "GZ_SIM_RESOURCE_PATH": gz_resource_path,
                 "GZ_MODEL_PATH": gz_model_path,
                 "GZ_SIM_SYSTEM_PLUGIN_PATH": gz_plugin_path,
-            }
-        ),
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{
-                'robot_description': robot_description,
-                'use_sim_time': True
-            }],
-            output='screen'
-        ),
-        Node(
-            package='ros_gz_bridge',
-            executable='parameter_bridge',
-            arguments=[
-                '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-                f'/model/{model_name}/pose@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
-                '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
-            ],
-            output='screen'
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "joint_state_broadcaster",
-                "--controller-manager", "/controller_manager"
-            ],
-        ),
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "forward_velocity_controller",
-                "--controller-manager", "/controller_manager"
-            ],
-        ),
-        Node(
-            package="gazebo_simulator",
-            executable="can_to_gazebo",
-            parameters=[{'robot_name': model_name}],
-            output="screen"
-        ),
-
-        Node(
-            package='gazebo_simulator',
-            executable='gazebo_to_uodom',
-            output='screen'
-        ),
-
-        # Omni node: translates /cmd_vel -> CAN messages
-        Node(
-        package='uec_core',
-        executable='omni',
-        parameters=[{'update_freq': 0.05},
-                    {'wheel_radius' : 0.05},
-                    {'wheel_base' : 0.23},
-                    {'min_v': 0.05},
-                    {'max_v': 1.0},
-                    {'max_a': 1.0},
-                    {'bulk_id':[1, 2, 3, 4]}],
-        output='screen'
-        ),        
-        
-        # # ============================================================
-        # # 2. Keyboard Teleop - CAN Command (/can/tx)
-        # # ============================================================
-        # Node(
-        #     package="gazebo_simulator",
-        #     executable="teleop_CANArray_keyboard",
-        #     output="screen",
-        #     prefix="xterm -e"
-        # ),        
-
-        # ============================================================
-        # 3. Keyboard Teleop - Twist Command (/cmd_vel)
-        # ============================================================
-
-        Node(
-            package="gazebo_simulator",
-            executable="teleop_twist_keyboard",
-            output="screen",
-            prefix="xterm -e"
-        ),
+            },
+        )
     ]
+
+    for spec in specs:
+        xacro_path = os.path.join(
+            ros2_ws,
+            f"src/gazebo_simulator/models/{spec.model_name}/urdf/{spec.model_name}.xacro",
+        )
+        if not os.path.isfile(xacro_path):
+            continue
+
+        robot_description = Command([
+            "xacro ",
+            xacro_path,
+            " robot_name:=",
+            spec.model_name,
+        ])
+        actions.append(
+            Node(
+                package="robot_state_publisher",
+                executable="robot_state_publisher",
+                namespace=spec.instance_name,
+                parameters=[{
+                    "robot_description": robot_description,
+                    "use_sim_time": True,
+                }],
+                output="screen",
+            )
+        )
+
+    bridge_arguments = ["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"]
+    for spec in specs:
+        bridge_arguments.append(
+            f"/model/{spec.instance_name}/pose@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"
+        )
+    bridge_arguments.append("/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan")
+    actions.append(
+        Node(
+            package="ros_gz_bridge",
+            executable="parameter_bridge",
+            arguments=bridge_arguments,
+            output="screen",
+        )
+    )
+
+    controlled_spec = next(
+        (spec for spec in specs if is_controlled(spec, control_model, enable_control)),
+        None,
+    )
+    if controlled_spec:
+        actions.extend([
+            Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=[
+                    "joint_state_broadcaster",
+                    "--controller-manager", "/controller_manager",
+                ],
+            ),
+            Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=[
+                    "forward_velocity_controller",
+                    "--controller-manager", "/controller_manager",
+                ],
+            ),
+            Node(
+                package="gazebo_simulator",
+                executable="can_to_gazebo",
+                parameters=[{"robot_name": controlled_spec.model_name}],
+                output="screen",
+            ),
+            Node(
+                package="gazebo_simulator",
+                executable="gazebo_to_uodom",
+                parameters=[{
+                    "input_topic": f"/model/{controlled_spec.instance_name}/pose",
+                    "target_child_frame_id": controlled_spec.instance_name,
+                }],
+                output="screen",
+            ),
+            Node(
+                package="uec_core",
+                executable="omni",
+                parameters=[
+                    {"update_freq": 0.05},
+                    {"wheel_radius": 0.05},
+                    {"wheel_base": 0.23},
+                    {"min_v": 0.05},
+                    {"max_v": 1.0},
+                    {"max_a": 1.0},
+                    {"bulk_id": [1, 2, 3, 4]},
+                ],
+                output="screen",
+            ),
+            Node(
+                package="gazebo_simulator",
+                executable="teleop_twist_keyboard",
+                output="screen",
+                prefix="xterm -e",
+            ),
+        ])
+
+    return actions
 
 
 def generate_launch_description():
@@ -199,12 +357,35 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "model_name",
             default_value=DEFAULT_MODEL_NAME,
-            description="Gazebo model name",
+            description="Backward-compatible single model name used when spawn_models is empty",
         ),
         DeclareLaunchArgument(
             "world_file",
             default_value=DEFAULT_WORLD_FILE,
-            description="World template file inside models/",
+            description="World template file inside models/world/",
+        ),
+        DeclareLaunchArgument(
+            "spawn_models",
+            default_value=DEFAULT_SPAWN_MODELS,
+            description=(
+                "Semicolon-separated models to include. "
+                "Use model[:x,y,z,roll,pitch,yaw] or model@instance[:x,y,z,roll,pitch,yaw]."
+            ),
+        ),
+        DeclareLaunchArgument(
+            "static_models",
+            default_value=DEFAULT_STATIC_MODELS,
+            description="Comma-separated model or instance names that should be included as static",
+        ),
+        DeclareLaunchArgument(
+            "enable_control",
+            default_value=DEFAULT_ENABLE_CONTROL,
+            description="Start controller, CAN, odom, omni, and teleop nodes for control_model",
+        ),
+        DeclareLaunchArgument(
+            "control_model",
+            default_value=DEFAULT_CONTROL_MODEL,
+            description="Model or instance name that should keep gz_ros2_control and receive control nodes",
         ),
         OpaqueFunction(function=launch_setup),
     ])

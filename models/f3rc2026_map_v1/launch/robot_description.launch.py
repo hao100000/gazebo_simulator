@@ -15,9 +15,9 @@ def generate_launch_description():
             " ",
             PathJoinSubstitution(
                 [
-                    FindPackageShare("f3rc2026_map_description"),
+                    FindPackageShare("f3rc2026_map_v1_description"),
                     "urdf",
-                    "f3rc2026_map.xacro",
+                    "f3rc2026_map_v1.xacro",
                 ]
             ),
 

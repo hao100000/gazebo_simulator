@@ -10,7 +10,7 @@ import tempfile
 # ============================================================
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
-DEFAULT_MODEL_NAME = "omni_robot"
+DEFAULT_MODEL_NAME = "f3rc2026_map_v1"
 DEFAULT_WORLD_FILE = "turtlebot3_world.world"
 
 

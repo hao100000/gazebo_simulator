@@ -9,12 +9,9 @@ import tempfile
 import xml.etree.ElementTree as ET
 
 
-DEFAULT_MODEL_NAME = "f3rc2026_map_v1"
 DEFAULT_WORLD_FILE = "world.sdf"
 DEFAULT_SPAWN_MODELS = "f3rc2026_map_v1:0,0,0,0,0,0;omni_robot:2,0,0.1,0,0,0"
 DEFAULT_STATIC_MODELS = "f3rc2026_map_v1"
-DEFAULT_ENABLE_CONTROL = "false"
-DEFAULT_CONTROL_MODEL = "omni_robot"
 
 
 class SpawnSpec:
@@ -24,18 +21,11 @@ class SpawnSpec:
         self.pose = pose
 
 
-def parse_bool(value):
-    return value.lower() in ("true", "1", "yes", "on")
-
-
 def parse_name_list(value):
     return {item.strip() for item in value.split(",") if item.strip()}
 
 
-def parse_spawn_models(value, fallback_model):
-    if not value.strip():
-        value = fallback_model
-
+def parse_spawn_models(value):
     specs = []
     for raw_entry in value.split(";"):
         entry = raw_entry.strip()
@@ -62,13 +52,24 @@ def parse_spawn_models(value, fallback_model):
         specs.append(SpawnSpec(model_name.strip(), instance_name.strip(), pose))
 
     if not specs:
-        raise RuntimeError("At least one model must be listed in spawn_models or model_name")
+        raise RuntimeError("At least one model must be listed in spawn_models")
 
     return specs
 
 
-def is_controlled(spec, control_model, enable_control):
-    return enable_control and control_model in (spec.instance_name, spec.model_name)
+def is_static(spec, static_models):
+    return spec.model_name in static_models or spec.instance_name in static_models
+
+
+def validate_control_targets(specs, static_models):
+    controlled_specs = [spec for spec in specs if not is_static(spec, static_models)]
+    if len(controlled_specs) > 1:
+        controlled_names = ", ".join(spec.instance_name for spec in controlled_specs)
+        raise RuntimeError(
+            "Multiple controlled models are not supported yet because controller_manager is global. "
+            f"Add all but one to static_models, or split controller namespaces. Controlled models: {controlled_names}"
+        )
+    return controlled_specs
 
 
 def remove_matching_plugins(element, predicate):
@@ -159,7 +160,7 @@ def make_include_block(spec, static_models):
     if spec.instance_name != spec.model_name:
         lines.append(f"      <name>{spec.instance_name}</name>")
     lines.append(f"      <pose>{spec.pose}</pose>")
-    if spec.model_name in static_models or spec.instance_name in static_models:
+    if is_static(spec, static_models):
         lines.append("      <static>true</static>")
     lines.append("    </include>")
     return "\n".join(lines)
@@ -207,22 +208,16 @@ def launch_setup(context, *args, **kwargs):
     if not ros2_ws:
         raise RuntimeError("ROS2_WS environment variable is required")
 
-    model_name = LaunchConfiguration("model_name").perform(context)
     world_file = LaunchConfiguration("world_file").perform(context)
     spawn_models = LaunchConfiguration("spawn_models").perform(context)
     static_models = parse_name_list(LaunchConfiguration("static_models").perform(context))
-    enable_control = parse_bool(LaunchConfiguration("enable_control").perform(context))
-    control_model = LaunchConfiguration("control_model").perform(context)
 
-    specs = parse_spawn_models(spawn_models, model_name)
+    specs = parse_spawn_models(spawn_models)
+    controlled_specs = validate_control_targets(specs, static_models)
     model_names = sorted({spec.model_name for spec in specs})
 
     for name in model_names:
-        keep_control_plugins = any(
-            is_controlled(spec, control_model, enable_control)
-            for spec in specs
-            if spec.model_name == name
-        )
+        keep_control_plugins = any(spec.model_name == name for spec in controlled_specs)
         regenerate_model_sdf(ros2_ws, name, keep_control_plugins)
 
     world_path = build_world_sdf(
@@ -290,10 +285,7 @@ def launch_setup(context, *args, **kwargs):
         )
     )
 
-    controlled_spec = next(
-        (spec for spec in specs if is_controlled(spec, control_model, enable_control)),
-        None,
-    )
+    controlled_spec = controlled_specs[0] if controlled_specs else None
     if controlled_spec:
         actions.extend([
             Node(
@@ -355,11 +347,6 @@ def launch_setup(context, *args, **kwargs):
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
-            "model_name",
-            default_value=DEFAULT_MODEL_NAME,
-            description="Backward-compatible single model name used when spawn_models is empty",
-        ),
-        DeclareLaunchArgument(
             "world_file",
             default_value=DEFAULT_WORLD_FILE,
             description="World template file inside models/world/",
@@ -376,16 +363,6 @@ def generate_launch_description():
             "static_models",
             default_value=DEFAULT_STATIC_MODELS,
             description="Comma-separated model or instance names that should be included as static",
-        ),
-        DeclareLaunchArgument(
-            "enable_control",
-            default_value=DEFAULT_ENABLE_CONTROL,
-            description="Start controller, CAN, odom, omni, and teleop nodes for control_model",
-        ),
-        DeclareLaunchArgument(
-            "control_model",
-            default_value=DEFAULT_CONTROL_MODEL,
-            description="Model or instance name that should keep gz_ros2_control and receive control nodes",
         ),
         OpaqueFunction(function=launch_setup),
     ])

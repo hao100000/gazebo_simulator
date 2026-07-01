@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, TimerAction
 from launch_ros.actions import Node
 from launch.substitutions import Command, LaunchConfiguration
 import os
@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 
 DEFAULT_WORLD_FILE = "world.sdf"
-DEFAULT_SPAWN_MODELS = "f3rc2026_map_v1:0,0,0,0,0,0;omni_robot:2,0,0.1,0,0,0"
+DEFAULT_SPAWN_MODELS = "f3rc2026_map_v1:0,0,0.05,0,0,0;omni_robot:2,-2,0.2,0,0,0"
 DEFAULT_STATIC_MODELS = "f3rc2026_map_v1"
 
 
@@ -257,16 +257,19 @@ def launch_setup(context, *args, **kwargs):
             " robot_name:=",
             spec.model_name,
         ])
+        node_kwargs = {}
+        if spec not in controlled_specs:
+            node_kwargs["namespace"] = spec.instance_name
         actions.append(
             Node(
                 package="robot_state_publisher",
                 executable="robot_state_publisher",
-                namespace=spec.instance_name,
                 parameters=[{
                     "robot_description": robot_description,
                     "use_sim_time": True,
                 }],
                 output="screen",
+                **node_kwargs,
             )
         )
 
@@ -288,20 +291,25 @@ def launch_setup(context, *args, **kwargs):
     controlled_spec = controlled_specs[0] if controlled_specs else None
     if controlled_spec:
         actions.extend([
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=[
-                    "joint_state_broadcaster",
-                    "--controller-manager", "/controller_manager",
-                ],
-            ),
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=[
-                    "forward_velocity_controller",
-                    "--controller-manager", "/controller_manager",
+            TimerAction(
+                period=5.0,
+                actions=[
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=[
+                            "joint_state_broadcaster",
+                            "--controller-manager", "/controller_manager",
+                        ],
+                    ),
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=[
+                            "forward_velocity_controller",
+                            "--controller-manager", "/controller_manager",
+                        ],
+                    ),
                 ],
             ),
             Node(

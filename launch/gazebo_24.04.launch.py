@@ -11,7 +11,7 @@ import tempfile
 # 設定：これらの2つの変数を変更すると、使用するモデルを切り替えられます
 # ============================================================
 DEFAULT_MODEL_NAME = "omni_robot"
-DEFAULT_WORLD_FILE = "world.sdf"
+DEFAULT_WORLD_FILE = "turtlebot3_world.world"
 
 
 def launch_setup(context, *args, **kwargs):

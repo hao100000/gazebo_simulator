@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<robot name="f3rc2026_map" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="robot_name" value="$(arg robot_name)"/>
+
+<xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/materials.xacro" />
+
+<xacro:include filename="$(find gazebo_simulator)/models/${robot_name}/urdf/${robot_name}.trans" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="2.25 1.2 0.005" rpy="0 0 0"/>
+    <mass value="847.8"/>
+    <inertia ixx="406.951065" iyy="1430.669565" izz="1837.6065" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="2400_v2_1">
+  <inertial>
+    <origin xyz="0.0 2.220446049250313e-16 0.04449999999999997" rpy="0 0 0"/>
+    <mass value="63.71688"/>
+    <inertia ixx="30.626161" iyy="0.049726" izz="30.59177" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-4.481 -1.2 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/2400_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-4.481 -1.2 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/2400_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="2400_v2_2">
+  <inertial>
+    <origin xyz="1.734723475976807e-17 -6.661338147750939e-16 0.044499999999999984" rpy="0 0 0"/>
+    <mass value="63.71688"/>
+    <inertia ixx="30.626161" iyy="0.049726" izz="30.59177" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.019 -1.2 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/2400_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.019 -1.2 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/2400_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="4500_v1_1">
+  <inertial>
+    <origin xyz="0.0 3.469446951953614e-18 0.0445" rpy="0 0 0"/>
+    <mass value="119.46915"/>
+    <inertia ixx="0.093236" iyy="201.68305" izz="201.618567" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-2.25 -0.019 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/4500_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-2.25 -0.019 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/4500_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="4500_v1_2">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0445" rpy="0 0 0"/>
+    <mass value="119.46915"/>
+    <inertia ixx="0.093236" iyy="201.68305" izz="201.618567" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-2.25 -2.381 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/4500_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-2.25 -2.381 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/4500_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="1000_v2_1">
+  <inertial>
+    <origin xyz="0.0 0.0 0.04449999999999999" rpy="0 0 0"/>
+    <mass value="26.548699999999997"/>
+    <inertia ixx="0.020719" iyy="2.229916" izz="2.215586" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.538 -0.75 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/1000_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.538 -0.75 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/1000_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="1000_v2_2">
+  <inertial>
+    <origin xyz="0.0 1.9984014443252818e-15 0.04450000000000043" rpy="0 0 0"/>
+    <mass value="26.548699999999997"/>
+    <inertia ixx="0.020719" iyy="2.229916" izz="2.215586" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.538 -1.574 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/1000_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.538 -1.574 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f3rc2026_map_v1/meshes/1000_v2_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="fixed_joint_1" type="fixed">
+  <origin xyz="4.481 1.2 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="2400_v2_1"/>
+</joint>
+
+<joint name="fixed_joint_2" type="fixed">
+  <origin xyz="0.019 1.2 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="2400_v2_2"/>
+</joint>
+
+<joint name="fixed_joint_3" type="fixed">
+  <origin xyz="2.25 0.019 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="4500_v1_1"/>
+</joint>
+
+<joint name="fixed_joint_4" type="fixed">
+  <origin xyz="2.25 2.381 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="4500_v1_2"/>
+</joint>
+
+<joint name="fixed_joint_5" type="fixed">
+  <origin xyz="0.538 0.75 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="1000_v2_1"/>
+</joint>
+
+<joint name="fixed_joint_6" type="fixed">
+  <origin xyz="0.538 1.574 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="1000_v2_2"/>
+</joint>
+
+
+<!-- ros2_control plugin config (keep velocity interfaces compatible with existing controllers) -->
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+  </hardware>
+
+
+</ros2_control>
+
+<gazebo>
+  <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+    <parameters>$(find gazebo_simulator)/config/controller_${robot_name}.yaml</parameters>
+  </plugin>
+</gazebo>
+
+<gazebo>
+  <plugin
+    filename="libgz-sim-pose-publisher-system.so"
+    name="gz::sim::systems::PosePublisher">
+    <publish_link_pose>true</publish_link_pose>
+    <publish_model_pose>true</publish_model_pose>
+    <use_pose_vector_msg>true</use_pose_vector_msg>
+    <update_frequency>50</update_frequency>
+  </plugin>
+</gazebo>
+
+</robot>

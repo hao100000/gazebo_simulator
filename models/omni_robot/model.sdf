@@ -114,8 +114,8 @@
           </box>
         </geometry>
         <material>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__lidar_link_visual_1'>
@@ -148,8 +148,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_3'>
@@ -165,8 +165,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_4'>
@@ -182,8 +182,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_5'>
@@ -199,8 +199,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <sensor name='lidar' type='gpu_lidar'>
@@ -279,8 +279,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='wheel0_motor_shaft_link_fixed_joint_lump__wheel0_housing_link_visual_1'>
@@ -296,8 +296,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
     </link>
@@ -1060,8 +1060,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='wheel1_motor_shaft_link_fixed_joint_lump__wheel1_housing_link_visual_1'>
@@ -1077,8 +1077,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
     </link>
@@ -1841,8 +1841,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='wheel2_motor_shaft_link_fixed_joint_lump__wheel2_housing_link_visual_1'>
@@ -1858,8 +1858,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
     </link>
@@ -2622,8 +2622,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
       <visual name='wheel3_motor_shaft_link_fixed_joint_lump__wheel3_housing_link_visual_1'>
@@ -2639,8 +2639,8 @@
             <name>Gazebo/Gray</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 0.5</diffuse>
+          <ambient>1 1 1 0.5</ambient>
         </material>
       </visual>
     </link>

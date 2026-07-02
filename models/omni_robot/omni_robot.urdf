@@ -5,7 +5,7 @@
 <!-- =================================================================================== -->
 <robot name="omni_robot">
   <material name="gray">
-    <color rgba="0.8 0.8 0.8 1.0"/>
+    <color rgba="0.8 0.8 0.8 0.5"/>
   </material>
   <material name="black">
     <color rgba="0 0 0 1.0"/>
@@ -18,6 +18,9 @@
   </material>
   <material name="light_red">
     <color rgba="1.0 0.5 0.5 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0 1.0 0 0.5"/>
   </material>
   <material name="yellow">
     <color rgba="0 1.0 1.0 1.0"/>

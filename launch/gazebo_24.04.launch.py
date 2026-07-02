@@ -1,5 +1,6 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, TimerAction
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, RegisterEventHandler, TimerAction
+from launch.event_handlers import OnProcessExit
 from launch_ros.actions import Node
 from launch.substitutions import Command, LaunchConfiguration
 import os
@@ -290,28 +291,29 @@ def launch_setup(context, *args, **kwargs):
 
     controlled_spec = controlled_specs[0] if controlled_specs else None
     if controlled_spec:
-        actions.extend([
-            TimerAction(
-                period=5.0,
-                actions=[
-                    Node(
-                        package="controller_manager",
-                        executable="spawner",
-                        arguments=[
-                            "joint_state_broadcaster",
-                            "--controller-manager", "/controller_manager",
-                        ],
-                    ),
-                    Node(
-                        package="controller_manager",
-                        executable="spawner",
-                        arguments=[
-                            "forward_velocity_controller",
-                            "--controller-manager", "/controller_manager",
-                        ],
-                    ),
-                ],
-            ),
+        joint_state_broadcaster_spawner = Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=[
+                "joint_state_broadcaster",
+                "--controller-manager", "/controller_manager",
+                "--controller-manager-timeout", "60",
+                "--service-call-timeout", "60",
+                "--switch-timeout", "60",
+            ],
+        )
+        forward_velocity_controller_spawner = Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=[
+                "forward_velocity_controller",
+                "--controller-manager", "/controller_manager",
+                "--controller-manager-timeout", "60",
+                "--service-call-timeout", "60",
+                "--switch-timeout", "60",
+            ],
+        )
+        control_nodes = [
             Node(
                 package="gazebo_simulator",
                 executable="can_to_gazebo",
@@ -347,7 +349,27 @@ def launch_setup(context, *args, **kwargs):
                 output="screen",
                 prefix="xterm -e",
             ),
-        ])
+        ]
+        actions.append(
+            TimerAction(
+                period=5.0,
+                actions=[
+                    joint_state_broadcaster_spawner,
+                    RegisterEventHandler(
+                        OnProcessExit(
+                            target_action=joint_state_broadcaster_spawner,
+                            on_exit=[forward_velocity_controller_spawner],
+                        )
+                    ),
+                    RegisterEventHandler(
+                        OnProcessExit(
+                            target_action=forward_velocity_controller_spawner,
+                            on_exit=control_nodes,
+                        )
+                    ),
+                ],
+            )
+        )
 
     return actions
 

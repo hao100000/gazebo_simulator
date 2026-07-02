@@ -2,15 +2,15 @@
   <model name='omni_robot'>
     <link name='base_link'>
       <inertial>
-        <pose>-1.309225264888157e-18 2.6184505297763132e-18 0.043452830188679258 0 0 0</pose>
+        <pose>-2.6184505297763132e-18 0 0.030094339622641509 0 0 0</pose>
         <mass>2.649999999999999</mass>
         <inertia>
-          <ixx>0.022904256603773581</ixx>
-          <ixy>-4.3368086899420177e-19</ixy>
-          <ixz>-1.5075728925187129e-19</ixz>
-          <iyy>0.022904256603773581</iyy>
-          <iyz>3.557246871280178e-19</iyz>
-          <izz>0.034410000000000003</izz>
+          <ixx>0.041251226415094343</ixx>
+          <ixy>-8.6736173798840355e-19</ixy>
+          <ixz>-6.4250229874386277e-19</ixz>
+          <iyy>0.041251226415094343</iyy>
+          <iyz>-2.1684043449710089e-19</iyz>
+          <izz>0.064409999999999995</izz>
         </inertia>
       </inertial>
       <collision name='base_link_fixed_joint_lump__body_link_collision'>
@@ -39,7 +39,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel0_motor_body_link_collision_2'>
-        <pose>0.12374368670764591 0.12374368670764579 0.019 -0.7853981633974485 1.5707963267948966 0</pose>
+        <pose>0.1944543648263006 0.19445436482630049 -0.040000000000000001 -0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -56,7 +56,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_3'>
-        <pose>-0.12374368670764579 0.12374368670764579 0.019 -2.3561944901923448 1.5707963267948966 0</pose>
+        <pose>-0.19445436482630049 0.1944543648263006 -0.040000000000000001 -2.3561944901923448 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -73,7 +73,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_4'>
-        <pose>-0.12374368670764591 -0.12374368670764579 0.019 2.3561944901923457 1.5707963267948966 0</pose>
+        <pose>-0.1944543648263006 -0.19445436482630049 -0.040000000000000001 2.3561944901923457 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -90,7 +90,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_5'>
-        <pose>0.12374368670764579 -0.12374368670764579 0.019 0.7853981633974485 1.5707963267948966 0</pose>
+        <pose>0.19445436482630049 -0.1944543648263006 -0.040000000000000001 0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -136,7 +136,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel0_motor_body_link_visual_2'>
-        <pose>0.1414213562373095 0.1414213562373095 0.019 0 0 0.78539816339744839</pose>
+        <pose>0.21213203435596431 0.2121320343559642 -0.040000000000000001 0 0 0.78539816339744839</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -153,7 +153,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_3'>
-        <pose>-0.1414213562373095 0.1414213562373095 0.019 0 0 2.3561944901923448</pose>
+        <pose>-0.2121320343559642 0.21213203435596431 -0.040000000000000001 0 0 2.3561944901923448</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -170,7 +170,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_4'>
-        <pose>-0.1414213562373095 -0.1414213562373095 0.019 0 0 -2.3561944901923448</pose>
+        <pose>-0.21213203435596431 -0.2121320343559642 -0.040000000000000001 0 0 -2.3561944901923448</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -187,7 +187,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_5'>
-        <pose>0.1414213562373095 -0.1414213562373095 0.019 0 0 -0.7853981633974485</pose>
+        <pose>0.2121320343559642 -0.21213203435596431 -0.040000000000000001 0 0 -0.7853981633974485</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -233,7 +233,7 @@
       </sensor>
     </link>
     <joint name='wheel0_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.1499066376115481 0.1499066376115481 0.019 0 0 0.78539816339744839</pose>
+      <pose relative_to='base_link'>0.2206173157302028 0.2206173157302028 -0.040000000000000001 0 0 0.78539816339744839</pose>
       <parent>base_link</parent>
       <child>wheel0_motor_shaft_link</child>
       <axis>
@@ -288,7 +288,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -302,7 +302,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.027789474000000002 0 -0.036842105 1.5707963267948957 1.5707963267948966 0</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_1_link</child>
       <axis>
@@ -338,7 +338,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -361,7 +361,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -391,7 +391,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.027789474000000002 0.036842105 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_2_link</child>
       <axis>
@@ -427,7 +427,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -450,7 +450,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -480,7 +480,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.027789473999999991 4.5118565962100687e-18 0.036842105 -1.570796326794897 -1.5707963267948966 0</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_3_link</child>
       <axis>
@@ -516,7 +516,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -539,7 +539,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -569,7 +569,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>0.027789474000000002 -0.036842105 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_4_link</child>
       <axis>
@@ -605,7 +605,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -628,7 +628,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -658,7 +658,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>-0.0037894740000000079 -0.026051302278686801 0.026051302278686791 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_5_link</child>
       <axis>
@@ -694,7 +694,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -717,7 +717,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -747,7 +747,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>-0.003789474000000004 0.026051302278686812 0.026051302278686801 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_6_link</child>
       <axis>
@@ -783,7 +783,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -806,7 +806,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -836,7 +836,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>-0.0037894739999999941 0.026051302278686812 -0.026051302278686801 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_7_link</child>
       <axis>
@@ -872,7 +872,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -895,7 +895,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -925,7 +925,7 @@
       </visual>
     </link>
     <joint name='wheel0_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel0_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel0_motor_shaft_link'>-0.0037894739999999941 -0.026051302278686812 -0.026051302278686812 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
       <parent>wheel0_motor_shaft_link</parent>
       <child>wheel0_barrel_8_link</child>
       <axis>
@@ -961,7 +961,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -984,7 +984,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1014,7 +1014,7 @@
       </visual>
     </link>
     <joint name='wheel1_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.1499066376115481 0.1499066376115481 0.019 0 0 2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.2206173157302028 0.2206173157302028 -0.040000000000000001 0 0 2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel1_motor_shaft_link</child>
       <axis>
@@ -1069,7 +1069,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1083,7 +1083,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.027789474000000002 0 -0.036842105 1.5707963267948957 1.5707963267948966 0</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_1_link</child>
       <axis>
@@ -1119,7 +1119,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1142,7 +1142,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1172,7 +1172,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.027789474000000002 0.036842105 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_2_link</child>
       <axis>
@@ -1208,7 +1208,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1231,7 +1231,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1261,7 +1261,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.027789473999999991 4.5118565962100687e-18 0.036842105 -1.570796326794897 -1.5707963267948966 0</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_3_link</child>
       <axis>
@@ -1297,7 +1297,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1320,7 +1320,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1350,7 +1350,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>0.027789474000000002 -0.036842105 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_4_link</child>
       <axis>
@@ -1386,7 +1386,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1409,7 +1409,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1439,7 +1439,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>-0.0037894740000000079 -0.026051302278686801 0.026051302278686791 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_5_link</child>
       <axis>
@@ -1475,7 +1475,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1498,7 +1498,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1528,7 +1528,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>-0.003789474000000004 0.026051302278686812 0.026051302278686801 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_6_link</child>
       <axis>
@@ -1564,7 +1564,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1587,7 +1587,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1617,7 +1617,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>-0.0037894739999999941 0.026051302278686812 -0.026051302278686801 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_7_link</child>
       <axis>
@@ -1653,7 +1653,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1676,7 +1676,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1706,7 +1706,7 @@
       </visual>
     </link>
     <joint name='wheel1_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel1_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel1_motor_shaft_link'>-0.0037894739999999941 -0.026051302278686812 -0.026051302278686812 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
       <parent>wheel1_motor_shaft_link</parent>
       <child>wheel1_barrel_8_link</child>
       <axis>
@@ -1742,7 +1742,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1765,7 +1765,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1795,7 +1795,7 @@
       </visual>
     </link>
     <joint name='wheel2_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.1499066376115481 -0.1499066376115481 0.019 0 0 -2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.22061731573020291 -0.2206173157302028 -0.040000000000000001 0 0 -2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel2_motor_shaft_link</child>
       <axis>
@@ -1850,7 +1850,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1864,7 +1864,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.027789474000000002 0 -0.036842105 1.5707963267948957 1.5707963267948966 0</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_1_link</child>
       <axis>
@@ -1900,7 +1900,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1923,7 +1923,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1953,7 +1953,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.027789474000000002 0.036842105 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_2_link</child>
       <axis>
@@ -1989,7 +1989,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2012,7 +2012,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2042,7 +2042,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.027789473999999991 4.5118565962100687e-18 0.036842105 -1.570796326794897 -1.5707963267948966 0</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_3_link</child>
       <axis>
@@ -2078,7 +2078,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2101,7 +2101,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2131,7 +2131,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>0.027789474000000002 -0.036842105 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_4_link</child>
       <axis>
@@ -2167,7 +2167,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2190,7 +2190,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2220,7 +2220,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>-0.0037894740000000079 -0.026051302278686801 0.026051302278686791 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_5_link</child>
       <axis>
@@ -2256,7 +2256,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2279,7 +2279,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2309,7 +2309,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>-0.003789474000000004 0.026051302278686812 0.026051302278686801 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_6_link</child>
       <axis>
@@ -2345,7 +2345,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2368,7 +2368,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2398,7 +2398,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>-0.0037894739999999941 0.026051302278686812 -0.026051302278686801 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_7_link</child>
       <axis>
@@ -2434,7 +2434,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2457,7 +2457,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2487,7 +2487,7 @@
       </visual>
     </link>
     <joint name='wheel2_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel2_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel2_motor_shaft_link'>-0.0037894739999999941 -0.026051302278686812 -0.026051302278686812 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
       <parent>wheel2_motor_shaft_link</parent>
       <child>wheel2_barrel_8_link</child>
       <axis>
@@ -2523,7 +2523,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2546,7 +2546,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2576,7 +2576,7 @@
       </visual>
     </link>
     <joint name='wheel3_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.14990663761154799 -0.1499066376115481 0.019 0 0 -0.7853981633974485</pose>
+      <pose relative_to='base_link'>0.2206173157302028 -0.22061731573020291 -0.040000000000000001 0 0 -0.7853981633974485</pose>
       <parent>base_link</parent>
       <child>wheel3_motor_shaft_link</child>
       <axis>
@@ -2631,7 +2631,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_housing.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2645,7 +2645,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_1_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 0 -0.014 1.5707963267948957 1.5707963267948966 0</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.027789474000000002 0 -0.036842105 1.5707963267948957 1.5707963267948966 0</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_1_link</child>
       <axis>
@@ -2681,7 +2681,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2704,7 +2704,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2734,7 +2734,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_2_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 0.014 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.027789474000000002 0.036842105 0 3.1415926535897931 1.5700924586837749e-16 1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_2_link</child>
       <axis>
@@ -2770,7 +2770,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2793,7 +2793,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2823,7 +2823,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_3_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 1.7145055188062949e-18 0.014 -1.570796326794897 -1.5707963267948966 0</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.027789473999999991 4.5118565962100687e-18 0.036842105 -1.570796326794897 -1.5707963267948966 0</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_3_link</child>
       <axis>
@@ -2859,7 +2859,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2882,7 +2882,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2912,7 +2912,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_4_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.017999999999999999 -0.014 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>0.027789474000000002 -0.036842105 0 0 1.5700924586837749e-16 -1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_4_link</child>
       <axis>
@@ -2948,7 +2948,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2971,7 +2971,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3001,7 +3001,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_5_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0059999999999999949 -0.009899494936611665 0.009899494936611665 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>-0.0037894740000000079 -0.026051302278686801 0.026051302278686791 -3.1415926535897931 -0.7853981633974485 -1.5707963267948972</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_5_link</child>
       <axis>
@@ -3037,7 +3037,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3060,7 +3060,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3090,7 +3090,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_6_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0059999999999999967 0.009899494936611665 0.009899494936611665 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>-0.003789474000000004 0.026051302278686812 0.026051302278686801 -6.2803698347351046e-16 -0.78539816339744883 1.5707963267948968</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_6_link</child>
       <axis>
@@ -3126,7 +3126,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3149,7 +3149,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3179,7 +3179,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_7_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0060000000000000036 0.0098994949366116667 -0.009899494936611665 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>-0.0037894739999999941 0.026051302278686812 -0.026051302278686801 -5.4953236053932107e-16 0.78539816339744817 1.5707963267948959</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_7_link</child>
       <axis>
@@ -3215,7 +3215,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3238,7 +3238,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3268,7 +3268,7 @@
       </visual>
     </link>
     <joint name='wheel3_barrel_8_joint' type='revolute'>
-      <pose relative_to='wheel3_motor_shaft_link'>0.0060000000000000036 -0.009899494936611665 -0.009899494936611665 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
+      <pose relative_to='wheel3_motor_shaft_link'>-0.0037894739999999941 -0.026051302278686812 -0.026051302278686812 -3.1415926535897931 0.78539816339744839 -1.570796326794897</pose>
       <parent>wheel3_motor_shaft_link</parent>
       <child>wheel3_barrel_8_link</child>
       <axis>
@@ -3304,7 +3304,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -3327,7 +3327,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>meshes/omni_barrel.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -3450,7 +3450,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel0_attach_joint' attached_to='base_link'>
-      <pose>0.1414213562373095 0.1414213562373095 0.019 0 0 0.78539816339744839</pose>
+      <pose>0.21213203435596431 0.2121320343559642 -0.040000000000000001 0 0 0.78539816339744839</pose>
     </frame>
     <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3528,7 +3528,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel1_attach_joint' attached_to='base_link'>
-      <pose>-0.1414213562373095 0.1414213562373095 0.019 0 0 2.3561944901923448</pose>
+      <pose>-0.2121320343559642 0.21213203435596431 -0.040000000000000001 0 0 2.3561944901923448</pose>
     </frame>
     <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3606,7 +3606,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel2_attach_joint' attached_to='base_link'>
-      <pose>-0.1414213562373095 -0.1414213562373095 0.019 0 0 -2.3561944901923448</pose>
+      <pose>-0.21213203435596431 -0.2121320343559642 -0.040000000000000001 0 0 -2.3561944901923448</pose>
     </frame>
     <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3684,7 +3684,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel3_attach_joint' attached_to='base_link'>
-      <pose>0.1414213562373095 -0.1414213562373095 0.019 0 0 -0.7853981633974485</pose>
+      <pose>0.2121320343559642 -0.21213203435596431 -0.040000000000000001 0 0 -0.7853981633974485</pose>
     </frame>
     <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'>
       <pose>0 0 0 0 0 0</pose>

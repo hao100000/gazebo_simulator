@@ -103,7 +103,7 @@
   <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel0_attach_link"/>
-    <origin rpy="0 0 0.7853981633974483" xyz="0.14142135623730953           0.1414213562373095           0.019"/>
+    <origin rpy="0 0 0.7853981633974483" xyz="0.21213203435596426           0.21213203435596423           -0.04"/>
   </joint>
   <link name="wheel0_attach_link"/>
   <joint name="wheel0_base_joint" type="fixed">
@@ -178,7 +178,7 @@
   <link name="wheel0_housing_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_housing.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_housing100.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="gray"/>
@@ -206,7 +206,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_link"/>
     <child link="wheel0_barrel_1_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -223,13 +224,13 @@
   <link name="wheel0_barrel_1_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -264,7 +265,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_link"/>
     <child link="wheel0_barrel_2_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -281,13 +283,13 @@
   <link name="wheel0_barrel_2_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -322,7 +324,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_link"/>
     <child link="wheel0_barrel_3_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -339,13 +342,13 @@
   <link name="wheel0_barrel_3_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -380,7 +383,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_link"/>
     <child link="wheel0_barrel_4_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -397,13 +401,13 @@
   <link name="wheel0_barrel_4_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -438,7 +442,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_s_link"/>
     <child link="wheel0_barrel_5_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -455,13 +460,13 @@
   <link name="wheel0_barrel_5_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -496,7 +501,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_s_link"/>
     <child link="wheel0_barrel_6_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -513,13 +519,13 @@
   <link name="wheel0_barrel_6_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -554,7 +560,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_s_link"/>
     <child link="wheel0_barrel_7_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -571,13 +578,13 @@
   <link name="wheel0_barrel_7_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -612,7 +619,8 @@
     <!-- continuous -->
     <parent link="wheel0_housing_s_link"/>
     <child link="wheel0_barrel_8_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -629,13 +637,13 @@
   <link name="wheel0_barrel_8_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -669,7 +677,7 @@
   <joint name="wheel1_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel1_attach_link"/>
-    <origin rpy="0 0 2.356194490192345" xyz="-0.1414213562373095           0.14142135623730953           0.019"/>
+    <origin rpy="0 0 2.356194490192345" xyz="-0.21213203435596423           0.21213203435596426           -0.04"/>
   </joint>
   <link name="wheel1_attach_link"/>
   <joint name="wheel1_base_joint" type="fixed">
@@ -744,7 +752,7 @@
   <link name="wheel1_housing_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_housing.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_housing100.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="gray"/>
@@ -772,7 +780,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_link"/>
     <child link="wheel1_barrel_1_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -789,13 +798,13 @@
   <link name="wheel1_barrel_1_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -830,7 +839,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_link"/>
     <child link="wheel1_barrel_2_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -847,13 +857,13 @@
   <link name="wheel1_barrel_2_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -888,7 +898,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_link"/>
     <child link="wheel1_barrel_3_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -905,13 +916,13 @@
   <link name="wheel1_barrel_3_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -946,7 +957,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_link"/>
     <child link="wheel1_barrel_4_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -963,13 +975,13 @@
   <link name="wheel1_barrel_4_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1004,7 +1016,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_s_link"/>
     <child link="wheel1_barrel_5_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1021,13 +1034,13 @@
   <link name="wheel1_barrel_5_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1062,7 +1075,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_s_link"/>
     <child link="wheel1_barrel_6_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1079,13 +1093,13 @@
   <link name="wheel1_barrel_6_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1120,7 +1134,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_s_link"/>
     <child link="wheel1_barrel_7_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1137,13 +1152,13 @@
   <link name="wheel1_barrel_7_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1178,7 +1193,8 @@
     <!-- continuous -->
     <parent link="wheel1_housing_s_link"/>
     <child link="wheel1_barrel_8_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1195,13 +1211,13 @@
   <link name="wheel1_barrel_8_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1235,7 +1251,7 @@
   <joint name="wheel2_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel2_attach_link"/>
-    <origin rpy="0 0 3.9269908169872414" xyz="-0.14142135623730953           -0.1414213562373095           0.019"/>
+    <origin rpy="0 0 3.9269908169872414" xyz="-0.2121320343559643           -0.21213203435596423           -0.04"/>
   </joint>
   <link name="wheel2_attach_link"/>
   <joint name="wheel2_base_joint" type="fixed">
@@ -1310,7 +1326,7 @@
   <link name="wheel2_housing_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_housing.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_housing100.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="gray"/>
@@ -1338,7 +1354,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_link"/>
     <child link="wheel2_barrel_1_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1355,13 +1372,13 @@
   <link name="wheel2_barrel_1_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1396,7 +1413,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_link"/>
     <child link="wheel2_barrel_2_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1413,13 +1431,13 @@
   <link name="wheel2_barrel_2_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1454,7 +1472,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_link"/>
     <child link="wheel2_barrel_3_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1471,13 +1490,13 @@
   <link name="wheel2_barrel_3_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1512,7 +1531,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_link"/>
     <child link="wheel2_barrel_4_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1529,13 +1549,13 @@
   <link name="wheel2_barrel_4_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1570,7 +1590,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_s_link"/>
     <child link="wheel2_barrel_5_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1587,13 +1608,13 @@
   <link name="wheel2_barrel_5_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1628,7 +1649,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_s_link"/>
     <child link="wheel2_barrel_6_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1645,13 +1667,13 @@
   <link name="wheel2_barrel_6_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1686,7 +1708,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_s_link"/>
     <child link="wheel2_barrel_7_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1703,13 +1726,13 @@
   <link name="wheel2_barrel_7_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1744,7 +1767,8 @@
     <!-- continuous -->
     <parent link="wheel2_housing_s_link"/>
     <child link="wheel2_barrel_8_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1761,13 +1785,13 @@
   <link name="wheel2_barrel_8_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1801,7 +1825,7 @@
   <joint name="wheel3_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel3_attach_link"/>
-    <origin rpy="0 0 5.497787143782138" xyz="0.14142135623730948        -0.14142135623730953        0.019"/>
+    <origin rpy="0 0 5.497787143782138" xyz="0.2121320343559642        -0.2121320343559643        -0.04"/>
   </joint>
   <link name="wheel3_attach_link"/>
   <joint name="wheel3_base_joint" type="fixed">
@@ -1876,7 +1900,7 @@
   <link name="wheel3_housing_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_housing.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_housing100.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="gray"/>
@@ -1904,7 +1928,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_link"/>
     <child link="wheel3_barrel_1_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1921,13 +1946,13 @@
   <link name="wheel3_barrel_1_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -1962,7 +1987,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_link"/>
     <child link="wheel3_barrel_2_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -1979,13 +2005,13 @@
   <link name="wheel3_barrel_2_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -2020,7 +2046,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_link"/>
     <child link="wheel3_barrel_3_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -2037,13 +2064,13 @@
   <link name="wheel3_barrel_3_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -2078,7 +2105,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_link"/>
     <child link="wheel3_barrel_4_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -2095,13 +2123,13 @@
   <link name="wheel3_barrel_4_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -2136,7 +2164,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_s_link"/>
     <child link="wheel3_barrel_5_link"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="0.014 0.0 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 0" xyz="0.036842105 0.0 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -2153,13 +2182,13 @@
   <link name="wheel3_barrel_5_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -2194,7 +2223,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_s_link"/>
     <child link="wheel3_barrel_6_link"/>
-    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="8.572527594031473e-19 0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="2.2559282981050347e-18 0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -2211,13 +2241,13 @@
   <link name="wheel3_barrel_6_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -2252,7 +2282,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_s_link"/>
     <child link="wheel3_barrel_7_link"/>
-    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.014 1.7145055188062945e-18 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.036842105 4.5118565962100695e-18 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -2269,13 +2300,13 @@
   <link name="wheel3_barrel_7_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -2310,7 +2341,8 @@
     <!-- continuous -->
     <parent link="wheel3_housing_s_link"/>
     <child link="wheel3_barrel_8_link"/>
-    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="8.572527594031473e-19 -0.014 0.006"/>
+    <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+    <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="2.2559282981050347e-18 -0.036842105 0.015789474"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0.001"/>
   </joint>
@@ -2327,13 +2359,13 @@
   <link name="wheel3_barrel_8_link">
     <visual>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+        <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
       </geometry>
     </collision>
     <inertial>

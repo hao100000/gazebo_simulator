@@ -244,7 +244,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_housing100.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -292,7 +292,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -315,7 +315,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -363,7 +363,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -386,7 +386,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -434,7 +434,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -457,7 +457,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -505,7 +505,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -528,7 +528,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -576,7 +576,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -599,7 +599,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -647,7 +647,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -670,7 +670,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -718,7 +718,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -741,7 +741,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -789,7 +789,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -812,7 +812,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -903,7 +903,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_housing100.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -951,7 +951,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -974,7 +974,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1022,7 +1022,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1045,7 +1045,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1093,7 +1093,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1116,7 +1116,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1164,7 +1164,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1187,7 +1187,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1235,7 +1235,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1258,7 +1258,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1306,7 +1306,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1329,7 +1329,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1377,7 +1377,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1400,7 +1400,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1448,7 +1448,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1471,7 +1471,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1562,7 +1562,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_housing100.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1610,7 +1610,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1633,7 +1633,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1681,7 +1681,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1704,7 +1704,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1752,7 +1752,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1775,7 +1775,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1823,7 +1823,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1846,7 +1846,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1894,7 +1894,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1917,7 +1917,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1965,7 +1965,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1988,7 +1988,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2036,7 +2036,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2059,7 +2059,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2107,7 +2107,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2130,7 +2130,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2221,7 +2221,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_housing100.stl</uri>
+            <uri>meshes/omni_housing100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2269,7 +2269,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2292,7 +2292,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2340,7 +2340,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2363,7 +2363,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2411,7 +2411,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2434,7 +2434,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2482,7 +2482,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2505,7 +2505,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2553,7 +2553,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2576,7 +2576,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2624,7 +2624,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2647,7 +2647,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2695,7 +2695,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2718,7 +2718,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -2766,7 +2766,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -2789,7 +2789,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://omni_2024/meshes/omni_barrel100.stl</uri>
+            <uri>meshes/omni_barrel100.stl</uri>
           </mesh>
         </geometry>
         <material>

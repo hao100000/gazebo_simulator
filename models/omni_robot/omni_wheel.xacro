@@ -4,7 +4,8 @@
     <joint name="${prefix}_joint" type="continuous"><!-- continuous -->
       <parent link="${parent}"/>
       <child link="${prefix}_link"/>
-      <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/>
+      <!-- <origin rpy="${pi/2} 0 ${dir}" xyz="${0.014*cos(dir)} ${0.014*sin(dir)} 0.006"/> -->
+      <origin rpy="${pi/2} 0 ${dir}" xyz="${0.036842105*cos(dir)} ${0.036842105*sin(dir)} 0.015789474"/>
       <axis xyz="0 0 1"/>
       <dynamics damping="0.001"/>
     </joint>
@@ -21,13 +22,13 @@
     <link name="${prefix}_link">
       <visual>
         <geometry>
-          <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+          <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
         </geometry>
         <material name="black"/>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="model://omni_robot/meshes/omni_barrel.stl"/>
+          <mesh filename="model://omni_robot/meshes/omni_barrel100.stl"/>
         </geometry>
       </collision>
       <inertial>
@@ -142,7 +143,7 @@
     <link name="${prefix}_housing_link">
       <visual>
         <geometry>
-          <mesh filename="model://omni_robot/meshes/omni_housing.stl"/>
+          <mesh filename="model://omni_robot/meshes/omni_housing100.stl"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <material name="gray"/>

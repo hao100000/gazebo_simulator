@@ -1,0 +1,214 @@
+<sdf version="1.11">
+  <model name="f3rc2026_map_v2">
+    <link name="base_link">
+      <inertial>
+        <pose>2.2193193540831881 1.1993190043546511 0.02342373692359704 0 0 0</pose>
+        <mass>2962.869459999999</mass>
+        <inertia>
+          <ixx>1626.1278563950079</ixx>
+          <ixy>-3.3924000783126762</ixy>
+          <ixz>4.6429727120770679</ixz>
+          <iyy>5488.4988004873903</iyy>
+          <iyz>0.1030566373008099</iyz>
+          <izz>7111.14180991592</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__2400_v2_1_collision_1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/2400_v2_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__2400_v2_2_collision_2">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/2400_v2_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__4500_v1_1_collision_3">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/4500_v1_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__4500_v1_2_collision_4">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/4500_v1_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__1000_v2_1_collision_5">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/1000_v2_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__1000_v2_2_collision_6">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/1000_v2_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__2400_v2_1_visual_1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/2400_v2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__2400_v2_2_visual_2">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/2400_v2_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__4500_v1_1_visual_3">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/4500_v1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__4500_v1_2_visual_4">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/4500_v1_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__1000_v2_1_visual_5">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/1000_v2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__1000_v2_2_visual_6">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/1000_v2_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name="gz::sim::systems::PosePublisher" filename="libgz-sim-pose-publisher-system.so">
+      <publish_link_pose>true</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
+    </plugin>
+    <frame name="fixed_joint_1" attached_to="base_link">
+      <pose>4.4809999999999999 1.2 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name="2400_v2_1" attached_to="fixed_joint_1">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="fixed_joint_2" attached_to="base_link">
+      <pose>0.019 1.2 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name="2400_v2_2" attached_to="fixed_joint_2">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="fixed_joint_3" attached_to="base_link">
+      <pose>2.25 0.019 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name="4500_v1_1" attached_to="fixed_joint_3">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="fixed_joint_4" attached_to="base_link">
+      <pose>2.25 2.3809999999999998 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name="4500_v1_2" attached_to="fixed_joint_4">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="fixed_joint_5" attached_to="base_link">
+      <pose>0.53800000000000003 0.75 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name="1000_v2_1" attached_to="fixed_joint_5">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="fixed_joint_6" attached_to="base_link">
+      <pose>0.53800000000000003 1.5740000000000001 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name="1000_v2_2" attached_to="fixed_joint_6">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

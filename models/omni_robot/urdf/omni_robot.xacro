@@ -9,7 +9,7 @@
   <xacro:property name="wheel1_angle_deg" value="135"/>
   <xacro:property name="wheel2_angle_deg" value="225"/>
   <xacro:property name="wheel3_angle_deg" value="315"/>
-  <xacro:property name="wheel_mount_radius" value="0.07"/>
+  <xacro:property name="wheel_mount_radius" value="0.2"/>
 
   <link name="base_link"/>
 

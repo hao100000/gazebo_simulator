@@ -103,7 +103,7 @@
   <joint name="wheel0_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel0_attach_link"/>
-    <origin rpy="0 0 0.7853981633974483" xyz="0.04949747468305833 0.049497474683058325 0.019"/>
+    <origin rpy="0 0 0.7853981633974483" xyz="0.14142135623730953           0.1414213562373095           0.019"/>
   </joint>
   <link name="wheel0_attach_link"/>
   <joint name="wheel0_base_joint" type="fixed">
@@ -669,7 +669,7 @@
   <joint name="wheel1_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel1_attach_link"/>
-    <origin rpy="0 0 2.356194490192345" xyz="-0.049497474683058325 0.04949747468305833 0.019"/>
+    <origin rpy="0 0 2.356194490192345" xyz="-0.1414213562373095           0.14142135623730953           0.019"/>
   </joint>
   <link name="wheel1_attach_link"/>
   <joint name="wheel1_base_joint" type="fixed">
@@ -1235,7 +1235,7 @@
   <joint name="wheel2_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel2_attach_link"/>
-    <origin rpy="0 0 3.9269908169872414" xyz="-0.049497474683058346 -0.049497474683058325 0.019"/>
+    <origin rpy="0 0 3.9269908169872414" xyz="-0.14142135623730953           -0.1414213562373095           0.019"/>
   </joint>
   <link name="wheel2_attach_link"/>
   <joint name="wheel2_base_joint" type="fixed">
@@ -1801,7 +1801,7 @@
   <joint name="wheel3_attach_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel3_attach_link"/>
-    <origin rpy="0 0 5.497787143782138" xyz="0.04949747468305832 -0.049497474683058346 0.019"/>
+    <origin rpy="0 0 5.497787143782138" xyz="0.14142135623730948        -0.14142135623730953        0.019"/>
   </joint>
   <link name="wheel3_attach_link"/>
   <joint name="wheel3_base_joint" type="fixed">

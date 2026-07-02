@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 
 
 DEFAULT_WORLD_FILE = "world.sdf"
-DEFAULT_SPAWN_MODELS = "f3rc2026_map_v1:0,0,0.05,0,0,0;omni_robot:2,-2,0.2,0,0,0"
+DEFAULT_SPAWN_MODELS = "f3rc2026_map_v1:0,0,0.01,0,0,0;omni_robot:2,-2,0.2,0,0,0"
 DEFAULT_STATIC_MODELS = "f3rc2026_map_v1"
 
 

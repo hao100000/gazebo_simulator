@@ -183,8 +183,8 @@ def main():
         while True:
             key = getKey(settings)
             if key in moveBindings.keys():
-                x = moveBindings[key][0]
-                y = moveBindings[key][1]
+                y = moveBindings[key][0]
+                x = -1 * moveBindings[key][1]
                 z = moveBindings[key][2]
                 th = moveBindings[key][3]
             elif key in speedBindings.keys():

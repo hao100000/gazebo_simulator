@@ -343,12 +343,12 @@ def launch_setup(context, *args, **kwargs):
                 ],
                 output="screen",
             ),
-            Node(
-                package="gazebo_simulator",
-                executable="teleop_twist_keyboard",
-                output="screen",
-                prefix="xterm -e",
-            ),
+            # Node(
+            #     package="gazebo_simulator",
+            #     executable="teleop_twist_keyboard",
+            #     output="screen",
+            #     prefix="xterm -e",
+            # ),
         ]
         actions.append(
             TimerAction(

@@ -2,8 +2,11 @@
 #include <memory>
 #include <string>
 
+#include <geometry_msgs/msg/transform_stamped.hpp>
+#include <nav_msgs/msg/odometry.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
+#include <tf2_ros/transform_broadcaster.h>
 #include <uec_msgs/msg/odometry.hpp>
 
 class GazeboToUodomNode : public rclcpp::Node {
@@ -14,16 +17,28 @@ public:
     input_topic_ = declare_parameter<std::string>("input_topic", "/model/omni_robot/pose");
     output_topic_ = declare_parameter<std::string>("output_topic", "/uodom");
     target_child_frame_id_ = declare_parameter<std::string>("target_child_frame_id", "omni_robot");
+    odom_topic_ = declare_parameter<std::string>("odom_topic", "/odom");
+    odom_frame_id_ = declare_parameter<std::string>("odom_frame_id", "odom");
+    base_frame_id_ = declare_parameter<std::string>("base_frame_id", "base_link");
+    publish_odom_ = declare_parameter<bool>("publish_odom", true);
+    publish_tf_ = declare_parameter<bool>("publish_tf", true);
 
-    publisher_ = create_publisher<uec_msgs::msg::Odometry>(output_topic_, 10);
+    uodom_pub_ = create_publisher<uec_msgs::msg::Odometry>(output_topic_, 10);
+    if (publish_odom_) {
+      odom_pub_ = create_publisher<nav_msgs::msg::Odometry>(odom_topic_, 10);
+    }
+    if (publish_tf_) {
+      tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
+    }
     subscription_ = create_subscription<tf2_msgs::msg::TFMessage>(
       input_topic_, 10,
       std::bind(&GazeboToUodomNode::tf_callback, this, std::placeholders::_1));
 
     RCLCPP_INFO(
       get_logger(),
-      "Listening on %s and publishing robot body pose to %s for child_frame_id='%s'",
-      input_topic_.c_str(), output_topic_.c_str(), target_child_frame_id_.c_str());
+      "Listening on %s and publishing %s plus %s/%s TF for child_frame_id='%s'",
+      input_topic_.c_str(), output_topic_.c_str(), odom_frame_id_.c_str(),
+      base_frame_id_.c_str(), target_child_frame_id_.c_str());
   }
 
 private:
@@ -46,7 +61,29 @@ private:
       odom.vy = 0.0f;
       odom.vyaw = 0.0f;
 
-      publisher_->publish(odom);
+      uodom_pub_->publish(odom);
+
+      if (publish_odom_ && odom_pub_) {
+        nav_msgs::msg::Odometry nav_odom;
+        nav_odom.header.stamp = transform.header.stamp;
+        nav_odom.header.frame_id = odom_frame_id_;
+        nav_odom.child_frame_id = base_frame_id_;
+        nav_odom.pose.pose.position.x = transform.transform.translation.x;
+        nav_odom.pose.pose.position.y = transform.transform.translation.y;
+        nav_odom.pose.pose.position.z = transform.transform.translation.z;
+        nav_odom.pose.pose.orientation = transform.transform.rotation;
+        odom_pub_->publish(nav_odom);
+      }
+
+      if (publish_tf_ && tf_broadcaster_) {
+        geometry_msgs::msg::TransformStamped odom_tf;
+        odom_tf.header.stamp = transform.header.stamp;
+        odom_tf.header.frame_id = odom_frame_id_;
+        odom_tf.child_frame_id = base_frame_id_;
+        odom_tf.transform = transform.transform;
+        tf_broadcaster_->sendTransform(odom_tf);
+      }
+
       RCLCPP_DEBUG(
         get_logger(),
         "Published body pose: frame_id='%s' child_frame_id='%s'",
@@ -57,9 +94,16 @@ private:
 
   std::string input_topic_;
   std::string output_topic_;
+  std::string odom_topic_;
   std::string target_child_frame_id_;
-  rclcpp::Publisher<uec_msgs::msg::Odometry>::SharedPtr publisher_;
+  std::string odom_frame_id_;
+  std::string base_frame_id_;
+  bool publish_odom_;
+  bool publish_tf_;
+  rclcpp::Publisher<uec_msgs::msg::Odometry>::SharedPtr uodom_pub_;
+  rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
   rclcpp::Subscription<tf2_msgs::msg::TFMessage>::SharedPtr subscription_;
+  std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 };
 
 int main(int argc, char * argv[])

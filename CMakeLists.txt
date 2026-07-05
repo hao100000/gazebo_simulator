@@ -7,9 +7,12 @@ endif()
 
 # Find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(tf2_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
 find_package(uec_msgs REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
@@ -35,8 +38,11 @@ add_executable(gazebo_to_uodom
 )
 
 ament_target_dependencies(gazebo_to_uodom
+  geometry_msgs
+  nav_msgs
   rclcpp
   tf2_msgs
+  tf2_ros
   uec_msgs
 )
 

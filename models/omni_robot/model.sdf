@@ -2,15 +2,15 @@
   <model name='omni_robot'>
     <link name='base_link'>
       <inertial>
-        <pose>-2.6184505297763132e-18 0 0.030094339622641509 0 0 0</pose>
+        <pose>-0.0056603773584905726 -3.9276757946644703e-18 0.02726415094339623 0 0 0</pose>
         <mass>2.649999999999999</mass>
         <inertia>
-          <ixx>0.041251226415094343</ixx>
-          <ixy>-8.6736173798840355e-19</ixy>
-          <ixz>-6.4250229874386277e-19</ixz>
-          <iyy>0.041251226415094343</iyy>
-          <iyz>-2.1684043449710089e-19</iyz>
-          <izz>0.064409999999999995</izz>
+          <ixx>0.033431415094339632</ixx>
+          <ixy>-8.0844660106843643e-19</ixy>
+          <ixz>-0.001533962264150944</ixz>
+          <iyy>0.037846509433962269</iyy>
+          <iyz>-6.6934141667407005e-20</iyz>
+          <izz>0.052325094339622631</izz>
         </inertia>
       </inertial>
       <collision name='base_link_fixed_joint_lump__body_link_collision'>
@@ -22,7 +22,7 @@
         </geometry>
       </collision>
       <collision name='base_link_fixed_joint_lump__lidar_link_collision_1'>
-        <pose>0 0 0.092499999999999999 0 0 0</pose>
+        <pose>-0.29999999999999999 0 -0.057500000000000002 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.035000000000000003</length>
@@ -39,7 +39,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel0_motor_body_link_collision_2'>
-        <pose>0.1944543648263006 0.19445436482630049 -0.040000000000000001 -0.7853981633974485 1.5707963267948966 0</pose>
+        <pose>0.15909902576697321 0.15909902576697321 -0.040000000000000001 -0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -56,7 +56,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel1_motor_body_link_collision_3'>
-        <pose>-0.19445436482630049 0.1944543648263006 -0.040000000000000001 -2.3561944901923448 1.5707963267948966 0</pose>
+        <pose>-0.15909902576697321 0.15909902576697321 -0.040000000000000001 -2.3561944901923448 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -73,7 +73,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel2_motor_body_link_collision_4'>
-        <pose>-0.1944543648263006 -0.19445436482630049 -0.040000000000000001 2.3561944901923457 1.5707963267948966 0</pose>
+        <pose>-0.15909902576697321 -0.15909902576697321 -0.040000000000000001 2.3561944901923457 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -90,7 +90,7 @@
         </surface>
       </collision>
       <collision name='base_link_fixed_joint_lump__wheel3_motor_body_link_collision_5'>
-        <pose>0.19445436482630049 -0.1944543648263006 -0.040000000000000001 0.7853981633974485 1.5707963267948966 0</pose>
+        <pose>0.15909902576697321 -0.15909902576697321 -0.040000000000000001 0.7853981633974485 1.5707963267948966 0</pose>
         <geometry>
           <cylinder>
             <length>0.050000000000000003</length>
@@ -119,7 +119,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__lidar_link_visual_1'>
-        <pose>0 0 0.092499999999999999 0 0 0</pose>
+        <pose>-0.29999999999999999 0 -0.057500000000000002 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.035000000000000003</length>
@@ -136,7 +136,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel0_motor_body_link_visual_2'>
-        <pose>0.21213203435596431 0.2121320343559642 -0.040000000000000001 0 0 0.78539816339744839</pose>
+        <pose>0.17677669529663689 0.17677669529663689 -0.040000000000000001 0 0 0.78539816339744839</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -153,7 +153,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel1_motor_body_link_visual_3'>
-        <pose>-0.2121320343559642 0.21213203435596431 -0.040000000000000001 0 0 2.3561944901923448</pose>
+        <pose>-0.17677669529663689 0.17677669529663689 -0.040000000000000001 0 0 2.3561944901923448</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -170,7 +170,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel2_motor_body_link_visual_4'>
-        <pose>-0.21213203435596431 -0.2121320343559642 -0.040000000000000001 0 0 -2.3561944901923448</pose>
+        <pose>-0.17677669529663689 -0.17677669529663689 -0.040000000000000001 0 0 -2.3561944901923448</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -187,7 +187,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__wheel3_motor_body_link_visual_5'>
-        <pose>0.2121320343559642 -0.21213203435596431 -0.040000000000000001 0 0 -0.7853981633974485</pose>
+        <pose>0.17677669529663681 -0.17677669529663689 -0.040000000000000001 0 0 -0.7853981633974485</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -213,8 +213,8 @@
             <horizontal>
               <samples>120</samples>
               <resolution>1</resolution>
-              <min_angle>-3.1415926535897931</min_angle>
-              <max_angle>3.1415926535897931</max_angle>
+              <min_angle>1.3962634015954636</min_angle>
+              <max_angle>4.8869219055841224</max_angle>
             </horizontal>
           </scan>
           <range>
@@ -228,12 +228,12 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <pose>0 0 0.10000000000000001 0 0 0</pose>
+        <pose>-0.29999999999999999 0 -0.050000000000000003 0 0 0</pose>
         <gz_frame_id>lidar_link</gz_frame_id>
       </sensor>
     </link>
     <joint name='wheel0_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.2206173157302028 0.2206173157302028 -0.040000000000000001 0 0 0.78539816339744839</pose>
+      <pose relative_to='base_link'>0.18526197667087549 0.18526197667087541 -0.040000000000000001 0 0 0.78539816339744839</pose>
       <parent>base_link</parent>
       <child>wheel0_motor_shaft_link</child>
       <axis>
@@ -1014,7 +1014,7 @@
       </visual>
     </link>
     <joint name='wheel1_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.2206173157302028 0.2206173157302028 -0.040000000000000001 0 0 2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.18526197667087541 0.18526197667087549 -0.040000000000000001 0 0 2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel1_motor_shaft_link</child>
       <axis>
@@ -1795,7 +1795,7 @@
       </visual>
     </link>
     <joint name='wheel2_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.22061731573020291 -0.2206173157302028 -0.040000000000000001 0 0 -2.3561944901923448</pose>
+      <pose relative_to='base_link'>-0.18526197667087549 -0.18526197667087541 -0.040000000000000001 0 0 -2.3561944901923448</pose>
       <parent>base_link</parent>
       <child>wheel2_motor_shaft_link</child>
       <axis>
@@ -2576,7 +2576,7 @@
       </visual>
     </link>
     <joint name='wheel3_motor_shaft_joint' type='revolute'>
-      <pose relative_to='base_link'>0.2206173157302028 -0.22061731573020291 -0.040000000000000001 0 0 -0.7853981633974485</pose>
+      <pose relative_to='base_link'>0.18526197667087541 -0.18526197667087549 -0.040000000000000001 0 0 -0.7853981633974485</pose>
       <parent>base_link</parent>
       <child>wheel3_motor_shaft_link</child>
       <axis>
@@ -3372,7 +3372,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='lidar_joint' attached_to='base_link'>
-      <pose>0 0 0.074999999999999997 0 0 0</pose>
+      <pose>-0.29999999999999999 0 -0.074999999999999997 0 0 0</pose>
     </frame>
     <frame name='lidar_link' attached_to='lidar_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3450,7 +3450,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel0_attach_joint' attached_to='base_link'>
-      <pose>0.21213203435596431 0.2121320343559642 -0.040000000000000001 0 0 0.78539816339744839</pose>
+      <pose>0.17677669529663689 0.17677669529663689 -0.040000000000000001 0 0 0.78539816339744839</pose>
     </frame>
     <frame name='wheel0_attach_link' attached_to='wheel0_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3528,7 +3528,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel1_attach_joint' attached_to='base_link'>
-      <pose>-0.2121320343559642 0.21213203435596431 -0.040000000000000001 0 0 2.3561944901923448</pose>
+      <pose>-0.17677669529663689 0.17677669529663689 -0.040000000000000001 0 0 2.3561944901923448</pose>
     </frame>
     <frame name='wheel1_attach_link' attached_to='wheel1_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3606,7 +3606,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel2_attach_joint' attached_to='base_link'>
-      <pose>-0.21213203435596431 -0.2121320343559642 -0.040000000000000001 0 0 -2.3561944901923448</pose>
+      <pose>-0.17677669529663689 -0.17677669529663689 -0.040000000000000001 0 0 -2.3561944901923448</pose>
     </frame>
     <frame name='wheel2_attach_link' attached_to='wheel2_attach_joint'>
       <pose>0 0 0 0 0 0</pose>
@@ -3684,7 +3684,7 @@
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='wheel3_attach_joint' attached_to='base_link'>
-      <pose>0.2121320343559642 -0.21213203435596431 -0.040000000000000001 0 0 -0.7853981633974485</pose>
+      <pose>0.17677669529663681 -0.17677669529663689 -0.040000000000000001 0 0 -0.7853981633974485</pose>
     </frame>
     <frame name='wheel3_attach_link' attached_to='wheel3_attach_joint'>
       <pose>0 0 0 0 0 0</pose>

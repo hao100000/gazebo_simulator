@@ -1,0 +1,49 @@
+<sdf version='1.11'>
+  <model name='omuni_nakamura_v9'>
+    <link name='base_link'>
+      <inertial>
+        <pose>4.0444455887623261e-17 0 0.0025000000000000001 0 0 0</pose>
+        <mass>14.12215</mass>
+        <inertia>
+          <ixx>0.423238</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.423238</iyy>
+          <iyz>0</iyz>
+          <izz>0.846418</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
+      <parameters>/home/hao/Ubuntu_3/Robomech/ros2_ws_3_abu2027/install/gazebo_simulator/share/gazebo_simulator/config/controller_omuni_nakamura_v9.yaml</parameters>
+    </plugin>
+    <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
+      <publish_link_pose>true</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
+    </plugin>
+  </model>
+</sdf>

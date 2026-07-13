@@ -1,0 +1,373 @@
+<sdf version='1.11'>
+  <model name='omuni_nakamura_v11'>
+    <link name='base_link'>
+      <inertial>
+        <pose>4.0443636658258527e-17 2.3990483360179928e-21 0.0024985855641619162 0 0 0</pose>
+        <mass>14.12281586056293</mass>
+        <inertia>
+          <ixx>0.4232703246284894</ixx>
+          <ixy>-5.0821976835258013e-21</ixy>
+          <ixz>-1.133276634152317e-22</ixz>
+          <iyy>0.4232703246284894</iyy>
+          <iyz>1.14344655584304e-21</iyz>
+          <izz>0.84648145076447456</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__body2_1_collision_1'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body2_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__body3_1_collision_2'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body3_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__body5_1_collision_3'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__body4_1_collision_4'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body4_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__body2_1_visual_1'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__body3_1_visual_2'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body3_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__body5_1_visual_3'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__body4_1_visual_4'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/body4_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotate_joint_1' type='revolute'>
+      <pose relative_to='base_link'>0.21934000000000001 -0.21934000000000001 -0.0275 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>omunimunimuni_v6_1</child>
+      <axis>
+        <xyz>-0.70710700000000004 0.70710700000000004 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='omunimunimuni_v6_1'>
+      <pose relative_to='rotate_joint_1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0081313023966845255 -0.0081313023966847198 -5.2041704279304213e-17 0 0 0</pose>
+        <mass>0.25109804258535828</mass>
+        <inertia>
+          <ixx>7.2000000000000002e-05</ixx>
+          <ixy>-1.5999999999999999e-05</ixy>
+          <ixz>0</ixz>
+          <iyy>7.2000000000000002e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.5999999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='omunimunimuni_v6_1_collision'>
+        <pose>-0.21934000000000001 0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='omunimunimuni_v6_1_visual'>
+        <pose>-0.21934000000000001 0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotate_joint_2' type='revolute'>
+      <pose relative_to='base_link'>0.21934000000000001 0.21934000000000001 -0.0275 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>omunimunimuni_v6_2</child>
+      <axis>
+        <xyz>-0.70710700000000004 -0.70710700000000004 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='omunimunimuni_v6_2'>
+      <pose relative_to='rotate_joint_2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0081313023966847198 0.0081313023966849141 -1.387778780781446e-17 0 0 0</pose>
+        <mass>0.25109804258535828</mass>
+        <inertia>
+          <ixx>7.2000000000000002e-05</ixx>
+          <ixy>1.5999999999999999e-05</ixy>
+          <ixz>0</ixz>
+          <iyy>7.2000000000000002e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.5999999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='omunimunimuni_v6_2_collision'>
+        <pose>-0.21934000000000001 -0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='omunimunimuni_v6_2_visual'>
+        <pose>-0.21934000000000001 -0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotate_joint_4' type='revolute'>
+      <pose relative_to='base_link'>-0.21934000000000001 -0.21934000000000001 -0.0275 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>omunimunimuni_v6_4</child>
+      <axis>
+        <xyz>0.70710700000000004 0.70710700000000004 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='omunimunimuni_v6_4'>
+      <pose relative_to='rotate_joint_4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.0081313023966848585 -0.0081313023966846087 -1.7347234759768071e-17 0 0 0</pose>
+        <mass>0.25109804258535828</mass>
+        <inertia>
+          <ixx>7.2000000000000002e-05</ixx>
+          <ixy>1.5999999999999999e-05</ixy>
+          <ixz>0</ixz>
+          <iyy>7.2000000000000002e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.5999999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='omunimunimuni_v6_4_collision'>
+        <pose>0.21934000000000001 0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='omunimunimuni_v6_4_visual'>
+        <pose>0.21934000000000001 0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotate_joint_3' type='revolute'>
+      <pose relative_to='base_link'>-0.21934000000000001 0.21934000000000001 -0.0275 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>omunimunimuni_v6_3</child>
+      <axis>
+        <xyz>0.70710700000000004 -0.70710700000000004 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='omunimunimuni_v6_3'>
+      <pose relative_to='rotate_joint_3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.0081313023966846365 0.0081313023966848308 1.0408340855860839e-17 0 0 0</pose>
+        <mass>0.25109804258535828</mass>
+        <inertia>
+          <ixx>7.2000000000000002e-05</ixx>
+          <ixy>-1.5999999999999999e-05</ixy>
+          <ixz>0</ixz>
+          <iyy>7.2000000000000002e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.5999999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='omunimunimuni_v6_3_collision'>
+        <pose>0.21934000000000001 -0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='omunimunimuni_v6_3_visual'>
+        <pose>0.21934000000000001 -0.21934000000000001 0.0275 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>meshes/omunimunimuni_v6_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
+          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
+      <parameters>/home/hao/Ubuntu_3/Robomech/ros2_ws_3_abu2027/install/gazebo_simulator/share/gazebo_simulator/config/controller_omuni_nakamura_v11.yaml</parameters>
+    </plugin>
+    <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
+      <publish_link_pose>true</publish_link_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>50</update_frequency>
+    </plugin>
+    <frame name='fixed_joint_1' attached_to='base_link'>
+      <pose>0.21721799999999999 -0.21721799999999999 -0.0275 0 0 0</pose>
+    </frame>
+    <frame name='body2_1' attached_to='fixed_joint_1'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='fixed_joint_2' attached_to='base_link'>
+      <pose>0.21721799999999999 0.21721799999999999 -0.0275 0 0 0</pose>
+    </frame>
+    <frame name='body3_1' attached_to='fixed_joint_2'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='fixed_joint_3' attached_to='base_link'>
+      <pose>-0.21721799999999999 -0.21721799999999999 -0.0275 0 0 0</pose>
+    </frame>
+    <frame name='body5_1' attached_to='fixed_joint_3'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='fixed_joint_4' attached_to='base_link'>
+      <pose>-0.21721799999999999 0.21721799999999999 -0.0275 0 0 0</pose>
+    </frame>
+    <frame name='body4_1' attached_to='fixed_joint_4'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

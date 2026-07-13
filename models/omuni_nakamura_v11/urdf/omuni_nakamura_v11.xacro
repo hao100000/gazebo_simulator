@@ -18,7 +18,7 @@
     <geometry>
       <mesh filename="package://omuni_nakamura_v11/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="_"/>
+    <material name="orange"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -123,7 +123,7 @@
     <geometry>
       <mesh filename="package://omuni_nakamura_v11/meshes/omunimunimuni_v6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="_"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="-0.21934 0.21934 0.0275" rpy="0 0 0"/>

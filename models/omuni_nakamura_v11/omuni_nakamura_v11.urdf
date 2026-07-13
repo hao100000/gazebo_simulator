@@ -4,8 +4,11 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="omuni_nakamura_v11">
-  <material name="silver_default">
-    <color rgba="0.700 0.700 0.700 1.000"/>
+  <material name="orange">
+    <color rgba="1 0.42 0.12 0.85"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
   </material>
   <material name="_">
     <color rgba="0.6274509803921569 0.6274509803921569 0.6274509803921569 1.0"/>
@@ -61,7 +64,7 @@
       <geometry>
         <mesh filename="package://omuni_nakamura_v11/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="_"/>
+      <material name="orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -161,7 +164,7 @@
       <geometry>
         <mesh filename="package://omuni_nakamura_v11/meshes/omunimunimuni_v6_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="_"/>
+      <material name="black"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.21934 0.21934 0.0275"/>

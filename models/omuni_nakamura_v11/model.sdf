@@ -67,8 +67,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
-          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+          <diffuse>1 0.524999976 0.149999991 0.850000024</diffuse>
+          <ambient>1 0.524999976 0.149999991 0.850000024</ambient>
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__body2_1_visual_1'>
@@ -172,8 +172,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.784313738 0.784313738 0.784313738 1</diffuse>
-          <ambient>0.784313738 0.784313738 0.784313738 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
         </material>
       </visual>
     </link>

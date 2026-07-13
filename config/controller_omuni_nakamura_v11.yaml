@@ -19,7 +19,7 @@ controller_manager:
 forward_velocity_controller:
   ros__parameters:
     joints:
-      - base_joint_1
-      - base_joint_2
-      - base_joint_3
-      - base_joint_4
+      - rotate_joint_1
+      - rotate_joint_2
+      - rotate_joint_3
+      - rotate_joint_4

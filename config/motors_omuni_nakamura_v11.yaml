@@ -6,23 +6,23 @@
 
 motors:
   - can_id: 1
-    joint_name: omni_joint_1
-    invert: false
+    joint_name: rotate_joint_1
+    invert: true
     control_type: velocity
 
   - can_id: 2
-    joint_name: omni_joint_2
-    invert: false
+    joint_name: rotate_joint_2
+    invert: true
     control_type: velocity
 
   - can_id: 3
-    joint_name: omni_joint_3
-    invert: false
+    joint_name: rotate_joint_3
+    invert: true
     control_type: velocity
 
   - can_id: 4
-    joint_name: omni_joint_4
-    invert: false
+    joint_name: rotate_joint_4
+    invert: true
     control_type: velocity
 
 # Optional settings

@@ -11,8 +11,12 @@ import xml.etree.ElementTree as ET
 
 
 DEFAULT_WORLD_FILE = "world.sdf"
-DEFAULT_SPAWN_MODELS = "f3rc2026_map_v2:0,0,0.01,0,0,0;omuni_nakamura_v11:2,1.0,0.5,0,0,0"
+DEFAULT_SPAWN_MODELS = "f3rc2026_map_v2:0,0,0.01,0,0,0;omni_robot:2,1.0,0.5,0,0,0"
 DEFAULT_STATIC_MODELS = "f3rc2026_map_v2"
+
+
+def launch_bool(value):
+    return value.strip().lower() in ("1", "true", "yes", "on")
 
 
 class SpawnSpec:
@@ -212,6 +216,8 @@ def launch_setup(context, *args, **kwargs):
     world_file = LaunchConfiguration("world_file").perform(context)
     spawn_models = LaunchConfiguration("spawn_models").perform(context)
     static_models = parse_name_list(LaunchConfiguration("static_models").perform(context))
+    enable_localization = launch_bool(LaunchConfiguration("enable_localization").perform(context))
+    rviz = launch_bool(LaunchConfiguration("rviz").perform(context))
 
     specs = parse_spawn_models(spawn_models)
     controlled_specs = validate_control_targets(specs, static_models)
@@ -350,6 +356,53 @@ def launch_setup(context, *args, **kwargs):
                 prefix="xterm -e",
             ),
         ]
+        if enable_localization:
+            localization_config_path = os.path.join(
+                ros2_ws,
+                "src/ROSLib2/uec_localization/config/localization.yaml",
+            )
+            rviz_config_path = os.path.join(
+                ros2_ws,
+                "src/ROSLib2/uec_localization/rviz/bag_fastlio2d.rviz",
+            )
+            control_nodes.extend([
+                Node(
+                    package="uec_localization",
+                    executable="fastlio2d_node",
+                    name="fastlio2d_node",
+                    output="screen",
+                    parameters=[
+                        {"config_path": localization_config_path},
+                        {"publish_pointcloud": True},
+                        {"use_sim_time": True},
+                        {"tf_mode": "map_to_odom"},
+                        {"tf_map_frame_id": "map"},
+                        {"tf_odom_frame_id": "odom"},
+                        {"tf_base_frame_id": "base_link"},
+                    ],
+                ),
+                Node(
+                    package="uec_localization",
+                    executable="view_map",
+                    name="view_map",
+                    output="screen",
+                    parameters=[
+                        {"config_path": localization_config_path},
+                        {"use_sim_time": True},
+                    ],
+                ),
+            ])
+            if rviz:
+                control_nodes.append(
+                    Node(
+                        package="rviz2",
+                        executable="rviz2",
+                        name="rviz2",
+                        output="screen",
+                        arguments=["-d", rviz_config_path],
+                        parameters=[{"use_sim_time": True}],
+                    )
+                )
         actions.append(
             TimerAction(
                 period=5.0,
@@ -393,6 +446,16 @@ def generate_launch_description():
             "static_models",
             default_value=DEFAULT_STATIC_MODELS,
             description="Comma-separated model or instance names that should be included as static",
+        ),
+        DeclareLaunchArgument(
+            "enable_localization",
+            default_value="true",
+            description="Start uec_localization fastlio2d_node/view_map for map->odom TF",
+        ),
+        DeclareLaunchArgument(
+            "rviz",
+            default_value="true",
+            description="Start RViz with the uec_localization FastLIO2D config",
         ),
         OpaqueFunction(function=launch_setup),
     ])
